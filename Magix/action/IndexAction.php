@@ -27,8 +27,8 @@ class IndexAction extends CommonAction
                 // Pour voir les informations retournées : var_dump($result);exit;
                 $key = $result->key; 
                 //(mettre la cle en session)
-                $key = $_SESSION["key"];
-                
+                $_SESSION["key"] = $key;
+                $_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
                 header("location:Lobby.php");
                 exit;
             }

@@ -30,7 +30,7 @@ abstract class CommonAction
         }
 
         if ($this->pageVisibility > $_SESSION["visibility"]) {
-            header("location:login.php");
+            header("location:index.php");
             exit;
         }
 
