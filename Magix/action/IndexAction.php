@@ -10,6 +10,7 @@
 
         protected function executeAction() {
             $data = [];
+            $key = $_SESSION["key"];
             $data["username"] = "Name_Hidden";
             $data["password"] = "Biotech1";
 
@@ -21,7 +22,7 @@
             else {
                 // Pour voir les informations retournées : var_dump($result);exit;
                 $key = $result->key;//(mettre la cle en session)
-                $key = $_SESSION["cle"];
+                
             }
 
         }
