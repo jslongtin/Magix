@@ -9,14 +9,19 @@ html {
 	font-size:16px;
 	font-family: 'Kreon', sans-serif;
 }
-#index{
+#index, #lobby{
 	height: 100vh;
 	width: 100vw;
 	align-items: center;
-	justify-content: center;
-	background-image: url("../img/thumb-1920-901142.jpg");
+	justify-content: center;	
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+#lobby{
+	background-image: url("../img/73e5870ccc55e0f1e350327506ac92d7.jpg");
+}
+#index{
+	background-image: url("../img/thumb-1920-901142.jpg");
 }
 .ConnexionBox{
 	width:400px;
