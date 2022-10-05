@@ -30,6 +30,7 @@ class IndexAction extends CommonAction
                 $key = $result->key; 
                 
             }
+            return compact("connectionError");
         }
     }
 }

@@ -12,7 +12,15 @@ require_once("partial/header.php");
 	<h1> CONNEXION </h1>
 	
 	<form action="" method="post">
-		<div class="erreur"></div>
+		<?php	
+			if ($data["connectionError"]) {
+			?>
+			<div class="error-message">
+				<strong>Username ou Password INVALIDE</strong> 
+			</div>
+			<?php
+			}
+			?>
 		<div class="formLabel"><label for="Username"> Username : </label></div>
 		<div class="formInput"><input type="text" name="Username" id="Username" /></div>
 		<div class="formSeparator"></div>
