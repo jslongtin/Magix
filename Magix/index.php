@@ -16,7 +16,7 @@ require_once("partial/header.php");
 			if ($data["connectionError"]) {
 			?>
 			<div class="error-message">
-				<strong>Username ou Password INVALIDE</strong> 
+				<strong>Username et/ou Password INVALIDE</strong> 
 			</div>
 			<?php
 			}

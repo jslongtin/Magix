@@ -12,8 +12,6 @@ class IndexAction extends CommonAction
 
     protected function executeAction()
     {   
-        //(mettre la cle en session)
-        $key = $_SESSION["key"] ?? null;
         $connectionError = false;
         if (isset($_POST["Username"]) && isset($_POST["Password"])) {
             $data = [];
@@ -28,9 +26,14 @@ class IndexAction extends CommonAction
             else {
                 // Pour voir les informations retournées : var_dump($result);exit;
                 $key = $result->key; 
+                //(mettre la cle en session)
+                $key = $_SESSION["key"];
                 
+                header("location:Lobby.php");
+                exit;
             }
-            return compact("connectionError");
+            
         }
+        return compact("connectionError");
     }
 }
