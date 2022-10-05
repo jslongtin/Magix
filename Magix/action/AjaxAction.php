@@ -11,8 +11,8 @@
 			$result = "";
 
 			if (!empty($_POST["username"])) {
-				if ($_POST["username"] === "ken" && $_POST["password"] == "AAAaaa111") {
-					$result = rand(0, 10);
+				if ($_POST["username"] === "Name_Hidden" && $_POST["password"] == "Biotech1") {
+					
 				}
 				else {
 					$result = "INVALID_USERNAME";

@@ -12,6 +12,9 @@ html {
 body{
 	align-items: center;
 	justify-content: center;
+	background-image: url("../img/thumb-1920-901142.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .ConnexionBox{
 	width:400px;
@@ -39,9 +42,7 @@ body{
 	clear:both;
 	height:10px;
 }
-.message{
-	display: none;
-}
+
 button {
 	box-shadow:rgba(0,0,0,1) 0 0px 2px 0;
 	color:#333;
