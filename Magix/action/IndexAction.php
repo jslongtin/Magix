@@ -1,6 +1,6 @@
 <?php
 require_once("action/CommonAction.php");
-require_once("action/DAO/AnswerDAO.php");
+
 
 class IndexAction extends CommonAction
 {
@@ -17,6 +17,7 @@ class IndexAction extends CommonAction
             $data = [];
             $data["username"] = $_POST["Username"];
             $data["password"] = $_POST["Password"];
+           
 
             $result = parent::callAPI("signin", $data);
 

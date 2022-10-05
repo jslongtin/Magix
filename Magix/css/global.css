@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Kreon');
 
 * {
 	margin:0;
@@ -7,9 +7,11 @@
 
 html {
 	font-size:16px;
-	font-family: 'Open+Sans', sans-serif;
+	font-family: 'Kreon', sans-serif;
 }
-body{
+#index{
+	height: 100vh;
+	width: 100vw;
 	align-items: center;
 	justify-content: center;
 	background-image: url("../img/thumb-1920-901142.jpg");
