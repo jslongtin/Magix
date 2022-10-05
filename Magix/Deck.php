@@ -1,7 +1,7 @@
 <?php
-    require_once("action/Action.php");
+    require_once("action/DeckAction.php");
 
-    $action = new Action();
+    $action = new DeckAction();
     $data = $action->execute();
 
     require_once("partial/header.php");
