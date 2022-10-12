@@ -1,4 +1,4 @@
-
+let counter = 0;
 const applyStyles = iframe => {
 	let styles = {
 		fontColor : "#333",
@@ -8,7 +8,7 @@ const applyStyles = iframe => {
 		hideIcons : false ,
 		inputBackgroundColor : "blanchedalmond",
 		inputFontColor : "blue",
-		height : "700px",
+		height : "562px",
 		memberListFontColor : "#ff00dd",
 		memberListBackgroundColor : "white"
 	}
@@ -16,4 +16,14 @@ const applyStyles = iframe => {
 	setTimeout(() => {
 		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");	
 }, 100);
+}
+const modifierDeck = () => {
+	counter++;
+	if (counter % 2 == 1) { 
+	document.querySelector("#deckAPI").setAttribute("hidden","hidden");
+	}
+	else{
+		console.log("allo");
+		document.querySelector("#deckAPI").removeAttribute("hidden");
+	}
 }

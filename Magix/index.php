@@ -10,7 +10,7 @@ require_once("partial/header.php");
 <div id="index">
 	<h1> MAGIX </h1>
 	<div class="ConnexionBox">
-		<h1> CONNEXION </h1>
+		<h2> CONNEXION </h2>
 
 		<form action="" method="post">
 			<?php
@@ -26,7 +26,7 @@ require_once("partial/header.php");
 			<div class="formInput"><input type="text" name="Username" id="Username" /></div>
 			<div class="formSeparator"></div>
 			<div class="formLabel"><label for="Password"> Password : </label></div>
-			<div class="formInput"><input type="text" name="Password" id="Password" /></div>
+			<div class="formInput"><input type="password" name="Password" id="Password" /></div>
 			<div class="formSeparator"></div>
 			<button class="connexion" type="submit">Connexion</button>
 		</form>

@@ -5,11 +5,18 @@
 	padding:0;
 }
 
-html {
+html{
 	font-size:16px;
 	font-family: 'Kreon', sans-serif;
 }
-#index, #lobby{
+h1{
+	color: yellow;
+	margin: auto;
+	padding: auto;
+	justify-self: center;
+	
+}
+#index, #lobby,#deck{
 	height: 100vh;
 	width: 100vw;
 	align-items: center;
@@ -17,11 +24,20 @@ html {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 #lobby{
 	background-image: url("../img/73e5870ccc55e0f1e350327506ac92d7.jpg");
 }
 #index{
 	background-image: url("../img/thumb-1920-901142.jpg");
+}
+#deck{
+	background-image: url("../img/bruce-brenneise-tower-lev1-finall.jpg");
+}
+
+#deckAPI{
+	width: 50vw;
+	height: 80%;
 }
 .ConnexionBox{
 	width:400px;
