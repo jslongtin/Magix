@@ -16,7 +16,7 @@ h1{
 	justify-self: center;
 	
 }
-#index, #lobby,#deck{
+#index, #lobby,#deck,#game{
 	height: 100vh;
 	width: 100vw;
 	align-items: center;
@@ -24,7 +24,9 @@ h1{
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-
+#game{
+	background-image: url("../img/bruce-brenneise-tower-lev1-finall.jpg");
+}
 #lobby{
 	background-image: url("../img/73e5870ccc55e0f1e350327506ac92d7.jpg");
 }
@@ -32,7 +34,7 @@ h1{
 	background-image: url("../img/thumb-1920-901142.jpg");
 }
 #deck{
-	background-image: url("../img/bruce-brenneise-tower-lev1-finall.jpg");
+	background-image: url("../img/bruce-brenneise-tower-level3-final.jpg");
 }
 
 #deckAPI{

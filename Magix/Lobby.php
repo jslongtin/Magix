@@ -13,7 +13,7 @@ require_once("partial/header.php");
     <div class="logout">
 		<form action="" method="post">
 			<?php
-			if ($data["deconnectionError"]) {
+			if ($data["deconnectionError"] or $data["KeyError"]) {
 			?>
 				<div class="error-message">
 					<strong>INVALID_KEY</strong>
@@ -21,6 +21,25 @@ require_once("partial/header.php");
 			<?php
 			}
 			?>
+			<?php
+			if ($data["TypeError"]) {
+			?>
+				<div class="error-message">
+					<strong>INVALID_GAME_TYPE</strong>
+				</div>
+			<?php
+			}
+			?>
+			<?php
+			if ($data["DeckError"]) {
+			?>
+				<div class="error-message">
+					<strong>"DECK_INCOMPLETE</strong>
+				</div>
+			<?php
+			}
+			?>
+
 
 			<button class="jouer" type="submit" name="jouer">Jouer</button>
 			<button class="pratique" type="submit" name="pratique">Pratique</button>

@@ -1,15 +1,22 @@
 <?php
-    require_once("action/CommonAction.php");
+require_once("action/CommonAction.php");
 
-    class LobbyAction extends CommonAction {
+class LobbyAction extends CommonAction
+{
 
-        public function __construct() {
-            parent::__construct(CommonAction::$VISIBILITY_MEMBER);
-        }
+    public function __construct()
+    {
+        parent::__construct(CommonAction::$VISIBILITY_MEMBER);
+    }
 
-        protected function executeAction() {
-            $deconnectionError = false;
-            if(isset($_POST["deconnexion"])) {
+    protected function executeAction()
+    {
+        $deconnectionError = false;
+        $KeyError = false;
+        $TypeError = false;
+        $DeckError = false;
+
+        if (isset($_POST["deconnexion"])) {
             $data = [];
             $data["key"] = $_SESSION["key"];
 
@@ -17,24 +24,58 @@
 
             if ($result == "INVALID_KEY") {
                 $deconnectionError = true;
-            } 
-            else {
+            } else {
                 $_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
                 header("location:Index.php");
                 exit;
             }
-            }
-            else if(isset($_POST["jouer"])){
+        } else if (isset($_POST["jouer"])) {
+            $data = [];
+            $data["key"] = $_SESSION["key"];
+            $data["type"] = "PVP";
+            $data["type"] = "STANDARD";
 
-            }
-            else if(isset($_POST["pratique"])){
 
+            $result = parent::callAPI("games/auto-match", $data);
+
+            if ($result == "INVALID_KEY") {
+                $KeyError = true;
             }
-            else if(isset($_POST["deck"])){
-                header("location:Deck.php");
+            if ($result == "INVALID_GAME_TYPE") {
+                $TypeError = true;
+            }
+            if ($result == "DECK_INCOMPLETE") {
+                $DeckError = true;
+            } else {
+                header("location:Game.php");
                 exit;
             }
-            
-        return compact("deconnectionError");
+        } else if (isset($_POST["pratique"])) {
+            $data = [];
+            $data["key"] = $_SESSION["key"];
+            $data["type"] = "TRAINING";
+            $data["type"] = "STANDARD";
+
+
+            $result = parent::callAPI("games/auto-match", $data);
+
+            if ($result == "INVALID_KEY") {
+                $KeyError = true;
+            }
+            if ($result == "INVALID_GAME_TYPE") {
+                $TypeError = true;
+            }
+            if ($result == "DECK_INCOMPLETE") {
+                $DeckError = true;
+            } else {
+                header("location:Game.php");
+                exit;
+            }
+        } else if (isset($_POST["deck"])) {
+            header("location:Deck.php");
+            exit;
         }
+
+        return compact("deconnectionError", "KeyError","TypeError" , "DeckError");
     }
+}
