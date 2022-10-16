@@ -11,9 +11,12 @@ html{
 }
 h1{
 	color: yellow;
+	font-size: 600%;
+	width: fit-content;
+	height: 100px;
 	margin: auto;
 	padding: auto;
-	justify-self: center;
+	
 	
 }
 #index, #lobby,#deck,#game{
@@ -43,7 +46,7 @@ h1{
 }
 .ConnexionBox{
 	width:400px;
-	margin:50px auto;
+	margin: auto;
 	border-radius: 5px;
 	border:1px solid #aaa;
 	padding:10px;
