@@ -11,11 +11,11 @@ html{
 }
 h1{
 	color: yellow;
-	font-size: 600%;
+	font-size: 700%;
 	width: fit-content;
 	height: 100px;
 	margin: auto;
-	padding: auto;
+	padding: 20px;
 	
 	
 }
@@ -32,6 +32,8 @@ h1{
 }
 #lobby{
 	background-image: url("../img/73e5870ccc55e0f1e350327506ac92d7.jpg");
+	display: grid;
+	grid-template-areas: 'bouttons chat';
 }
 #index{
 	background-image: url("../img/thumb-1920-901142.jpg");
@@ -87,4 +89,14 @@ button {
 
 button:hover {
 	background-color:#bbb;
+}
+#buttonsLobby{
+	grid-area: bouttons;
+	width: 30vw;
+	height: 80vh;
+	
+
+}
+#chat{
+	grid-area: chat;
 }

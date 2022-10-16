@@ -7,8 +7,10 @@ $data = $action->execute();
 require_once("partial/header.php");
 ?>
 <div id="lobby">
+	<div id="chat">
     <iframe  style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
     </iframe>
+	</div>
 
     <div class="logout">
 		<form action="" method="post">
@@ -40,7 +42,7 @@ require_once("partial/header.php");
 			}
 			?>
 
-
+			<div id="buttonsLobby">
 			<button class="jouer" type="submit" name="jouer">Jouer</button>
 			<button class="pratique" type="submit" name="pratique">Pratique</button>
 			<input type="text" name="PrivateKey" id="PrivateKey" placeholder="PrivateKey">
@@ -48,7 +50,7 @@ require_once("partial/header.php");
 			<button class="PratiqueCoop" type="submit" name="PratiqueCoop">Pratique</button>
 			<button class="deck" type="submit" name="deck">Deck/statistiques</button>
 			<button class="deconnexion" type="submit" name="deconnexion">Quitter</button>
-			
+			</div>
 		</form>
     </div>
 
