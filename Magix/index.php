@@ -10,7 +10,7 @@ require_once("partial/header.php");
 <div id="index">
 	<h1> MAGIX </h1>
 	<div class="ConnexionBox">
-		<h2> CONNEXION </h2>
+		<h2> Bienvennue! </h2>
 
 		<form action="" method="post">
 			<?php

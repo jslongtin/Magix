@@ -4,10 +4,24 @@
 	margin:0;
 	padding:0;
 }
-
+:root{
+	--gray: #474242;
+	--blue: #162331;
+	--burgundy: #2D0203;
+	--gold :#ffc500;
+	--white: #F8F8FF;
+}
 html{
 	font-size:16px;
 	font-family: 'Kreon', sans-serif;
+	
+}
+button[type="submit"]{
+	background-color: var(--gray);
+	color: var(--white);
+}
+button[type="submit"]:hover{
+	color: var(--gold);
 }
 h1{
 	color: yellow;
@@ -19,7 +33,7 @@ h1{
 	
 	
 }
-#index, #lobby,#deck,#game{
+#index, #lobby, #deck, #game{
 	height: 100vh;
 	width: 100vw;
 	align-items: center;
@@ -39,12 +53,19 @@ h1{
 	background-image: url("../img/thumb-1920-901142.jpg");
 }
 #deck{
-	background-image: url("../img/bruce-brenneise-tower-level3-final.jpg");
+	overflow: hidden;
+	background-image: url("../img/deck.jpg");
 }
-
-#deckAPI{
-	width: 50vw;
+.main{
+	width: 95vw;
 	height: 80%;
+	padding: 20px;
+	margin: auto;
+}
+#deckAPI{
+	width: 100%;
+	height: 100%;
+	background-color: var(--burgundy);
 }
 .ConnexionBox{
 	width:400px;

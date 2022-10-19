@@ -7,16 +7,18 @@
     require_once("partial/header.php");
 ?>
 <div id="deck">
-    <div class="stats"></div>
+    
+    <div class="actionBar">
     <button name="deck" onclick="modifierDeck()">Modifier son deck</button>
     <form action="" method="post">
         <button name="retour" type="submit">Retour</button>
     </form>
-    
+    </div>
+    <div class="main">
     <iframe  id="deckAPI"  src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>">
     </iframe>
- 
-    
+    <div class="stats"></div>
+    </div>
     </div>
 <?php
     require_once("partial/footer.php");
