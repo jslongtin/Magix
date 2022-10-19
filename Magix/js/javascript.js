@@ -1,15 +1,15 @@
 let counter = 0;
 const applyStyles = iframe => {
 	let styles = {
-		fontColor : "#333",
-		backgroundColor : "rgba(201, 176, 167, 0.45)",
-		fontGoogleName : "Kreon",
+		fontColor : "#FFFFFF",
+		backgroundColor : "rgba(67, 72, 76, 0.7)",
+		fontGoogleName : "Bebas Neue",
 		fontSize : "20px",
 		hideIcons : false ,
-		inputBackgroundColor : "blanchedalmond",
-		inputFontColor : "blue",
+		inputBackgroundColor : "#218ffe",
+		inputFontColor : "#FFFFFF",
 		height : "562px",
-		memberListFontColor : "#ff00dd",
+		memberListFontColor : "#000000",
 		memberListBackgroundColor : "white"
 	}
 	

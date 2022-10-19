@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Kreon');
+@import url('https://fonts.googleapis.com/css?family=Bebas Neue');
 
 * {
 	margin:0;
@@ -9,20 +9,20 @@
 	--blue: #405275;
 	--lightBlue: #218ffe;
 	--black: #000000;
-	--orange :#f99e1a;
-	--white: #F8F8FF;
+	--orange :#f06414;
+	--white: #FFFFFF;
 }
 html{
 	font-size:16px;
-	font-family: 'Kreon', sans-serif;
+	font-family: 'Bebas Neue', sans-serif;
 	
 }
 button[type="submit"]{
-	background-color: var(--gray);
+	background-color: var(--orange);
 	color: var(--white);
 }
 button[type="submit"]:hover{
-	color: var(--orange);
+	background-color: var(--lightBlue);
 }
 h1{
 	color: var(--orange);
@@ -50,7 +50,7 @@ h1{
 	background-repeat: no-repeat;
 }
 #game{
-	background-image: url("../img/bruce-brenneise-tower-lev1-finall.jpg");
+	background-image: url("../img/omnic-3-1573084850059.jpg");
 }
 #lobby{
 	background-image: url("../img/Lobby.jpg");
@@ -129,3 +129,125 @@ button:hover {
 #chat{
 	grid-area: chat;
 }
+
+/* heatlh */
+
+.health{
+	position:absolute;
+	left: 20px;
+	width:70%;
+	height:100px;
+	z-index:99;
+	display: flex;
+  }
+  
+  .emptyHealth{
+	position:absolute;
+	left: 20px;
+	width:70%;
+	height:100px;
+	display: flex;
+	z-index:88;
+  }
+  
+  .gridBar {
+	width: 84%;
+	height: 100%;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 4px;
+	margin:auto;
+	z-index:99;
+  
+  }
+  
+  .emptyBar {
+	width: 84%;
+	height: 100%;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 4px;
+	margin:auto;
+	z-index:99;
+  
+  }
+  
+  .count{
+	height:100%;
+	width:12%;
+	marign:auto;
+	display:flex;
+  }
+  
+  .spacer{
+	height:100%;
+	width:12%;
+	marign:auto;
+	display:flex;
+  }
+  
+  .count h1{
+	text-align:center;
+	margin:auto;
+	font-size:15vh;
+  }
+  
+  .bar {
+	height: 100%;
+	background-color: rgb(50, 130, 200);
+	border-radius: 10px;
+	box-sizing: border-box;
+	transition: 0.5s;
+	float: left;
+	-ms-transform: skewX(-20deg);
+	/* IE 9 */
+	-webkit-transform: skewX(-20deg);
+	/* Safari */
+	transform: skewX(-20deg);
+	position:relative;
+  /*   opacity:0; */
+  }
+  
+  .nullBar{
+	height: 100%;
+	background-color: rgb(225, 225, 225);
+	border-radius: 10px;
+	box-sizing: border-box;
+	transition: 0.5s;
+	float: left;
+	-ms-transform: skewX(-20deg);
+	/* IE 9 */
+	-webkit-transform: skewX(-20deg);
+	/* Safari */
+	transform: skewX(-20deg);
+	position:relative;
+	opacity:0.5;
+  }
+  
+  .dmgBar{
+	height:100%;
+	transition: 0.5s;
+	position:absolute;
+	right:0;
+	background-color:red;
+  }
+  
+  .damageMenu {
+	width: 50%;
+	height: 80px;
+	display: flex;
+	position:absolute;
+	bottom:0;
+  }
+  
+  .bt {
+	width: 30%;
+	height: 40px;
+	background-color: grey;
+	color: white;
+	margin: auto;
+	border-radius: 8px;
+	line-height: 40px;
+	text-align: center;
+	cursor:pointer;
+  }

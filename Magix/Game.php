@@ -12,6 +12,28 @@
 <form action="" method="post">
     <button name="Quitter" type="submit">Quitter</button>
 </form>
+
+<!-- health bar -->
+<div class="health">
+  <div class="gridBar">
+
+  </div>
+
+  <div class="count">
+    <h1></h1>
+  </div>
+</div>
+
+<div class="emptyHealth">
+  <div class="emptyBar">
+  </div>
+  <div class="spacer"></div>
+</div>
+
+
+
 </div>
 <?php
     require_once("partial/footer.php");
+
+    
