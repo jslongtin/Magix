@@ -13,23 +13,14 @@
     <button name="Quitter" type="submit">Quitter</button>
 </form>
 
+<div id="timer"></div>
+
+
 <!-- health bar -->
-<div class="health">
-  <div class="gridBar">
-
-  </div>
-
-  <div class="count">
-    <h1></h1>
-  </div>
+<div id="healthBar">
+<div id="vies">0</div>
+<progress id="health" value="100" max="100"> </progress>
 </div>
-
-<div class="emptyHealth">
-  <div class="emptyBar">
-  </div>
-  <div class="spacer"></div>
-</div>
-
 
 
 </div>

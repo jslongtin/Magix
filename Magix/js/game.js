@@ -8,6 +8,11 @@ const state = () => {
     let node = document.querySelector("#message");
     node.innerHTML = data;
 
+    //affiche la vie
+    let healthbar = document.querySelector("#vies").innerHTML = data.hp;
+    let timer = document.querySelector("#timer").innerHTML =  data.remainingTurnTime;
+
+
     // //changer la value d'une healthbar
     // let health = document.getElementById("health")
     // health.value -= 10;
@@ -16,7 +21,6 @@ const state = () => {
     // data.remainingTurnTime
     // data.heroPowerAlreadyUsed
     // data.yourTurn"yourTurn": true,
-    // data.hp
     // data.maxHp
     // data.heroClass
     // data.talent
