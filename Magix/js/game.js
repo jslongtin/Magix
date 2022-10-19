@@ -11,7 +11,33 @@ const state = () => {
     //affiche la vie
     let healthbar = document.querySelector("#vies").innerHTML = data.hp;
     let timer = document.querySelector("#timer").innerHTML =  data.remainingTurnTime;
-
+    let hand = document.querySelector("#card-container");
+    hand.innerHTML = null;
+    let main =  data.hand;
+    console.log(main);
+    main.forEach(element => {
+        let img = document.createElement("img");
+        img.alt= "carte";
+        img.style = "width:100%";
+        img.src = "img/Cartes/1664932350_837161.png";
+        let carte = document.createElement("div");
+        carte.classList.add("card");
+        let container = document.createElement("div");
+        container.classList.add("container");
+        let name = document.createElement("h4");
+        let textName = element.id;
+        let bold = document.createElement("b");
+        let info = document.createElement("p");
+        let textTnfo = element.mechanics;
+        info.append(textTnfo);
+        bold.append(textName);
+        name.append(bold);
+        container.append(name);
+        container.append(info);
+        carte.append(img);
+        carte.append(container);
+        hand.append(carte);
+    });
 
     // //changer la value d'une healthbar
     // let health = document.getElementById("health")

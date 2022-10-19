@@ -51,6 +51,10 @@ h1{
 }
 #game{
 	background-image: url("../img/omnic-3-1573084850059.jpg");
+	display: flex;
+	flex-direction: column;
+
+
 }
 #lobby{
 	background-image: url("../img/Lobby.jpg");
@@ -129,5 +133,66 @@ button:hover {
 #chat{
 	grid-area: chat;
 }
+/* card */
+.card {
+	width: 140px;
+	height: 200px;
+	background-color: var(--blue);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	border-radius: 5px; /* 5px rounded corners */
+	display: flex;
+	flex-direction: column;
 
+  }
+  
+  /* Add rounded corners to the top left and the top right corner of the image */
+  img {
+	border-radius: 5px 5px 0 0;
+	height: 65%;
+	width: fit-content;
+	height: fit-content;
+	
+  }
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+	padding: 2px 16px;
+	background-color: var(--lightBlue);
+	height: 35%;
+  }
+
+  #card-container{
+	  background-color: var(--gray);
+	width: 100%;
+	height: 30vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	justify-self: end;
+	bottom: 0px;
+	padding: auto 10px;
+  }
+  #board{
+	height: 50vh;
+	width: 100%;
+	background-color: wheat;
+  }
+  #action-buttons{
+	background-color: white;
+	right: 0px;
+  	height: 100%;
+	width: 20%;
+  }
+  #enemy{
+	  background-color: yellow;
+	  top: 0px;
+	  height: 20vh;
+	  width: 100%;
+	  padding: auto 10px;
+  }
 /* heatlh */

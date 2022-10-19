@@ -24,7 +24,8 @@ class LobbyAction extends CommonAction
 
             if ($result == "INVALID_KEY") {
                 $deconnectionError = true;
-            } else {
+            } 
+            else {
                 $_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
                 header("location:Index.php");
                 exit;
@@ -73,7 +74,8 @@ class LobbyAction extends CommonAction
                 header("location:Game.php");
                 exit;
             }
-        } else if (isset($_POST["deck"])) {
+        } 
+        else if (isset($_POST["deck"])) {
             header("location:Deck.php");
             exit;
         }
