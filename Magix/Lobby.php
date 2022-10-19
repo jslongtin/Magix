@@ -47,7 +47,7 @@ require_once("partial/header.php");
 			<button class="pratique" type="submit" name="pratique">Pratique</button>
 			<input type="text" name="PrivateKey" id="PrivateKey" placeholder="PrivateKey">
 			<button class="JouerCoop" type="submit" name="JouerCoop">Jouer COOP</button>
-			<button class="PratiqueCoop" type="submit" name="PratiqueCoop">Pratique</button>
+			<button class="PratiqueCoop" type="submit" name="PratiqueCoop">Pratique COOP</button>
 			<button class="deck" type="submit" name="deck">Deck/statistiques</button>
 			<button class="deconnexion" type="submit" name="deconnexion">Quitter</button>
 			</div>

@@ -5,7 +5,8 @@ const state = () => {
 .then(response => response.json())
 .then(data => {
     console.log(data); // contient les cartes/état du jeu.
-
+    let node = document.querySelector("#message");
+    node.innerHTML = data;
     setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
     })
 }

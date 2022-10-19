@@ -31,7 +31,14 @@ h1{
 	margin: auto;
 	padding: 20px;
 	
-	
+}
+#message{
+	width: 100px;
+	height: 50px;
+	margin: auto;
+	padding: auto;
+	color: var(--white);
+	background-color: var(--blue);
 }
 #index, #lobby, #deck, #game{
 	height: 100vh;

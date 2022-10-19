@@ -10,6 +10,9 @@
 
         protected function executeAction() {
             
-            return [];
+            if (isset($_POST["Quitter"])){
+                header("location:Lobby.php");
+                exit;
+            }
         }
     }

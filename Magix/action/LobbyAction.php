@@ -33,7 +33,7 @@ class LobbyAction extends CommonAction
             $data = [];
             $data["key"] = $_SESSION["key"];
             $data["type"] = "PVP";
-            $data["type"] = "STANDARD";
+            $data["mode"] = "STANDARD";
 
 
             $result = parent::callAPI("games/auto-match", $data);
@@ -50,11 +50,12 @@ class LobbyAction extends CommonAction
                 header("location:Game.php");
                 exit;
             }
-        } else if (isset($_POST["pratique"])) {
+        } 
+        else if (isset($_POST["pratique"])) {
             $data = [];
             $data["key"] = $_SESSION["key"];
             $data["type"] = "TRAINING";
-            $data["type"] = "STANDARD";
+            $data["mode"] = "STANDARD";
 
 
             $result = parent::callAPI("games/auto-match", $data);
@@ -67,7 +68,8 @@ class LobbyAction extends CommonAction
             }
             if ($result == "DECK_INCOMPLETE") {
                 $DeckError = true;
-            } else {
+            } 
+            else {
                 header("location:Game.php");
                 exit;
             }
