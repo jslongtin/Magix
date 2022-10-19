@@ -5,10 +5,11 @@
 	padding:0;
 }
 :root{
-	--gray: #474242;
-	--blue: #162331;
-	--burgundy: #2D0203;
-	--gold :#ffc500;
+	--gray: #43484c;
+	--blue: #405275;
+	--lightBlue: #218ffe;
+	--black: #000000;
+	--orange :#f99e1a;
 	--white: #F8F8FF;
 }
 html{
@@ -21,10 +22,10 @@ button[type="submit"]{
 	color: var(--white);
 }
 button[type="submit"]:hover{
-	color: var(--gold);
+	color: var(--orange);
 }
 h1{
-	color: yellow;
+	color: var(--orange);
 	font-size: 700%;
 	width: fit-content;
 	height: 100px;
@@ -52,16 +53,16 @@ h1{
 	background-image: url("../img/bruce-brenneise-tower-lev1-finall.jpg");
 }
 #lobby{
-	background-image: url("../img/73e5870ccc55e0f1e350327506ac92d7.jpg");
+	background-image: url("../img/Lobby.jpg");
 	display: grid;
 	grid-template-areas: 'bouttons chat';
 }
 #index{
-	background-image: url("../img/thumb-1920-901142.jpg");
+	background-image: url("../img/dalticu-eb19f94d-2103-4b0e-bcfd-4383f2eba94f.jpg");
 }
 #deck{
 	overflow: hidden;
-	background-image: url("../img/deck.jpg");
+	background-image: url("../img/wallpaperbetter.com_1366x768.jpg");
 }
 .main{
 	width: 95vw;
