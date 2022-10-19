@@ -1,5 +1,6 @@
 <?php
     require_once("action/CommonAction.php");
+ 
 
     class GameAction extends CommonAction {
 
