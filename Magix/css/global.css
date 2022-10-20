@@ -168,14 +168,15 @@ button:hover {
 
   #card-container{
 	  background-color: var(--gray);
-	width: 100%;
+	width: 95vw;
 	height: 30vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	justify-self: end;
 	bottom: 0px;
-	padding: auto 10px;
+	padding: 10px ;
+	border-radius: 10px; 
   }
   #board{
 	height: 50vh;
@@ -187,12 +188,14 @@ button:hover {
 	right: 0px;
   	height: 100%;
 	width: 20%;
+	border-radius: 10px; 
   }
   #enemy{
 	  background-color: yellow;
 	  top: 0px;
 	  height: 20vh;
-	  width: 100%;
-	  padding: auto 10px;
+	  width: 95vw;
+	  padding: 10px ;
+	border-radius: 10px; 
   }
 /* heatlh */
