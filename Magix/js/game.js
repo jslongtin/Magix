@@ -13,8 +13,10 @@ const state = () => {
             let healthbar = document.querySelector("#vies").innerHTML = data.hp;
             let timer = document.querySelector("#timer").innerHTML = data.remainingTurnTime;
             let hand = document.querySelector("#card-container");
-            hand.innerHTML = [];
-            let main = data.hand;
+            hand.innerHTML = null;
+          
+            let main = null;
+             main= data.hand;
             // console.log(main);
             if (main != null) {
                 main.forEach(element => {
@@ -23,8 +25,7 @@ const state = () => {
                     img.style = "width:100%";
                     img.src = "img/Cartes/1664932350_837161.png";
                     let carte = document.createElement("div");
-                    carte.classList.add("card");
-                    
+                    carte.classList.add("card")
                     let container = document.createElement("div");
                     container.classList.add("container");
                     let name = document.createElement("h4");
@@ -49,11 +50,11 @@ const state = () => {
                         })
                             .then(response => response.json())
                             .then(data => {
-                                console.log(data);
+                                
+            
                             });
                     };
                     hand.append(carte);
-
                 })
             };
 
