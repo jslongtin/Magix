@@ -12,6 +12,8 @@ const state = () => {
             //affiche la vie
             let healthbar = document.querySelector("#vies").innerHTML = data.hp;
             let timer = document.querySelector("#timer").innerHTML = data.remainingTurnTime;
+            let mana = document.querySelector("#mana").innerHTML = data.mp;
+            let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" :  "Enemy turn";
             let hand = document.querySelector("#card-container");
             hand.innerHTML = null;
           
@@ -51,8 +53,7 @@ const state = () => {
                         })
                             .then(response => response.json())
                             .then(data => {
-                             
-            
+
                             });
                     };
                     hand.append(carte);

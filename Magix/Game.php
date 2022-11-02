@@ -26,6 +26,8 @@ require_once("partial/header.php");
             </div>
         </div>
     </div>
+    <div id="mana"></div>
+    <div id="turn"></div>
     <div id="card-container"></div>
     <!-- card exemple -->
     <!-- <div class="card">
