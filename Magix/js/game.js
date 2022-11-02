@@ -4,7 +4,7 @@ const state = () => {
     })
         .then(response => response.json())
         .then(data => {
-            // if data== Waiting
+           
             console.log(data); // contient les cartes/état du jeu.
             let node = document.querySelector("#message");
             node.innerHTML = data;
@@ -16,9 +16,9 @@ const state = () => {
             hand.innerHTML = null;
           
             let main = null;
-             main= data.hand;
-            // console.log(main);
-            if (main != null) {
+            main = data.hand;
+            console.log(main);
+            if (data != "WAITING") {
                 main.forEach(element => {
                     let img = document.createElement("img");
                     img.alt = "carte";
@@ -41,16 +41,17 @@ const state = () => {
                     carte.append(img);
                     carte.append(container);
                     carte.onclick = () => {
+                        carte.remove();
                         let formData = new FormData();
                         formData.append("type", "PLAY");
-                        formData.append("uid", element.id);
+                        formData.append("uid", element.uid);
                         fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
                             method: "POST",
                             body: formData       // l’API (games/state)
                         })
                             .then(response => response.json())
                             .then(data => {
-                                
+                             
             
                             });
                     };

@@ -12,36 +12,36 @@ class AjaxStateAction extends CommonAction
 	protected function executeAction()
 	{
 		$result = "";
+		$data = [];
 		if(!empty($_POST["type"])){
 			if ($_POST["type"] == "HERO_POWER") {
-				$data = [];
+				
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "HERO_POWER";
 				$result = parent::callAPI("games/action", $data);
 			}
 			else if ($_POST["type"] == "END_TURN") {
-				$data = [];
+				
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "END_TURN";
 				$result = parent::callAPI("games/action", $data);
 			}
 			else if ($_POST["type"] == "SURRENDER") {
-				$data = [];
+				
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "SURRENDER";
 				$result = parent::callAPI("games/action", $data);
 			}
 			else if ($_POST["type"] == "PLAY") {
-				$data = [];
+				
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "PLAY";
 				$data["uid"] = $_POST["uid"];
 				$result = parent::callAPI("games/action", $data);
 			}
-			
 		}
-		 else {
-			$data = [];
+		else {
+			
 			$data["key"] = $_SESSION["key"];
 			$result = parent::callAPI("games/state", $data);
 		}
