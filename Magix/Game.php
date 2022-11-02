@@ -24,10 +24,12 @@ require_once("partial/header.php");
                 <div id="vies">0</div>
                 <progress id="health" value="100" max="100"> </progress>
             </div>
+            <div id="boardCardContainer"></div>
         </div>
     </div>
     <div id="mana"></div>
     <div id="turn"></div>
+    <div id="remaining"></div>
     <div id="card-container"></div>
     <!-- card exemple -->
     <!-- <div class="card">

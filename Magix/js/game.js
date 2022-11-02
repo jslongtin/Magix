@@ -14,11 +14,18 @@ const state = () => {
             let timer = document.querySelector("#timer").innerHTML = data.remainingTurnTime;
             let mana = document.querySelector("#mana").innerHTML = data.mp;
             let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" :  "Enemy turn";
+            let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
+            
+            
             let hand = document.querySelector("#card-container");
             hand.innerHTML = null;
+            let board = document.querySelector("#boardCardContainer");
+           
           
             let main = null;
             main = data.hand;
+            let boardCards = null;
+            boardCards = data.board;
             console.log(main);
             if (data != "WAITING") {
                 main.forEach(element => {
@@ -35,15 +42,24 @@ const state = () => {
                     let bold = document.createElement("b");
                     let info = document.createElement("p");
                     let textTnfo = element.mechanics;
+                    let hp = element.hp;
+                    let atk = element.atk;
+                    let cost = element.cost;
+                    let baseHP = element.baseHP;
                     info.append(textTnfo);
                     bold.append(textName);
                     name.append(bold);
                     container.append(name);
                     container.append(info);
+                    container.append(hp);
+                    container.append(atk);
+                    container.append(cost);
+                    container.append(baseHP);
                     carte.append(img);
                     carte.append(container);
                     carte.onclick = () => {
-                        carte.remove();
+                        // play
+                        board.append(carte);
                         let formData = new FormData();
                         formData.append("type", "PLAY");
                         formData.append("uid", element.uid);
@@ -53,11 +69,11 @@ const state = () => {
                         })
                             .then(response => response.json())
                             .then(data => {
-
                             });
                     };
                     hand.append(carte);
                 })
+                
             };
 
             // //changer la value d'une healthbar
