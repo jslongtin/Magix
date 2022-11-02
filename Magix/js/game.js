@@ -16,8 +16,8 @@ const state = () => {
     hand.innerHTML = [];
     let main =  data.hand;
     console.log(main);
-    if ( data == []){
-    main.forEach(element => {
+    if ( main != null){
+        main.forEach(element => {
         let img = document.createElement("img");
         img.alt= "carte";
         img.style = "width:100%";
