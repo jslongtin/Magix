@@ -4,7 +4,7 @@ const state = () => {
     })
         .then(response => response.json())
         .then(data => {
-// if data== Waiting
+            // if data== Waiting
             console.log(data); // contient les cartes/état du jeu.
             let node = document.querySelector("#message");
             node.innerHTML = data;
@@ -15,7 +15,7 @@ const state = () => {
             let hand = document.querySelector("#card-container");
             hand.innerHTML = [];
             let main = data.hand;
-            console.log(main);
+            // console.log(main);
             if (main != null) {
                 main.forEach(element => {
                     let img = document.createElement("img");
@@ -24,6 +24,7 @@ const state = () => {
                     img.src = "img/Cartes/1664932350_837161.png";
                     let carte = document.createElement("div");
                     carte.classList.add("card");
+                    
                     let container = document.createElement("div");
                     container.classList.add("container");
                     let name = document.createElement("h4");
@@ -38,6 +39,19 @@ const state = () => {
                     container.append(info);
                     carte.append(img);
                     carte.append(container);
+                    carte.onclick = () => {
+                        let formData = new FormData();
+                        formData.append("type", "PLAY");
+                        formData.append("uid", element.id);
+                        fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+                            method: "POST",
+                            body: formData       // l’API (games/state)
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                            });
+                    };
                     hand.append(carte);
 
                 })
@@ -101,7 +115,7 @@ const heroPower = () => {
 }
 const endTurn = () => {
     let formData = new FormData();
- 
+
     formData.append("type", "END_TURN");
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST",
@@ -114,7 +128,6 @@ const endTurn = () => {
 }
 const surrender = () => {
     let formData = new FormData();
-  
     formData.append("type", "SURRENDER");
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST",
@@ -128,6 +141,7 @@ const surrender = () => {
 const quitGame = () => {
     window.location.href = "Lobby.php";
 }
+
 window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });

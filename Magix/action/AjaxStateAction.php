@@ -31,6 +31,13 @@ class AjaxStateAction extends CommonAction
 				$data["type"] = "SURRENDER";
 				$result = parent::callAPI("games/action", $data);
 			}
+			else if ($_POST["type"] == "PLAY") {
+				$data = [];
+				$data["key"] = $_SESSION["key"];
+				$data["type"] = "PLAY";
+				$data["uid"] = $_POST["uid"];
+				$result = parent::callAPI("games/action", $data);
+			}
 			
 		}
 		 else {
