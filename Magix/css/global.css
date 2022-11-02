@@ -181,17 +181,17 @@ button:hover {
   #board{
 	height: 50vh;
 	width: 100%;
-	background-color: wheat;
+	/* background-color: wheat; */
   }
   #action-buttons{
-	background-color: white;
+	/* background-color: white; */
 	right: 0px;
   	height: 100%;
 	width: 20%;
 	border-radius: 10px; 
   }
   #enemy{
-	  background-color: yellow;
+	  /* background-color: yellow; */
 	  top: 0px;
 	  height: 20vh;
 	  width: 95vw;

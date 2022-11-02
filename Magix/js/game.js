@@ -4,6 +4,7 @@ const state = () => {
     })
 .then(response => response.json())
 .then(data => {
+
     console.log(data); // contient les cartes/état du jeu.
     let node = document.querySelector("#message");
     node.innerHTML = data;
@@ -12,9 +13,10 @@ const state = () => {
     let healthbar = document.querySelector("#vies").innerHTML = data.hp;
     let timer = document.querySelector("#timer").innerHTML =  data.remainingTurnTime;
     let hand = document.querySelector("#card-container");
-    hand.innerHTML = null;
+    hand.innerHTML = [];
     let main =  data.hand;
     console.log(main);
+    if ( data != "WAITING"){
     main.forEach(element => {
         let img = document.createElement("img");
         img.alt= "carte";
@@ -37,7 +39,8 @@ const state = () => {
         carte.append(img);
         carte.append(container);
         hand.append(carte);
-    });
+
+    })};
 
     // //changer la value d'une healthbar
     // let health = document.getElementById("health")

@@ -4,5 +4,7 @@
 	$action = new AjaxStateAction();
 	$data =$action->execute();
 	
-	echo json_encode($data["result"]);
+	
+		echo json_encode($data["result"]);
+	
 	
