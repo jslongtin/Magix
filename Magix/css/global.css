@@ -179,11 +179,16 @@ button:hover {
 	border-radius: 10px; 
   }
   #board{
+	display: flex;
+	flex-direction: row;
 	height: 50vh;
 	width: 100%;
 	/* background-color: wheat; */
   }
-  
+  #boardCardContainer{
+	  height: 100%;
+	  width:80%;
+  }
   #action-buttons{
 	/* background-color: white; */
 	right: 0px;
