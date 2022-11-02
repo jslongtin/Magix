@@ -19,6 +19,8 @@ const state = () => {
             
             let hand = document.querySelector("#card-container");
             hand.innerHTML = null;
+            let opponent = document.querySelector("#enemy");
+            enemy.innerHTML = null;
             let board = document.querySelector("#boardCardContainer");
            
           
@@ -26,7 +28,9 @@ const state = () => {
             main = data.hand;
             let boardCards = null;
             boardCards = data.board;
-            console.log(main);
+            let opponentHand = null;
+            opponentHand = data.opponent.board;
+            // console.log(main);
             if (data != "WAITING") {
                 main.forEach(element => {
                     let img = document.createElement("img");
@@ -72,6 +76,38 @@ const state = () => {
                             });
                     };
                     hand.append(carte);
+                })
+                opponentHand.forEach(element => {
+                    let img = document.createElement("img");
+                    img.alt = "carte";
+                    img.style = "width:100%";
+                    img.src = "img/Cartes/1664932350_837161.png";
+                    let carte = document.createElement("div");
+                    carte.classList.add("card")
+                    let container = document.createElement("div");
+                    container.classList.add("container");
+                    let name = document.createElement("h4");
+                    let textName = element.id;
+                    let bold = document.createElement("b");
+                    let info = document.createElement("p");
+                    let textTnfo = element.mechanics;
+                    let hp = element.hp;
+                    let atk = element.atk;
+                    let cost = element.cost;
+                    let baseHP = element.baseHP;
+                    info.append(textTnfo);
+                    bold.append(textName);
+                    name.append(bold);
+                    container.append(name);
+                    container.append(info);
+                    container.append(hp);
+                    container.append(atk);
+                    container.append(cost);
+                    container.append(baseHP);
+                    carte.append(img);
+                    carte.append(container);
+                    
+                    opponent.append(carte);
                 })
                 
             };
