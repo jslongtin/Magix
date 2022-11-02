@@ -16,7 +16,7 @@ const state = () => {
     hand.innerHTML = [];
     let main =  data.hand;
     console.log(main);
-    if ( data != "WAITING"){
+    if ( data == []){
     main.forEach(element => {
         let img = document.createElement("img");
         img.alt= "carte";

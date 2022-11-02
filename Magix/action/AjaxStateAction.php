@@ -13,6 +13,5 @@
 			$result = parent::callAPI("games/state",$data);
 			
 		     return compact("result");
-	
 		}
 	}
