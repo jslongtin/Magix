@@ -11,16 +11,13 @@ require_once("partial/header.php");
 
 
     <div id="enemy"></div>
-     <div id="board">
+    <div id="board">
         <div id="action-buttons">
             <div id="message"></div>
-            <form action="" method="post">
-                <button name="quitter" type="submit">Quitter</button>
-                <button name="endTurn" type="submit">End Turn</button>
-                <button name="surrender" type="submit">Surrender</button>
-                <button name="heroPower" type="submit">Hero Power</button>
-                
-            </form>
+            <button name="heroPower" onclick="heroPower()">Hero Power</button>
+            <button name="endTurn" onclick="endTurn()">End Turn</button>
+            <button name="surrender" onclick="surrender()">Surrender</button>
+            <button name="quitter" onclick="quitGame()">Quitter</button>
             <div id="timer"></div>
             <!-- health bar -->
             <div id="healthBar">
@@ -28,10 +25,10 @@ require_once("partial/header.php");
                 <progress id="health" value="100" max="100"> </progress>
             </div>
         </div>
-</div>
-<div id="card-container"></div>
-<!-- card exemple -->
-<!-- <div class="card">
+    </div>
+    <div id="card-container"></div>
+    <!-- card exemple -->
+    <!-- <div class="card">
   <img  alt="Carte" src="img/Cartes/1664932350_837161.png" style="width:100%">
   <div class="container">
     <h4><b>Name</b></h4>
