@@ -167,9 +167,9 @@ button:hover {
   }
 
   #card-container{
-	  background-color: var(--gray);
-	width: 95vw;
-	height: 30vh;
+	background-color: var(--gray);
+	width: 80%;
+	height: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -181,6 +181,7 @@ button:hover {
   #board{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-evenly;
 	height: 50vh;
 	width: 100%;
 	/* background-color: wheat; */
@@ -192,9 +193,12 @@ button:hover {
   #action-buttons{
 	/* background-color: white; */
 	right: 0px;
-  	height: 100%;
-	width: 20%;
+ 	 width: 20%;
+	height: 100%;
 	border-radius: 10px; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
   }
   #enemy{
 	  /* background-color: yellow; */
@@ -203,5 +207,20 @@ button:hover {
 	  width: 95vw;
 	  padding: 10px ;
 	border-radius: 10px; 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+  }
+  #info{
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	height: 100%;
+  }
+  #player{
+	display: flex;
+	flex-direction: row;
+	width:100vw;
+	height: 30vh;
   }
 /* heatlh */
