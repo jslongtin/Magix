@@ -9,7 +9,7 @@ const state = () => {
             let node = document.querySelector("#message");
             node.innerHTML = data;
 
-            //affiche la vie
+           
             let healthbar = document.querySelector("#vies").innerHTML = data.hp;
             let timer = document.querySelector("#timer").innerHTML = data.remainingTurnTime;
             let mana = document.querySelector("#mana").innerHTML = data.mp;
@@ -26,20 +26,21 @@ const state = () => {
             let boardCardOpponent = document.querySelector("#boardOpponentContainer");
             boardCardOpponent.innerHTML = null;
 
-            let main = null;
-            main = data.hand;
-            let boardCards = null;
-            boardCards = data.board;
-            let boardOpponent = null;
-            boardOpponent = data.opponent.board;
-            let opponentHand = null;
-            opponentHand = data.opponent.handSize;
+
             // console.log(main);
             if (data != "WAITING") {
+                let main = null;
+                main = data.hand;
+                let boardCards = null;
+                boardCards = data.board;
+                let boardOpponent = null;
+                boardOpponent = data.opponent.board;
+                let opponentHand = null;
+                opponentHand = data.opponent.handSize;
                 main.forEach(element => {
-                    let carte = makeCard(element,"img/Cartes/1664932350_837161.png");
+                    let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
                     hand.append(carte);
-    
+
                     carte.onclick = () => {
                         // play
                         // board.append(carte);
@@ -56,25 +57,15 @@ const state = () => {
                     };
                 })
                 for (let i = 0; i < opponentHand; i++) {
-                    let img = document.createElement("img");
-                    img.alt = "carte";
-                    img.style = "width:100%";
-                    img.style = "height:100%";
-                    img.src = "img/Cartes/1664932350_837161.png";
-                    let carte = document.createElement("div");
-                    carte.classList.add("card")
-                    let container = document.createElement("div");
-                    container.classList.add("container");
-                    carte.append(img);
-                    carte.append(container);
+                    let carte = makeCard(0, "img/cardback.png");
                     opponent.append(carte);
                 }
                 boardCards.forEach(element => {
-                    let carte = makeCard(element,"img/Cartes/1664932350_837161.png");
+                    let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
                     board.append(carte);
                 })
                 boardOpponent.forEach(element => {
-                    let carte = makeCard(element,"img/Cartes/1664932350_837161.png");
+                    let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
                     boardCardOpponent.append(carte);
                 })
             };
@@ -122,15 +113,16 @@ const state = () => {
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
-// methode de construction de carte generale
-const makeCard = (element , image) => {
+// methode de construction de carte pour eviter la repetition
+const makeCard = (element, image) => {
     let img = document.createElement("img");
     img.alt = "carte";
     img.style = "width:100%";
     img.src = image;
     let carte = document.createElement("div");
-    carte.classList.add("card")
+    carte.classList.add("card");
     let container = document.createElement("div");
+    if (element != 0){
     container.classList.add("container");
     let name = document.createElement("h4");
     let textName = element.id;
@@ -150,8 +142,9 @@ const makeCard = (element , image) => {
     container.append(atk);
     container.append(cost);
     container.append(baseHP);
+    }
     carte.append(img);
-    carte.append(container)
+    carte.append(container);
     return carte
 }
 const heroPower = () => {
