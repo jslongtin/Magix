@@ -9,9 +9,9 @@ require_once("partial/header.php");
 <script defer src="js/game.js"></script>
 <div id="game">
 
-
   <div id="enemy"></div>
   <div id="board">
+    <div id="boardOpponentContainer"></div>
     <div id="boardCardContainer"></div>
   </div>
   <div id="player">

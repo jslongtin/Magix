@@ -2,18 +2,13 @@
 Projet Final Web 3 
 Jeu Magix de carte 
 
-Themes:
-slay the spire
-overwatch
-detroit/futuristique
-attack on titan
-xenoblade 
 
 Info connexions
 Name_Hidden
-mdp habituel
 
-Se faire un compte digital ocean
+idees animation : 
+faire un select character dans le loby/login et changer les couleurs des cartes selons
+sons de ult ou autre quand actions
 
 https://tiermaker.com/create/overwatch-2-heroes-with-kiriko-660263
 
