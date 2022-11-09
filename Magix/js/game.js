@@ -38,6 +38,7 @@ const state = () => {
                 boardOpponent = data.opponent.board;
                 let opponentHand = null;
                 opponentHand = data.opponent.handSize;
+                
                 main.forEach(element => {
                     let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
                     hand.append(carte);
