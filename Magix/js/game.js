@@ -5,7 +5,7 @@ const state = () => {
         .then(response => response.json())
         .then(data => {
 
-            // console.log(data); // contient les cartes/état du jeu.
+            console.log(data); // contient les cartes/état du jeu.
             let node = document.querySelector("#message");
             node.innerHTML = data;
 
@@ -38,9 +38,9 @@ const state = () => {
                 boardOpponent = data.opponent.board;
                 let opponentHand = null;
                 opponentHand = data.opponent.handSize;
-                
+
                 main.forEach(element => {
-                    let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
+                    let carte = makeCard(element, element.id);
                     hand.append(carte);
                     carte.onclick = () => {
                         // play
@@ -58,11 +58,11 @@ const state = () => {
                     };
                 })
                 for (let i = 0; i < opponentHand; i++) {
-                    let carte = makeCard(0, "img/cardback.png");
+                    let carte = makeCard(0, 102);
                     opponent.append(carte);
                 }
                 boardCards.forEach(element => {
-                    let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
+                    let carte = makeCard(element, element.id);
                     board.append(carte);
                     carte.onclick = () => {
                         carte.classList.add("isSelected");
@@ -70,7 +70,7 @@ const state = () => {
                     };
                 })
                 boardOpponent.forEach(element => {
-                    let carte = makeCard(element, "img/Cartes/1664932350_837161.png");
+                    let carte = makeCard(element, element.id);
                     boardCardOpponent.append(carte);
                     carte.onclick = () => {
                         if (isCardSelected != null){
@@ -84,11 +84,11 @@ const state = () => {
         })
 }
 // methode de construction de carte pour eviter la repetition
-const makeCard = (element, image) => {
+const makeCard = (element, imageId ) => {
     let img = document.createElement("img");
     img.alt = "carte";
     img.style = "width:100%";
-    img.src = image;
+    img.src = cardImage(imageId);
     let carte = document.createElement("div");
     carte.classList.add("card");
     let container = document.createElement("div");
@@ -116,6 +116,23 @@ const makeCard = (element, image) => {
     carte.append(img);
     carte.append(container);
     return carte
+}
+const cardImage= (id) => {
+    console.log(id);
+    let image;
+    if (id<=34){
+     image =  "img/CartesNum/" + id.toString() +".png";
+    }
+    else if (id>34 && id <= 68){
+        image =  "img/CartesNum/" + (id-34).toString() +".png";
+    }
+    else if (id> 68 && id <= 101){
+        image =  "img/CartesNum/" + (id-68).toString() +".png";
+    }
+    else {
+        image =  "img/cardback.png";
+    }
+    return image;
 }
 const heroPower = () => {
     let formData = new FormData();
