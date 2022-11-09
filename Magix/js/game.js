@@ -148,7 +148,6 @@ const heroPower = () => {
 }
 const endTurn = () => {
     let formData = new FormData();
-
     formData.append("type", "END_TURN");
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST",
