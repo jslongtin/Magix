@@ -11,20 +11,24 @@ require_once("partial/header.php");
 
   <div id="enemy"></div>
   <div id="board">
+    <div id="gameInfo">
+      <div id="timer"></div>
+      <div id="turn"></div>
+    </div>
     <div id="boardOpponentContainer"></div>
     <div id="boardCardContainer"></div>
   </div>
   <div id="player">
     <div id="info">
       <div id="message"></div>
-      <div id="timer"></div>
+
       <!-- health bar -->
       <div id="healthBar">
         <div id="vies">0</div>
-        <progress id="health" value="100" max="100"> </progress>
+        <!-- <progress id="health" value="100" max="100"> </progress> -->
       </div>
       <div id="mana"></div>
-      <div id="turn"></div>
+
       <div id="remaining"></div>
     </div>
     <div id="card-container"></div>

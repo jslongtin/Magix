@@ -3,6 +3,7 @@
 * {
 	margin:0;
 	padding:0;
+	color: var(--white);
 }
 :root{
 	--gray: #43484c;
@@ -15,7 +16,6 @@
 html{
 	font-size:16px;
 	font-family: 'Bebas Neue', sans-serif;
-	
 }
 button[type="submit"]{
 	background-color: var(--orange);
@@ -31,7 +31,6 @@ h1{
 	height: 100px;
 	margin: auto;
 	padding: 20px;
-	
 }
 #message{
 	width: 100px;
@@ -141,7 +140,7 @@ button:hover {
 	border-radius: 5px; /* 5px rounded corners */
 	display: flex;
 	flex-direction: column;
-
+	color: var(--black);
   }
   
   /* Add rounded corners to the top left and the top right corner of the image */
@@ -192,7 +191,6 @@ button:hover {
   }
  
   #action-buttons{
-	
 	right: 0px;
  	 width: 20%;
 	height: 100%;
@@ -202,11 +200,10 @@ button:hover {
 	justify-content: space-evenly;
   }
   #enemy{
-
-	  top: 0px;
-	  height: 100%;
-		width: 100%;
-	  padding: 10px ;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 10px ;
 	border-radius: 10px; 
 	display: flex;
 	flex-direction: row;
@@ -224,4 +221,21 @@ button:hover {
 	height: 100%;
 	width: 100%;
   }
-/* heatlh */
+  #healthBar{
+	  height: auto;
+	  width: auto;
+	  color: var(--black);
+	  
+  }
+  #gameInfo{
+	  position: absolute;
+	  left: 10px;
+	  min-height: 100px;
+	  min-width: 100px;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+.isSelected{
+
+	}
