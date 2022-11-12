@@ -31,14 +31,22 @@
         
        
 
-        public static function addAnswer($id){
+        public static function addCartejouee($id){
             $connection = Connection::getConnection();
-            $statement = $connection->prepare("UPDATE CartesPlusJouées set id = ?");
-            $statement->bindParam(1, $newFirstName); // Remplace le premier ? par $username
+            $statement = $connection->prepare(
+               "INSERT into cartesPlusjouees (`idCarte`, `nbJouees`)
+                VALUES (? )
+                ON DUPLICATE KEY UPDATE
+                idCarte = ?
+                nbJouees = nbJouees +1
+            ");
+                
+            $statement->bindParam(1, $id); 
       
                     
             $statement->execute();
         }
         
 
+        I
     }
