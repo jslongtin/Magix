@@ -19,15 +19,16 @@ const state = () => {
 
             let hand = document.querySelector("#card-container");
             hand.innerHTML = null;
-            let opponent = document.querySelector("#enemy");
-            enemy.innerHTML = null;
+            let opponentHand = document.querySelector("#opponentHand");
+            opponentHand.innerHTML = null;
+            let opponent = document.querySelector("#opponent");
+            opponent.innerHTML = null;
             let board = document.querySelector("#boardCardContainer");
             board.innerHTML = null;
             let boardCardOpponent = document.querySelector("#boardOpponentContainer");
             boardCardOpponent.innerHTML = null;
-
             let isCardSelected = null;
-
+            
             // console.log(main);
             if (data != "WAITING") {
                 let main = null;
@@ -36,31 +37,42 @@ const state = () => {
                 boardCards = data.board;
                 let boardOpponent = null;
                 boardOpponent = data.opponent.board;
-                let opponentHand = null;
-                opponentHand = data.opponent.handSize;
+                let opponentHandSize = null;
+                opponentHandSize = data.opponent.handSize;
 
                 main.forEach(element => {
                     let carte = makeCard(element, element.id);
                     hand.append(carte);
                     carte.onclick = () => {
                         // play
-                        // board.append(carte);
+
                         let formData = new FormData();
                         formData.append("type", "PLAY");
                         formData.append("uid", element.uid);
-                        fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+                        fetch("ajax-state.php", {   
                             method: "POST",
-                            body: formData       // l’API (games/state)
+                            body: formData      
                         })
                             .then(response => response.json())
                             .then(data => {
+                                // appelle la methode de la bd pour rajouter la carte si le retour de l'appel de l'api n'est pas une string(qui est un message d'erreur)
+                                if (typeof data != String){
+                                addCardPlayed(element.id);
+                                }
                             });
                     };
                 })
-                for (let i = 0; i < opponentHand; i++) {
+                for (let i = 0; i < opponentHandSize; i++) {
                     let carte = makeCard(0, 102);
-                    opponent.append(carte);
+                    opponentHand.append(carte);
                 }
+                opponent.append("img/Cartes/Reaper.png");
+                let opponentHealth = data.opponent.hp;
+                opponent.append(opponentHealth);
+                let opponentMp = data.opponent.mp;
+                opponent.append(opponentMp);
+                let opponentRemainingCards = data.opponent.remainingCardsCount;
+                opponent.append(opponentRemainingCards); 
                 boardCards.forEach(element => {
                     let carte = makeCard(element, element.id);
                     board.append(carte);
@@ -93,15 +105,36 @@ const makeCard = (element, imageId ) => {
     carte.classList.add("card");
     let container = document.createElement("div");
     if (element != 0){
+        // si la carte peut etre jouée
+        if (element.state == "idle"){
+            carte.classList.add("playableCard");
+        }
     container.classList.add("container");
     let name = document.createElement("h4");
     let textName = element.id;
     let bold = document.createElement("b");
     let info = document.createElement("p");
+    element.mechanics.forEach(e => {
+        if ( e == "taunt"){
+            // image taunt
+        }
+        else if ( e == "charge"){
+            // image charge
+        }
+        else if ( e == " stealth "){
+            // 
+        }
+        else if ( e == "confused "){
+            
+        }
+    })
     let textTnfo = element.mechanics;
     let hp = element.hp;
+    hp.classList.add("hp");
     let atk = element.atk;
+    atk.classList.add("atk");
     let cost = element.cost;
+    atk.classList.add("cost");
     let baseHP = element.baseHP;
     info.append(textTnfo);
     bold.append(textName);
@@ -117,17 +150,26 @@ const makeCard = (element, imageId ) => {
     carte.append(container);
     return carte
 }
+//retourne une image pour la carte selon le id
 const cardImage= (id) => {
     console.log(id);
     let image;
+    let cheminImage;
+    //  pour l'implementation futur du hero selection screen
+     if (id.length < 2 ){
+        cheminImage = "img/Cartes/";
+     }
+     else{
+        cheminImage = "img/CartesNum/";
+     }
     if (id<=34){
-     image =  "img/CartesNum/" + id.toString() +".png";
+     image =  cheminImage + id.toString() +".png";
     }
     else if (id>34 && id <= 68){
-        image =  "img/CartesNum/" + (id-34).toString() +".png";
+        image =  cheminImage + (id-34).toString() +".png";
     }
     else if (id> 68 && id <= 101){
-        image =  "img/CartesNum/" + (id-68).toString() +".png";
+        image =  cheminImage + (id-68).toString() +".png";
     }
     else {
         image =  "img/cardback.png";

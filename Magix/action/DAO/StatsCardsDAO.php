@@ -31,7 +31,7 @@
         
        
 
-        public static function addCartejouee($id){
+        public static function addCardPlayed($id){
             $connection = Connection::getConnection();
             $statement = $connection->prepare(
                "INSERT into cartesPlusjouees (`idCarte`, `nbJouees`)
@@ -48,5 +48,5 @@
         }
         
 
-        I
+        
     }
