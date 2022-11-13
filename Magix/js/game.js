@@ -22,7 +22,7 @@ const state = () => {
             let opponentHand = document.querySelector("#opponentHand");
             opponentHand.innerHTML = null;
             let opponent = document.querySelector("#opponent");
-            opponent.innerHTML = null;
+            // opponent.innerHTML = null;
             let board = document.querySelector("#boardCardContainer");
             board.innerHTML = null;
             let boardCardOpponent = document.querySelector("#boardOpponentContainer");
@@ -130,11 +130,11 @@ const makeCard = (element, imageId ) => {
     })
     let textTnfo = element.mechanics;
     let hp = element.hp;
-    hp.classList.add("hp");
+    // hp.classList.add("hp");
     let atk = element.atk;
-    atk.classList.add("atk");
+    // atk.classList.add("atk");
     let cost = element.cost;
-    atk.classList.add("cost");
+    // atk.classList.add("cost");
     let baseHP = element.baseHP;
     info.append(textTnfo);
     bold.append(textName);
