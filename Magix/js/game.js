@@ -19,10 +19,10 @@ const state = () => {
 
             let hand = document.querySelector("#card-container");
             hand.innerHTML = null;
-            let opponentHand = document.querySelector("#opponentHand");
-            opponentHand.innerHTML = null;
+            // let opponentHand = document.querySelector("#opponentHand");
+            // // opponentHand.innerHTML = null;
             let opponent = document.querySelector("#opponent");
-            // opponent.innerHTML = null;
+            opponent.innerHTML = null;
             let board = document.querySelector("#boardCardContainer");
             board.innerHTML = null;
             let boardCardOpponent = document.querySelector("#boardOpponentContainer");
@@ -39,14 +39,21 @@ const state = () => {
                 boardOpponent = data.opponent.board;
                 let opponentHandSize = null;
                 opponentHandSize = data.opponent.handSize;
+                let playerIcon = document.createElement("img");
+                playerIcon.src =  "img/CartesNum/1.png";
+                playerIcon.alt = "playerIcon";
 
+
+                let imageOpp = document.querySelector("#opponentIcon");
+            imageOpp.innerHTML = null;
+            let imagePlay = document.querySelector("#playerIcon");
+            imagePlay.innerHTML = null;
+                // playerIcon.classList.add("playerIcon");
+                imagePlay.append(playerIcon);
                 main.forEach(element => {
                     let carte = makeCard(element, element.id);
                     hand.append(carte);
                     
-                    let playerIcon = document.createElement("img");
-                    playerIcon.src =  "img/CartesNum/1.png";
-                    hand.append(playerIcon);
                     carte.onclick = () => {
                         // play
 
@@ -68,9 +75,11 @@ const state = () => {
                 })
                 for (let i = 0; i < opponentHandSize; i++) {
                     let carte = makeCard(0, 102);
-                    opponentHand.append(carte);
+                    opponent.append(carte);
                 }
-                opponent.append("img/Cartes/Reaper.png");
+                let opponentIcon = document.createElement("img");
+                opponentIcon.src =  "img/Cartes/Reaper.png";
+                imageOpp.append(opponentIcon);
                 let opponentHealth = data.opponent.hp;
                 opponent.append(opponentHealth);
                 let opponentMp = data.opponent.mp;

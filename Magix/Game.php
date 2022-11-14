@@ -10,8 +10,8 @@ require_once("partial/header.php");
 <div id="game">
 
   <div id="opponent">
-    <div id="opponentHand"></div>
   </div>
+  <div id="opponentIcon"></div>
   <div id="board">
     <div id="gameInfo">
       <div id="timer"></div>
@@ -20,6 +20,7 @@ require_once("partial/header.php");
     <div id="boardOpponentContainer"></div>
     <div id="boardCardContainer"></div>
   </div>
+  <div id="playerIcon"></div>
   <div id="player">
     <div id="info">
       <div id="message"></div>
