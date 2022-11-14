@@ -39,8 +39,7 @@
         }
         public static function getPopularite(){
             $connection = Connection::getConnection();
-            $statement = $connection->prepare("SELECT  * FROM statsCards  GROUP BY id" );
-        
+            $statement = $connection->prepare("SELECT idCarte , COUNT (idCarte) FROM statsCards  GROUP BY idCarte" );
             $statement->setFetchMode(PDO::FETCH_ASSOC); // Retourne un dictionnaire
             $statement->execute();
     
