@@ -42,7 +42,7 @@ const state = () => {
                 let playerIcon = document.createElement("img");
                 playerIcon.src =  "img/CartesNum/1.png";
                 playerIcon.alt = "playerIcon";
-
+                playerIcon.style = "height:100px";
 
                 let imageOpp = document.querySelector("#opponentIcon");
             imageOpp.innerHTML = null;
@@ -60,6 +60,7 @@ const state = () => {
                         let formData = new FormData();
                         formData.append("type", "PLAY");
                         formData.append("uid", element.uid);
+                        formData.append("id", element.id);
                         fetch("ajax-state.php", {   
                             method: "POST",
                             body: formData      
@@ -67,9 +68,10 @@ const state = () => {
                             .then(response => response.json())
                             .then(data => {
                                 // appelle la methode de la bd pour rajouter la carte si le retour de l'appel de l'api n'est pas une string(qui est un message d'erreur)
-                                if (typeof data != String){
-                                addCardPlayed(element.id);
-                                }
+                                console.log(data);
+                                
+                                
+                                
                             });
                     };
                 })
@@ -79,6 +81,7 @@ const state = () => {
                 }
                 let opponentIcon = document.createElement("img");
                 opponentIcon.src =  "img/Cartes/Reaper.png";
+                opponentIcon.style = "height:100px";
                 imageOpp.append(opponentIcon);
                 let opponentHealth = data.opponent.hp;
                 opponent.append(opponentHealth);
@@ -165,7 +168,7 @@ const makeCard = (element, imageId ) => {
 }
 //retourne une image pour la carte selon le id
 const cardImage= (id) => {
-    console.log(id);
+    // console.log(id);
     let image;
     let cheminImage;
     //  pour l'implementation futur du hero selection screen
@@ -240,7 +243,7 @@ const attack = (uidCarteMain,uidTarget) => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
         });
 }
 

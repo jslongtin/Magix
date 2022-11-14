@@ -1,5 +1,6 @@
 <?php
 require_once("action/CommonAction.php");
+require_once("action/DAO/StatsCardsDAO.php");
 
 class AjaxStateAction extends CommonAction
 {
@@ -33,11 +34,11 @@ class AjaxStateAction extends CommonAction
 				$result = parent::callAPI("games/action", $data);
 			}
 			else if ($_POST["type"] == "PLAY") {
-				
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "PLAY";
 				$data["uid"] = $_POST["uid"];
 				$result = parent::callAPI("games/action", $data);
+				$add = StatsCardsDAO::addCardPlayed($_POST["id"]);
 			}
 			else if ($_POST["type"] == "ATTACK") {
 				$data["key"] = $_SESSION["key"];

@@ -1,9 +1,10 @@
 <?php
     
-    define("DB_HOST", "pgsql:host="); // echo DB_HOST
-    define("DB_NAME",  "");
-    define("DB_USER", "");
-    define("DB_PASS", "");
+    define("DB_HOST", "pgsql:host=webpgsql.notes-de-cours.com"); // echo DB_HOST
+    define("DB_NAME",  "db_e1836108");
+    define("DB_USER", "e1836108");
+    define("DB_PASS", "e1836108");
 
+    
     
     

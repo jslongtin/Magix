@@ -33,14 +33,13 @@
 // version avec des inserts seulement
         public static function addCardPlayed($id){
             $connection = Connection::getConnection();
-
-            $statement = $connection->prepare("INSERT INTO statsCards(id) VALUES(?)");
+            $statement = $connection->prepare("INSERT INTO statsCards(id) VALUES (?)");
             $statement->bindParam(1, $id); 
             $statement->execute();
         }
         public static function getPopularite(){
             $connection = Connection::getConnection();
-            $statement = $connection->prepare("SELECT COUNT * FROM statsCards  GROUP BY id" );
+            $statement = $connection->prepare("SELECT  * FROM statsCards  GROUP BY id" );
         
             $statement->setFetchMode(PDO::FETCH_ASSOC); // Retourne un dictionnaire
             $statement->execute();
@@ -49,3 +48,23 @@
         }
         
     }
+    // public static function getAnswer(){
+    //     $connection = Connection::getConnection();
+    //     $statement = $connection->prepare("SELECT * FROM stack_answers " );
+    
+    //     $statement->setFetchMode(PDO::FETCH_ASSOC); // Retourne un dictionnaire
+    //     $statement->execute();
+
+    //     return $statement->fetchAll();
+    // }
+
+    // public static function addAnswer($author, $answer){
+    //     $connection = Connection::getConnection();
+
+    //     $statement = $connection->prepare("INSERT INTO  stack_answers(author,answer) VALUES ( ?,?)");
+    //     $statement->bindParam(1, $author); // Remplace le premier ? par $username
+    //     $statement->bindParam(2, $answer); // Remplace le deuxieme ? par $username
+        
+    //     $statement->execute();
+    // }
+    
