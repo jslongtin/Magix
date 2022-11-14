@@ -17,7 +17,7 @@
     <div class="main">
     <iframe  id="deckAPI"  src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>">
     </iframe>
-    <div class="stats"></div>
+    <div id="stats"> <canvas id="chart" style="width:100%;max-width:600px"></canvas></div>
     </div>
     </div>
 <?php

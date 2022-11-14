@@ -43,6 +43,10 @@ const state = () => {
                 main.forEach(element => {
                     let carte = makeCard(element, element.id);
                     hand.append(carte);
+                    
+                    let playerIcon = document.createElement("img");
+                    playerIcon.src =  "img/CartesNum/1.png";
+                    hand.append(playerIcon);
                     carte.onclick = () => {
                         // play
 

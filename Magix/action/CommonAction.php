@@ -42,7 +42,7 @@ abstract class CommonAction
 
         return $data; // Retourne à la vue
     }
-    
+
     /**
      * data = array('key1' => 'value1', 'key2' => 'value2');
      */

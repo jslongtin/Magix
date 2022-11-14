@@ -1,262 +1,302 @@
  @import url('https://fonts.googleapis.com/css?family=Bebas Neue');
 
-* {
-	margin:0;
-	padding:0;
-	
-}
-:root{
-	--gray: #43484c;
-	--blue: #405275;
-	--lightBlue: #218ffe;
-	--black: #000000;
-	--orange :#f06414;
-	--white: #FFFFFF;
-}
-html{
-	font-size:16px;
-	font-family: 'Bebas Neue', sans-serif;
-}
-button[type="submit"], button{
-	background-color: var(--orange);
-	color: var(--white);
-}
-button[type="submit"]:hover, button:hover{
-	background-color: var(--lightBlue);
-}
-h1{
-	color: var(--orange);
-	font-size: 700%;
-	width: fit-content;
-	height: 100px;
-	margin: auto;
-	padding: 20px;
-}
-#message{
-	width: 100px;
-	height: 50px;
-	margin: auto;
-	padding: auto;
-	color: var(--white);
-	background-color: var(--blue);
-}
-#index, #lobby, #deck, #game{
-	height: 100vh;
-	width: 100vw;
-	align-items: center;
-	justify-content: center;	
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-#game{
-	background-image: url("../img/omnic-3-1573084850059.jpg");
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 3fr 2fr;
-}
-#lobby{
-	background-image: url("../img/Lobby.jpg");
-	display: grid;
-	grid-template-areas: 'bouttons chat';
-}
-#index{
-	background-image: url("../img/dalticu-eb19f94d-2103-4b0e-bcfd-4383f2eba94f.jpg");
-}
-#deck{
-	overflow: hidden;
-	background-image: url("../img/wallpaperbetter.com_1366x768.jpg");
-}
-.main{
-	width: 95vw;
-	height: 80%;
-	padding: 20px;
-	margin: auto;
-}
-#deckAPI{
-	width: 100%;
-	height: 100%;
-	background-color: var(--burgundy);
-}
-.ConnexionBox{
-	width:400px;
-	margin: auto;
-	border-radius: 5px;
-	border:1px solid #aaa;
-	padding:10px;
-	background-color:#fff;
-	box-shadow: 0 0 15px #000;
-	justify-content: center;
-}
-.formLabel {
-	float:left;
-	width:180px;
-	text-align:right;
-	padding-right:5px;
-}
+ * {
+ 	margin: 0;
+ 	padding: 0;
 
-.formInput {
-	float:left;
-	width:180px;
-}
+ }
 
-.formSeparator {
-	clear:both;
-	height:10px;
-}
+ :root {
+ 	--gray: #43484c;
+ 	--blue: #405275;
+ 	--lightBlue: #218ffe;
+ 	--black: #000000;
+ 	--orange: #f06414;
+ 	--white: #FFFFFF;
+ }
 
-button {
-	box-shadow:rgba(0,0,0,1) 0 0px 2px 0;
-	color:#333;
-	background-color:#d1d1d1;
-	border-radius:3px;
-	border:none;
-	font-size:16px;
-	font-weight:700;
-	height:30px;
-	width: 150px;
-	padding:4px 16px;
-	cursor: pointer;
-}
+ html {
+ 	font-size: 16px;
+ 	font-family: 'Bebas Neue', sans-serif;
+ }
 
-button:hover {
-	background-color:#bbb;
-}
-#buttonsLobby{
-	grid-area: bouttons;
-	width: 30vw;
-	height: 80vh;
+ button[type="submit"],
+ button {
+ 	background-color: var(--orange);
+ 	color: var(--white);
+ }
 
-}
-#chat{
-	grid-area: chat;
-}
+ button[type="submit"]:hover,
+ button:hover {
+ 	background-color: var(--lightBlue);
+ }
 
-/* card */
-.card {
-	width: 140px;
-	height: 200px;
-	background-color: var(--blue);
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	transition: 0.3s;
-	border-radius: 5px; /* 5px rounded corners */
-	display: flex;
-	flex-direction: column;
-	color: var(--black);
-  }
-  /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
-  .playableCard{
-	padding-bottom: 20px;
-  }
-  .hp{
-	color: red;
-	position: absolute;
-	left: 10px;
-	top: 10px;
-}
-.atk{
-	color: blue;
-	position: absolute;
-	left: 10px;
-	top: 20px;
-}
+ h1 {
+ 	color: var(--orange);
+ 	font-size: 700%;
+ 	width: fit-content;
+ 	height: 100px;
+ 	margin: auto;
+ 	padding: 20px;
+ }
 
-.cost{
-	color: green;
-	position: absolute;
-	left: 10px;
-	top: 30px;
-}
+ #message {
+ 	width: 100px;
+ 	height: 50px;
+ 	margin: auto;
+ 	padding: auto;
+ 	color: var(--white);
+ 	background-color: var(--blue);
+ }
 
-  /* Add rounded corners to the top left and the top right corner of the image */
-  img {
-	border-radius: 5px 5px 0 0;
-	height: 65%;
-	width: fit-content;
-	height: fit-content;
-	
-  }
-  /* On mouse-over, add a deeper shadow */
-.card:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-	padding: 2px 16px;
-	background-color: var(--lightBlue);
-	height: 35%;
-  }
+ #index,
+ #lobby,
+ #deck,
+ #game {
+ 	height: 100vh;
+ 	width: 100vw;
+ 	align-items: center;
+ 	justify-content: center;
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+ }
 
-  #card-container{
-	background-color: var(--gray);
-	width: 80%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	justify-self: end;
-	bottom: 0px;
-	padding: 10px ;
-	border-radius: 10px; 
-  }
-  #board{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	height: 100%;
-	width: 100%;
-  }
-  #boardCardContainer, #boardOpponentContainer{
-	  height: 50%;
-	  width:80%;
-	  display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-  }
- 
-  #action-buttons{
-	right: 0px;
- 	 width: 20%;
-	height: 100%;
-	border-radius: 10px; 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-  }
-  #opponent, #opponentHand{
-	top: 0px;
-	height: 100%;
-	width: 100%;
-	padding: 10px ;
-	border-radius: 10px; 
-	display: flex;
-	flex-direction: row;
-	justify-content:flex-start;
-  }
-  #info{
-	display: flex;
-	flex-direction: column;
-	width: 20%;
-	height: 100%;
-  }
-  #player{
-	display: flex;
-	flex-direction: row;
-	height: 100%;
-	width: 100%;
-  }
-  #healthBar{
-	  height: auto;
-	  width: auto;
-	  color: var(--black);
-	  
-  }
-  #gameInfo{
-	  position: absolute;
-	  left: 10px;
-	  min-height: 100px;
-	  min-width: 100px;
-	  align-items: center;
-	  justify-content: center;
-  }
+ #game {
+ 	background-image: url("../img/omnic-3-1573084850059.jpg");
+ 	display: grid;
+ 	grid-template-columns: 1fr;
+ 	grid-template-rows: 1fr 3fr 2fr;
+ }
 
+ #lobby {
+ 	background-image: url("../img/Lobby.jpg");
+ 	display: grid;
+ 	grid-template-areas: 'bouttons chat';
+ }
+
+ #index {
+ 	background-image: url("../img/dalticu-eb19f94d-2103-4b0e-bcfd-4383f2eba94f.jpg");
+ }
+
+ #deck {
+ 	overflow: hidden;
+ 	background-image: url("../img/wallpaperbetter.com_1366x768.jpg");
+ }
+
+ .main {
+ 	width: 95vw;
+ 	height: 80%;
+ 	padding: 20px;
+ 	margin: auto;
+ }
+
+ #deckAPI {
+ 	width: 100%;
+ 	height: 100%;
+ 	background-color: var(--burgundy);
+ }
+
+ .ConnexionBox {
+ 	width: 400px;
+ 	margin: auto;
+ 	border-radius: 5px;
+ 	border: 1px solid #aaa;
+ 	padding: 10px;
+ 	background-color: #fff;
+ 	box-shadow: 0 0 15px #000;
+ 	justify-content: center;
+ }
+
+ .formLabel {
+ 	float: left;
+ 	width: 180px;
+ 	text-align: right;
+ 	padding-right: 5px;
+ }
+
+ .formInput {
+ 	float: left;
+ 	width: 180px;
+ }
+
+ .formSeparator {
+ 	clear: both;
+ 	height: 10px;
+ }
+
+ button {
+ 	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
+ 	color: #333;
+ 	background-color: #d1d1d1;
+ 	border-radius: 3px;
+ 	border: none;
+ 	font-size: 16px;
+ 	font-weight: 700;
+ 	height: 30px;
+ 	width: 150px;
+ 	padding: 4px 16px;
+ 	cursor: pointer;
+ }
+
+ button:hover {
+ 	background-color: #bbb;
+ }
+
+ #buttonsLobby {
+ 	grid-area: bouttons;
+ 	width: 30vw;
+ 	height: 80vh;
+
+ }
+
+ #chat {
+ 	grid-area: chat;
+ }
+
+ /* card */
+ .card {
+ 	width: 140px;
+ 	height: 200px;
+ 	background-color: var(--blue);
+ 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ 	transition: 0.3s;
+ 	border-radius: 5px;
+ 	/* 5px rounded corners */
+ 	display: flex;
+ 	flex-direction: column;
+ 	color: var(--black);
+ }
+
+ /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
+ .playableCard {
+ 	position: relative;
+ 	bottom: 20px;
+ }
+
+ .hp {
+ 	color: red;
+ 	position: absolute;
+ 	left: 10px;
+ 	top: 10px;
+ }
+
+ .atk {
+ 	color: blue;
+ 	position: absolute;
+ 	left: 10px;
+ 	top: 20px;
+ }
+
+ .cost {
+ 	color: green;
+ 	position: absolute;
+ 	left: 10px;
+ 	top: 30px;
+ }
+
+ /* Add rounded corners to the top left and the top right corner of the image */
+ img {
+ 	border-radius: 5px 5px 0 0;
+ 	height: 65%;
+ 	width: fit-content;
+ 	height: fit-content;
+
+ }
+
+ /* On mouse-over, add a deeper shadow */
+ .card:hover {
+ 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+ }
+
+ /* Add some padding inside the card container */
+ .container {
+ 	padding: 2px 16px;
+ 	background-color: var(--lightBlue);
+ 	height: 35%;
+ }
+
+ #card-container {
+ 	background-color: var(--gray);
+ 	width: 80%;
+ 	height: 100%;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: space-evenly;
+ 	justify-self: end;
+ 	bottom: 0px;
+ 	padding: 10px;
+ 	border-radius: 10px;
+ }
+
+ .playerIcon {
+ 	position: absolute;
+ }
+
+ #board {
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: space-evenly;
+ 	height: 100%;
+ 	width: 100%;
+ }
+
+ #boardCardContainer,
+ #boardOpponentContainer {
+ 	height: 50%;
+ 	width: 80%;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: space-evenly;
+ }
+
+ #action-buttons {
+ 	right: 0px;
+ 	width: 20%;
+ 	height: 100%;
+ 	border-radius: 10px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: space-evenly;
+ }
+
+ #opponent,
+ #opponentHand {
+ 	top: 0px;
+ 	height: 100%;
+ 	width: 100%;
+ 	padding: 10px;
+ 	border-radius: 10px;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: flex-start;
+ }
+
+ #info {
+ 	display: flex;
+ 	flex-direction: column;
+ 	width: 20%;
+ 	height: 100%;
+ }
+
+ #player {
+ 	display: flex;
+ 	flex-direction: row;
+ 	height: 100%;
+ 	width: 100%;
+ }
+
+ #healthBar {
+ 	height: auto;
+ 	width: auto;
+ 	color: var(--black);
+
+ }
+
+ #gameInfo {
+ 	position: absolute;
+ 	left: 10px;
+ 	min-height: 100px;
+ 	min-width: 100px;
+ 	align-items: center;
+ 	justify-content: center;
+ }

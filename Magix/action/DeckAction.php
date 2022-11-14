@@ -8,9 +8,7 @@
         }
 
         protected function executeAction() {
-        // if (isset($_POST["Deck"])) {
-        //     modfierDeck();
-        // }
+        
         if (isset($_POST["retour"])){
             header("location:Lobby.php");
             exit;

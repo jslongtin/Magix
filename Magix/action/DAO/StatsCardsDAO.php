@@ -30,23 +30,22 @@
         }
         
        
-
+// version avec des inserts seulement
         public static function addCardPlayed($id){
             $connection = Connection::getConnection();
-            $statement = $connection->prepare(
-               "INSERT into cartesPlusjouees (`idCarte`, `nbJouees`)
-                VALUES (? )
-                ON DUPLICATE KEY UPDATE
-                idCarte = ?
-                nbJouees = nbJouees +1
-            ");
-                
+
+            $statement = $connection->prepare("INSERT INTO statsCards(id) VALUES(?)");
             $statement->bindParam(1, $id); 
-      
-                    
             $statement->execute();
         }
+        public static function getPopularite(){
+            $connection = Connection::getConnection();
+            $statement = $connection->prepare("SELECT COUNT * FROM statsCards  GROUP BY id" );
         
-
+            $statement->setFetchMode(PDO::FETCH_ASSOC); // Retourne un dictionnaire
+            $statement->execute();
+    
+            return $statement->fetchAll();
+        }
         
     }
