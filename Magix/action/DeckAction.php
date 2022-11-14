@@ -1,6 +1,6 @@
 <?php
     require_once("action/CommonAction.php");
-
+    require_once("action/DAO/StatsCardsDAO.php");
     class DeckAction extends CommonAction {
 
         public function __construct() {
@@ -13,5 +13,7 @@
             header("location:Lobby.php");
             exit;
         }
+        $getPop = StatsCardsDAO::getPopularite();
+        return compact("getPop");
     }
 }

@@ -20,40 +20,40 @@ const applyStyles = iframe => {
 const modifierDeck = () => {
 	counter++;
 	if (counter % 2 == 1) {
-		document.querySelector("#deckAPI").setAttribute("hidden", "hidden");
+		document.querySelector("#deckAPI").removeAttribute("visibility");
 	}
 	else {
-		console.log("allo");
-		document.querySelector("#deckAPI").removeAttribute("hidden");
+
+		document.querySelector("#deckAPI").setAttribute("hidden", "hidden");
 	}
 }
-document.addEventListener("load", () => {
-	let titres = [];
-	let valeures = [];
+// document.addEventListener("load", () => {
+// 	let titres = [];
+// 	let valeures = [];
 
-	let couleurs = [];
-	// genere des couleurs aleatoires pour chaque id
-	let letters = "0123456789ABCDEF";
-	let color = "#";
-	for (let i = 0 ;i < titres.length;i++){
-		color+= letters[Math.floor(Math.random*16)];
-		couleurs.append(color);
-	}
-	new chart("chart", {
-		type: "doughnut",
-		data: {
-			lables: titres,
-			datasets: [{
-				backgroundColor: couleurs,
-				data: valeures
-			}]
-		},
-		options: {
-			title: {
-				display: true,
-				text: "Popularitée des cartes"
-			}
-		}
-	});
-})
+// 	let couleurs = [];
+// 	// genere des couleurs aleatoires pour chaque id
+// 	let letters = "0123456789ABCDEF";
+// 	let color = "#";
+// 	for (let i = 0 ;i < titres.length;i++){
+// 		color+= letters[Math.floor(Math.random*16)];
+// 		couleurs.append(color);
+// 	}
+// 	new chart("chart", {
+// 		type: "doughnut",
+// 		data: {
+// 			lables: titres,
+// 			datasets: [{
+// 				backgroundColor: couleurs,
+// 				data: valeures
+// 			}]
+// 		},
+// 		options: {
+// 			title: {
+// 				display: true,
+// 				text: "Popularitée des cartes"
+// 			}
+// 		}
+// 	});
+// })
 
