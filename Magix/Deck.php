@@ -35,14 +35,16 @@ require_once("partial/header.php");
 					data.forEach(element => {
 
 						if (element.idcarte != null) {
-							xValues.push(JSON.stringify(element.idcarte));
+							xValues.push("Carte: "+ JSON.stringify(element.idcarte));
 							total += element.count;
 						}
 						
 					});
-					
+	
 					data.forEach(e  => {
+						if (e.count != 0) {
 						yValues.push((e.count*100/total));
+					}
 					})
 				});
 			console.log(xValues);
