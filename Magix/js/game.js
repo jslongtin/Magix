@@ -56,7 +56,6 @@ const state = () => {
                     
                     carte.onclick = () => {
                         // play
-
                         let formData = new FormData();
                         formData.append("type", "PLAY");
                         formData.append("uid", element.uid);
@@ -85,7 +84,8 @@ const state = () => {
                 imageOpp.append(opponentIcon);
                 imageOpp.onclick = () => {
                     if (isCardSelected != null){
-                        attack(isCardSelected,element.uid);
+                        attack(isCardSelected,0);
+                        isCardSelected = null;
                      }
                 };
                 let opponentHealth = data.opponent.hp;
@@ -98,6 +98,7 @@ const state = () => {
                     let carte = makeCard(element, element.id);
                     board.append(carte);
                     carte.onclick = () => {
+                        console.log("click");
                         carte.classList.add("isSelected");
                         isCardSelected = element.uid;
                     };
@@ -107,7 +108,8 @@ const state = () => {
                     boardCardOpponent.append(carte);
                     carte.onclick = () => {
                         if (isCardSelected != null){
-                           attack(isCardSelected,0);
+                           attack(isCardSelected,element.uid);
+                           isCardSelected = null;
                         }
                     };
                 })

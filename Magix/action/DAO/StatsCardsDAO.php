@@ -33,7 +33,7 @@
 // version avec des inserts seulement
         public static function addCardPlayed($id){
             $connection = Connection::getConnection();
-            $statement = $connection->prepare("INSERT INTO statsCards(id) VALUES (?)");
+            $statement = $connection->prepare("INSERT INTO statsCards(idCarte) VALUES (?)");
             $statement->bindParam(1, $id); 
             $statement->execute();
         }
