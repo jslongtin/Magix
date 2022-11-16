@@ -83,6 +83,11 @@ const state = () => {
                 opponentIcon.src =  "img/Cartes/Reaper.png";
                 opponentIcon.style = "height:100px";
                 imageOpp.append(opponentIcon);
+                imageOpp.onclick = () => {
+                    if (isCardSelected != null){
+                        attack(isCardSelected,element.uid);
+                     }
+                };
                 let opponentHealth = data.opponent.hp;
                 opponent.append(opponentHealth);
                 let opponentMp = data.opponent.mp;
@@ -102,7 +107,7 @@ const state = () => {
                     boardCardOpponent.append(carte);
                     carte.onclick = () => {
                         if (isCardSelected != null){
-                           attack(isCardSelected,element.uid);
+                           attack(isCardSelected,0);
                         }
                     };
                 })

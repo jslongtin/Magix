@@ -217,6 +217,7 @@
  /* On mouse-over, add a deeper shadow */
  .card:hover {
  	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	 opacity: 0.5;
  }
 
  /* Add some padding inside the card container */
@@ -305,7 +306,8 @@
  #healthBar {
  	height: auto;
  	width: auto;
- 	color: var(--black);
+ 	color: var(--orange);
+	 background-color: var(--blue);
 
  }
 
@@ -323,3 +325,23 @@
 	 align-items: center;
 	
  }
+ #turn{
+	 color: var(--white);
+	 width: 50px;
+	 background-color: var(--orange);
+ }
+ #mana{
+	 color: var(--white);
+	 background-color: var(--lightBlue);
+	 width: 50px;
+ }
+#timer{
+	color: var(--orange);
+	background-color: var(--black);
+	width: 50px;
+}
+#remaining{
+	color: var(--orange);
+	background-color: var(--black);
+	width: 50px;
+}
