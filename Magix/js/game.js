@@ -5,7 +5,7 @@ const state = () => {
         .then(response => response.json())
         .then(data => {
 
-            console.log(data); // contient les cartes/état du jeu.
+            // console.log(data); // contient les cartes/état du jeu.
             let node = document.querySelector("#message");
             node.innerHTML = data;
 
@@ -66,11 +66,8 @@ const state = () => {
                         })
                             .then(response => response.json())
                             .then(data => {
-                                // appelle la methode de la bd pour rajouter la carte si le retour de l'appel de l'api n'est pas une string(qui est un message d'erreur)
-                                console.log(data);
-                                
-                                
-                                
+                    
+                            
                             });
                     };
                 })
@@ -110,6 +107,7 @@ const state = () => {
                         if (isCardSelected != null){
                            attack(isCardSelected,element.uid);
                            isCardSelected = null;
+                           
                         }
                     };
                 })
@@ -259,7 +257,7 @@ const attack = (uidCarteMain,uidTarget) => {
     })
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
+            console.log(data);
         });
 }
 

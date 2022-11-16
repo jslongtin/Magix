@@ -345,3 +345,6 @@
 	background-color: var(--black);
 	width: 50px;
 }
+.isSelected{
+	background-color: var(--orange);
+}
