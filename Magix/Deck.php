@@ -23,7 +23,7 @@ require_once("partial/header.php");
 		<script>
 			let xValues = [];
 			let yValues = [];
-			
+			let total = 0;
 			let formData = new FormData();
 			formData.append("type", "BD");
 			fetch("ajax-state.php", {
@@ -33,11 +33,17 @@ require_once("partial/header.php");
 				.then(response => response.json())
 				.then(data => {
 					data.forEach(element => {
+
 						if (element.idcarte != null) {
 							xValues.push(JSON.stringify(element.idcarte));
-							yValues.push(element.count);
+							total += element.count;
 						}
+						
 					});
+					
+					data.forEach(e  => {
+						yValues.push((e.count*100/total));
+					})
 				});
 			console.log(xValues);
 			console.log(yValues);
@@ -47,7 +53,7 @@ require_once("partial/header.php");
 			// genere des  barColors aleatoires pour chaque id
 			let letters = "0123456789ABCDEF";
 			let color = "#";
-			for (let i = 0; i < 101; i++) {
+			for (let i = 0; i < 10; i++) {
 				for (let i = 0; i < 6; i++) {
 					color += letters[Math.floor(Math.random() * 16)];
 				}
@@ -67,7 +73,7 @@ require_once("partial/header.php");
   options: {
     title: {
       display: true,
-      text: "Popularitée des cartes"
+      text: "Popularitée des cartes en Pourcentage"
     }
   }
 });
