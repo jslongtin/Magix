@@ -118,9 +118,10 @@ const makeCard = (element, imageId ) => {
     img.style = "width:100%";
     img.src = cardImage(imageId);
     let carte = document.createElement("div");
-    carte.classList.add("card");
+    
     let container = document.createElement("div");
     if (element != 0){
+        carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle"){
             carte.classList.add("playableCard");
@@ -145,13 +146,16 @@ const makeCard = (element, imageId ) => {
         }
     })
     let textTnfo = element.mechanics;
-    let hp = element.hp;
-    // hp.classList.add("hp");
-    let atk = element.atk;
-    // atk.classList.add("atk");
-    let cost = element.cost;
-    // atk.classList.add("cost");
-    let baseHP = element.baseHP;
+    let hp = document.createElement("div");
+    hp.innerText = element.hp;
+    hp.classList.add("hp");
+    let atk = document.createElement("div");
+    atk.innerText = element.atk;
+    atk.classList.add("atk");
+    let cost = document.createElement("div");
+    cost.innerHTML = element.cost;
+    cost.classList.add("cost");
+    // let baseHP = element.baseHP;
     info.append(textTnfo);
     bold.append(textName);
     name.append(bold);
@@ -160,7 +164,11 @@ const makeCard = (element, imageId ) => {
     container.append(hp);
     container.append(atk);
     container.append(cost);
-    container.append(baseHP);
+    // container.append(baseHP);
+    }
+    else{
+        carte.classList.add("cardEnemy");
+      
     }
     carte.append(img);
     carte.append(container);
@@ -189,6 +197,7 @@ const cardImage= (id) => {
     }
     else {
         image =  "img/cardback.png";
+        
     }
     return image;
 }
