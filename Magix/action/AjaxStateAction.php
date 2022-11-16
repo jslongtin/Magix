@@ -28,7 +28,6 @@ class AjaxStateAction extends CommonAction
 				$result = parent::callAPI("games/action", $data);
 			}
 			else if ($_POST["type"] == "SURRENDER") {
-				
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "SURRENDER";
 				$result = parent::callAPI("games/action", $data);

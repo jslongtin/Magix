@@ -7,7 +7,8 @@ $data = $action->execute();
 require_once("partial/header.php");
 ?>
 
-<div id="deck">
+
+<div id="deck" data-card-location="hand" >
 
 	<div class="actionBar">
 		<button name="deck" onclick="modifierDeck()">Modifier son deck</button>
