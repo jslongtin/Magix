@@ -1,3 +1,22 @@
+let hand = document.querySelector("#card-container");
+let playerIcon = document.createElement("img");
+playerIcon.src = "img/CartesNum/1.png";
+playerIcon.alt = "playerIcon";
+playerIcon.style = "height:100px";
+
+let imageOpp = document.querySelector("#opponentIcon");
+
+let imagePlay = document.querySelector("#playerIcon");
+imagePlay.append(playerIcon);
+
+let opponent = document.querySelector("#opponent");
+
+let board = document.querySelector("#boardCardContainer");
+
+
+let isCardSelected = null;
+let boardCardOpponent = document.querySelector("#boardOpponentContainer");
+
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
@@ -17,17 +36,11 @@ const state = () => {
             let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
 
 
-            let hand = document.querySelector("#card-container");
-       
+
+
             // let opponentHand = document.querySelector("#opponentHand");
             // // opponentHand.innerHTML = null;
-            let opponent = document.querySelector("#opponent");
-           
-            let board = document.querySelector("#boardCardContainer");
-            
-            let boardCardOpponent = document.querySelector("#boardOpponentContainer");
-            
-            let isCardSelected = null;
+
             // faire methode refresh game pour l'utiliser dans le retour des actions
             if (data == "WAITING") {
 
@@ -43,52 +56,83 @@ const state = () => {
 }
 
 const refreshGame = (data) => {
-    
+    console.log(data);
     let main = data.hand;
-    let boardCards  = data.board;
+    let boardCards = data.board;
     let boardOpponent = data.opponent.board;
-    let opponentHandSize  = data.opponent.handSize;
-    let playerIcon = document.createElement("img");
-    playerIcon.src = "img/CartesNum/1.png";
-    playerIcon.alt = "playerIcon";
-    playerIcon.style = "height:100px";
+    let opponentHandSize = data.opponent.handSize;
 
-    let imageOpp = document.querySelector("#opponentIcon");
-    
-    let imagePlay = document.querySelector("#playerIcon");
-    imagePlay.append(playerIcon);
 
-//     <script>
+    //     <script>
     // 	node.setAttribute("data-card-location", "hand");
 
     // </script>
 
     // <div id="deck" data-card-location="hand" data-543=""></div>
 
-// regarder si les cartes dans le ajax sont dans la main sinon la créé et l'ajouter ,
-// si la carte est deja la , regarder si ses stats ont changer et les modifs au besoin
-// regarder si la main a plus de carte que le ajax si oui, faire remove child 
+    // regarder si les cartes dans le ajax sont dans la main sinon la créé et l'ajouter ,
+    // si la carte est deja la , regarder si ses stats ont changer et les modifs au besoin
+    // regarder si la main a plus de carte que le ajax si oui, faire remove child 
+    if (hand.childElementCount <= main.length) {
+        main.forEach(element => {
+            // si elle exite
+            let carteCourante = hand.querySelectorAll("data-uid");
+            carteCourante.forEach(e => {
+                if (e == element) {
+                    console.log("allo");
+                }
+                else {
+                    let carte = makeCard(element, element.id);
+                    carte.setAttribute("data-card-location", "hand");
+                    carte.setAttribute("data-id", element.id);
+                    hand.append(carte);
 
-    main.forEach(element => {
-        let carte = makeCard(element, element.id);
-        hand.append(carte);
+                    carte.onclick = () => {
+                        // play
+                        let formData = new FormData();
+                        formData.append("type", "PLAY");
+                        formData.append("uid", element.uid);
+                        formData.append("id", element.id);
+                        fetch("ajax-state.php", {
+                            method: "POST",
+                            body: formData
+                        })
+                            .then(response => response.json())
+                            .then(data => {
 
-        carte.onclick = () => {
-            // play
-            let formData = new FormData();
-            formData.append("type", "PLAY");
-            formData.append("uid", element.uid);
-            formData.append("id", element.id);
-            fetch("ajax-state.php", {
-                method: "POST",
-                body: formData
+                            });
+
+                    };
+                }
             })
-                .then(response => response.json())
-                .then(data => {
+        })
 
-                });
-        };
-    })
+
+
+
+
+    }
+    else if (hand.childElementCount > main.length) {
+        main.forEach(element => {
+            if (hand.querySelectorAll("data-id") == element) {
+                console.log("allo");
+
+            } else {
+                hand.removeChild(hand.querySelectorAll("data-id"));
+            }
+        })
+    }
+    // else if (hand.childElementCount == main.length){
+    //     main.forEach(element => {
+    //         let carteCourante = hand.querySelectorAll("data-id") ;
+    //         if(carteCourante.querySelector("atk").innerHTML != element.atk){
+    //             carteCourante.querySelector("atk").innerHTML == element.atk;
+    //         }
+
+
+    // })}
+
+
     for (let i = 0; i < opponentHandSize; i++) {
         let carte = makeCard(0, 102);
         opponent.append(carte);
@@ -129,18 +173,19 @@ const refreshGame = (data) => {
             }
         };
     })
-};
+
 }
 // methode de construction de carte pour eviter la repetition
 const makeCard = (element, imageId) => {
-    let img = document.createElement("img");
-    img.alt = "carte";
-    img.style = "width:100%";
-    img.src = cardImage(imageId);
+
     let carte = document.createElement("div");
 
     let container = document.createElement("div");
     if (element != 0) {
+        let img = document.createElement("img");
+        img.alt = "carte";
+        img.style = "width:100%";
+        img.src = cardImage(imageId);
         carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle") {
@@ -184,13 +229,15 @@ const makeCard = (element, imageId) => {
         container.append(hp);
         container.append(atk);
         container.append(cost);
+        carte.append(img);
         // container.append(baseHP);
     }
     else {
         carte.classList.add("cardEnemy");
+        carte.style.backgroundImage = "../img/cardback.png";
 
     }
-    carte.append(img);
+
     carte.append(container);
     return carte
 }
