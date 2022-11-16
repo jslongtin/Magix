@@ -13,7 +13,6 @@
             header("location:Lobby.php");
             exit;
         }
-        $getPop = StatsCardsDAO::getPopularite();
-        return compact("getPop");
+        
     }
 }

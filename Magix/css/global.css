@@ -84,11 +84,13 @@
  	background-image: url("../img/wallpaperbetter.com_1366x768.jpg");
  }
 
- .main {
+ #graphiques {
  	width: 95vw;
  	height: 80%;
  	padding: 20px;
  	margin: auto;
+	/* background-color: var(--gray); */
+	 
  }
 
  #deckAPI {

@@ -1,59 +1,78 @@
 <?php
-    require_once("action/DeckAction.php");
+require_once("action/DeckAction.php");
 
-    $action = new DeckAction();
-    $data = $action->execute();
+$action = new DeckAction();
+$data = $action->execute();
 
-    require_once("partial/header.php");
+require_once("partial/header.php");
 ?>
 
 <div id="deck">
-    
-    <div class="actionBar">
-    <button name="deck" onclick="modifierDeck()">Modifier son deck</button>
-    <form action="" method="post">
-        <button name="retour" type="submit">Retour</button>
-    </form>
-    </div>
-    <div class="main">
-    <!-- <iframe  id="deckAPI"  src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>"> -->
-    <!-- </iframe> -->
-    <div id="stats"> <canvas id="chart" style="width:100%;max-width:600px"></canvas></div>
-<script>
-    let titres = ["patate","fd","fds"];
-	let valeures = [10,11,12];
 
-	let couleurs = [];
-	// genere des couleurs aleatoires pour chaque id
-	let letters = "0123456789ABCDEF";
-	let color = "#";
-	for (let i = 0 ;i < titres.length;i++){
-		for (let i = 0 ;i < 6;i++){
-		color += letters[Math.floor(Math.random()*16)];
-	}
-		couleurs.push(color);
-		color = "#";
-	}
-	
-	console.log(couleurs);
-	new Chart("chart", {
-		type: "doughnut",
-		data: {
-			lables: titres,
-			datasets: [{
-				backgroundColor: couleurs,
-				data: valeures
-			}]
-		},
-		options: {
-			title: {
-				display: true,
-				text: "Popularitée des cartes"
+	<div class="actionBar">
+		<button name="deck" onclick="modifierDeck()">Modifier son deck</button>
+		<form action="" method="post">
+			<button name="retour" type="submit">Retour</button>
+		</form>
+	</div>
+	<div id="graphiques">
+		<!-- <iframe  id="deckAPI"  src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>"> -->
+		<!-- </iframe> -->
+		<div id="stats"> <canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
+
+		<script>
+			let xValues = [];
+			let yValues = [];
+			
+			let formData = new FormData();
+			formData.append("type", "BD");
+			fetch("ajax-state.php", {
+					method: "POST",
+					body: formData
+				})
+				.then(response => response.json())
+				.then(data => {
+					data.forEach(element => {
+						if (element.idcarte != null) {
+							xValues.push(JSON.stringify(element.idcarte));
+							yValues.push(element.count);
+						}
+					});
+				});
+			console.log(xValues);
+			console.log(yValues);
+
+			let  barColors = [];
+
+			// genere des  barColors aleatoires pour chaque id
+			let letters = "0123456789ABCDEF";
+			let color = "#";
+			for (let i = 0; i < 101; i++) {
+				for (let i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				 barColors.push(color);
+				color = "#";
 			}
-		}
-	});
-</script>    
+			console.log( barColors);
+			new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Popularitée des cartes"
+    }
+  }
+});
+		</script>
+	</div>
 </div>
-    </div>
 <?php
-    require_once("partial/footer.php");
+require_once("partial/footer.php");
