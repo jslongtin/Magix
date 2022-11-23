@@ -69,8 +69,10 @@ const graphiqueP =  () => {
 				color = "#";
 			}
 			console.log( barColors);
+
+			
 			new Chart("myChart", {
-  type: "pie",
+  type: 'pie',
   data: {
     labels: xValues,
     datasets: [{
@@ -80,6 +82,7 @@ const graphiqueP =  () => {
   },
   options: {
     title: {
+		// cutoutPercentage: 0.9
       display: true,
       text: "Popularitée des cartes en Pourcentage"
     }
