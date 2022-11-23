@@ -45,6 +45,11 @@
     
             return $statement->fetchAll();
         }
+        public static function clear(){
+            $connection = Connection::getConnection();
+            $statement = $connection->prepare("TRUNCATE TABLE statsCards" );
+            $statement->execute();
+        }
         
     }
     // public static function getAnswer(){
