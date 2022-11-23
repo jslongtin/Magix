@@ -1,23 +1,8 @@
-let imageOpp = document.querySelector("#opponentIcon");
-    
-        let imagePlay = document.querySelector("#playerIcon");
-        imagePlay.innerHTML = null;
-            // playerIcon.classList.add("playerIcon");
-           
-let opponentIcon = document.createElement("img");
-    opponentIcon.src = "img/Cartes/Reaper.png";
-    opponentIcon.style = "height:100px";
-    imageOpp.append(opponentIcon); 
-    let playerIcon = document.createElement("img");
-    playerIcon.src =  "img/CartesNum/1.png";
-    playerIcon.alt = "playerIcon";
-    playerIcon.style = "height:100px";
-    imagePlay.append(playerIcon);   
 
     let myHand = [];
     let opponantHand = [];
     let myBoard = [];
-    let opponetBoard = [];
+    let opponentBoard = [];
     let message = null;
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
@@ -32,7 +17,8 @@ const state = () => {
             // // opponentHand.innerHTML = null;
 
             if (data == "WAITING") {
-                //  message = document.querySelector("#game").innerHTML = "WAITING";
+                message = document.querySelector("#game");
+                message.setAttribute("id", "messageGame");
             }
             else if (data == "LAST_GAME_WON") {
                 //  message = document.querySelector("#game").innerHTML = "LAST_GAME_WON" ;
@@ -47,7 +33,7 @@ const state = () => {
             let mana = document.querySelector("#mana").innerHTML = data.mp;
             let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
             let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
-                    refreshGame(data);  
+                refreshGame(data);  
             }
 
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
@@ -55,35 +41,32 @@ const state = () => {
 }
 
 let refreshGame = (data) => {
-    // let myHand = [];
-    // let opponantHand = [];
-    // let myBoard = [];
-    // let opponetBoard = [];
-    if (JSON.stringify(data) != JSON.stringify(myHand)){
-    
-    }
-        
-    let hand = document.querySelector("#card-container");
-    hand.innerHTML = null;
-    
-    let opponent = document.querySelector("#opponent");
-    opponent.innerHTML = null;
-    
-    let board = document.querySelector("#boardCardContainer");
-    board.innerHTML = null;
-    
-    let isCardSelected = null;
-    let boardCardOpponent = document.querySelector("#boardOpponentContainer");
-    boardCardOpponent .innerHTML = null;
-   
-    let main = null;
-main = data.hand;
-let boardCards = null;
-boardCards = data.board;
-let boardOpponent = null;
-boardOpponent = data.opponent.board;
-let opponentHandSize = data.opponent.handSize;
-      
+    let imageOpp = document.querySelector("#opponentIcon");
+    let imagePlay = document.querySelector("#playerIcon");
+    imagePlay.innerHTML = null; 
+    imageOpp.innerHTML = null; 
+    // playerIcon.classList.add("playerIcon");
+
+    let opponentIcon = document.createElement("img");
+    opponentIcon.src = "img/Cartes/Reaper.png";
+    opponentIcon.style = "height:100px";
+    imageOpp.append(opponentIcon);
+    let playerIcon = document.createElement("img");
+    playerIcon.src = "img/CartesNum/1.png";
+    playerIcon.alt = "playerIcon";
+    playerIcon.style = "height:100px";
+    imagePlay.append(playerIcon);
+    imageOpp.onclick = () => {
+        if (isCardSelected != null) {
+            attack(isCardSelected, 0);
+            isCardSelected = null;
+        }
+    };
+    if (JSON.stringify(data.hand) != JSON.stringify(myHand)){
+        let hand = document.querySelector("#card-container");
+        hand.innerHTML = null;
+        let main = null;
+        main = data.hand; 
         main.forEach(element => {
             let carte = makeCard(element, element.id);
             hand.append(carte);
@@ -105,48 +88,66 @@ let opponentHandSize = data.opponent.handSize;
                     });
             };
         })
-   
+        myHand = data.hand
+    }
+    if (JSON.stringify(data.opponent.handSize) != JSON.stringify(opponantHand)){   
+        let opponentCards = document.querySelector("#opponentCards");
+        opponentCards.innerHTML = null;
+        let opponentHandSize = data.opponent.handSize;
+        for (let i = 0; i < opponentHandSize; i++) {
+            let carte = makeCard(0, 102);
+            opponentCards.append(carte);
+        }
+        opponantHand = data.opponent.handSize
+    }
+    if (JSON.stringify(data.board) != JSON.stringify(myBoard)){ 
+    
+        let board = document.querySelector("#boardCardContainer");
+        board.innerHTML = null;
+        let boardCards = null;
+        boardCards = data.board;
+        boardCards.forEach(element => {
+            let carte = makeCard(element, element.id);
+            board.append(carte);
+            carte.onclick = () => {
+                console.log("click");
+                carte.classList.add("isSelected");
+                isCardSelected = element.uid;
+            };
+        })
+        myBoard = data.board
+    }
+    if (JSON.stringify(data.opponent.board) != JSON.stringify(opponentBoard)) {
 
+        let boardOpponent = null;
+        boardOpponent = data.opponent.board;
+        let boardCardOpponent = document.querySelector("#boardOpponentContainer");
+        boardCardOpponent.innerHTML = null;
+        boardOpponent.forEach(element => {
+            let carte = makeCard(element, element.id);
+            boardCardOpponent.append(carte);
+            carte.onclick = () => {
+                if (isCardSelected != null) {
+                    attack(isCardSelected, element.uid);
+                    isCardSelected = null;
 
-    for (let i = 0; i < opponentHandSize; i++) {
-        let carte = makeCard(0, 102);
-        opponent.append(carte);
+                }
+            };
+        })
+        opponentBoard = data.opponent.board
     }
     
-    imageOpp.onclick = () => {
-        if (isCardSelected != null) {
-            attack(isCardSelected, 0);
-            isCardSelected = null;
-        }
-    };
-    let opponentHealth = data.opponent.hp;
-    opponent.append(opponentHealth);
-    let opponentMp = data.opponent.mp;
-    opponent.append(opponentMp);
-    let opponentRemainingCards = data.opponent.remainingCardsCount;
-    opponent.append(opponentRemainingCards);
-    boardCards.forEach(element => {
-        let carte = makeCard(element, element.id);
-        board.append(carte);
-        carte.onclick = () => {
-            console.log("click");
-            carte.classList.add("isSelected");
-            isCardSelected = element.uid;
-        };
-    })
-    boardOpponent.forEach(element => {
-        let carte = makeCard(element, element.id);
-        boardCardOpponent.append(carte);
-        carte.onclick = () => {
-            if (isCardSelected != null) {
-                attack(isCardSelected, element.uid);
-                isCardSelected = null;
-
-            }
-        };
-    })
-   
-}
+    let isCardSelected = null;
+    let opponentInfos = document.querySelector("#opponentInfo");
+    opponentInfos.innerHTML = null;
+    opponentHealth = data.opponent.hp;
+    opponentInfos.append(opponentHealth);
+    let opponentMp = null;
+    opponentMp = data.opponent.mp;
+    opponentInfos.append(opponentMp);
+    let opponentRemainingCards = null;
+    opponentRemainingCards = data.opponent.remainingCardsCount;
+    opponentInfos.append(opponentRemainingCards);
 
 }
 // methode de construction de carte pour eviter la repetition

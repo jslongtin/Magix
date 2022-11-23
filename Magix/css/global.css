@@ -7,12 +7,12 @@
  }
 
  :root {
- 	--gray: #43484c;
- 	--blue: #405275;
- 	--lightBlue: #218ffe;
- 	--black: #000000;
- 	--orange: #f06414;
- 	--white: #FFFFFF;
+ 	--gray: rgb(67, 72, 76);
+ 	--blue: rgb(64, 82, 117);
+ 	--lightBlue: rgb(33, 143, 254);
+ 	--black: rgb(0, 0, 0);
+ 	--orange: rgb(240, 100, 20);
+ 	--white: rgb(255, 255, 255);
  }
 
  html {
@@ -69,6 +69,12 @@
  	grid-template-rows: 1fr 0.2fr 3fr 0.2fr 2fr;
 	padding: 10px;
  }
+ /* #messageGame{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	
+} */
 
  #lobby {
  	background-image: url("../img/Lobby.jpg");
@@ -279,18 +285,17 @@
  	justify-content: space-evenly;
  }
 
- #opponent,
- #opponentHand {
- 	top: 0px;
- 	height: 100%;
- 	width: 100%;
- 	padding: 10px;
- 	border-radius: 10px;
+ #opponent,#opponentCards {
  	display: flex;
  	flex-direction: row;
- 	justify-content: flex-start;
+ 	justify-content: space-evenly;
  }
-
+#opponent{
+top: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	border-radius: 10px;}
  #info {
  	display: flex;
  	flex-direction: column;

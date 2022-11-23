@@ -11,6 +11,8 @@ require_once("partial/header.php");
   <!-- <iframe  style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
     </iframe> -->
   <div id="opponent">
+    <div id="opponentCards"></div>
+    <div id="opponentInfo"></div>
   </div>
   <div id="opponentIcon"></div>
   <div id="board">
