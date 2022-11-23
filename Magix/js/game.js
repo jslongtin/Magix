@@ -14,47 +14,58 @@ let opponentIcon = document.createElement("img");
     playerIcon.style = "height:100px";
     imagePlay.append(playerIcon);   
 
+    let myHand = [];
+    let opponantHand = [];
+    let myBoard = [];
+    let opponetBoard = [];
+    let message = null;
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
     })
         .then(response => response.json())
         .then(data => {
+           
+// json stringfy
+            
+            // let opponentHand = document.querySelector("#opponentHand");
+            // // opponentHand.innerHTML = null;
 
-            // console.log(data); // contient les cartes/état du jeu.
-            let node = document.querySelector("#message");
-            node.innerHTML = data;
-
-            // FAIRE healt bar
-            let healthbar = document.querySelector("#vies").innerHTML = data.hp;;
+            if (data == "WAITING") {
+                //  message = document.querySelector("#game").innerHTML = "WAITING";
+            }
+            else if (data == "LAST_GAME_WON") {
+                //  message = document.querySelector("#game").innerHTML = "LAST_GAME_WON" ;
+                }
+            else if (data == "LAST_GAME_LOST") {
+                // message = document.querySelector("#game").innerHTML = "LAST_GAME_LOST" ; 
+            }
+            else {
+                // message.innerHTML = null;
+                let healthbar = document.querySelector("#vies").innerHTML = data.hp;;
             let timer = document.querySelector("#timer").innerHTML = data.remainingTurnTime;
             let mana = document.querySelector("#mana").innerHTML = data.mp;
             let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
             let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
-
-
-
-
-            // let opponentHand = document.querySelector("#opponentHand");
-            // // opponentHand.innerHTML = null;
-
-            // faire methode refresh game pour l'utiliser dans le retour des actions
-            if (data == "WAITING") {
-
-            }
-            else if (data == "LAST_GAME_WON") { }
-            else if (data == "LAST_GAME_WON") { }
-            else {
-                refreshGame(data);
+                    refreshGame(data);  
             }
 
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
 
-const refreshGame = (data) => {
+let refreshGame = (data) => {
+    // let myHand = [];
+    // let opponantHand = [];
+    // let myBoard = [];
+    // let opponetBoard = [];
+    if (JSON.stringify(data) != JSON.stringify(myHand)){
+    
+    }
+        
     let hand = document.querySelector("#card-container");
     hand.innerHTML = null;
+    
     let opponent = document.querySelector("#opponent");
     opponent.innerHTML = null;
     
@@ -65,8 +76,6 @@ const refreshGame = (data) => {
     let boardCardOpponent = document.querySelector("#boardOpponentContainer");
     boardCardOpponent .innerHTML = null;
    
-    
-    
     let main = null;
 main = data.hand;
 let boardCards = null;
@@ -74,7 +83,7 @@ boardCards = data.board;
 let boardOpponent = null;
 boardOpponent = data.opponent.board;
 let opponentHandSize = data.opponent.handSize;
-        
+      
         main.forEach(element => {
             let carte = makeCard(element, element.id);
             hand.append(carte);
@@ -136,6 +145,8 @@ let opponentHandSize = data.opponent.handSize;
             }
         };
     })
+   
+}
 
 }
 // methode de construction de carte pour eviter la repetition

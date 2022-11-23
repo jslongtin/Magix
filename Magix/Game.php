@@ -24,7 +24,7 @@ require_once("partial/header.php");
   <div id="playerIcon"></div>
   <div id="player">
     <div id="info">
-      <div id="message"></div>
+     
 
       <!-- health bar -->
       <div id="healthBar">
