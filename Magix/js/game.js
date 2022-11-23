@@ -140,15 +140,15 @@ let opponentHandSize = data.opponent.handSize;
 }
 // methode de construction de carte pour eviter la repetition
 const makeCard = (element, imageId) => {
-
+   
     let carte = document.createElement("div");
 
     let container = document.createElement("div");
-    if (element != 0) {
-        let img = document.createElement("img");
+    let img = document.createElement("img");
         img.alt = "carte";
         img.style = "width:100%";
         img.src = cardImage(imageId);
+    if (element != 0) {
         carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle") {
@@ -192,15 +192,15 @@ const makeCard = (element, imageId) => {
         container.append(hp);
         container.append(atk);
         container.append(cost);
-        carte.append(img);
+        
         // container.append(baseHP);
     }
     else {
         carte.classList.add("cardEnemy");
-        carte.style.backgroundImage = "../img/cardback.png";
+        // carte.style.backgroundImage = "../img/cardback.png";
 
     }
-
+    carte.append(img);
     carte.append(container);
     return carte
 }
