@@ -78,7 +78,10 @@
  #lobby {
  	background-image: url("../img/Lobby.jpg");
  	display: grid;
- 	grid-template-areas: 'bouttons chat';
+ 	grid-template-areas: 
+	'bouttons chat'
+	'heros heros'
+	;
  }
 
  #index {
@@ -519,38 +522,54 @@ display: block;
 
 
  .heroSelectionGallery {
- 	display: grid;
- 	height: 600px;
+	grid-area: heros;
+ 	display: flex;
+	flex-direction: column;
+ 	height: 300px;
  	width: 100%;
- 	grid-template-columns: 1fr;
- 	grid-template-rows: 83px 1fr;
- 	grid-template-areas: "heroes" "select";
+	justify-content: center;
+	align-items: center;
+ 	/* grid-template-columns: 1fr 1fr;
+ 	grid-template-rows:  1fr ;
+ 	grid-template-areas: 
+	"heroes" 
+	"select"; */
+
  }
 
 
-
-
-
- .heroes {
- 	grid-area: heroes;
- 	display: grid;
- 	-webkit-box-pack: center;
- 	-ms-flex-pack: center;
- 	justify-content: center;
- 	grid-template-columns: 241px 213px 206px 177px;
- 	grid-column-gap: 32px;
+ #heroes {
+ 	/* grid-area: heroes; */
+ 	display: flex;
+	flex-direction: row;
+	/* grid-template-columns: 1fr 1fr 1fr; 
+ 	grid-template-rows:  1fr ;
+ 	grid-template-areas: "tanks" "dps" "support"; */
+ 	/* -webkit-box-pack: center;
+ 	-ms-flex-pack: center; */
+ 	/* justify-content: center; */
+ 	/* grid-template-columns: 241px 213px 206px 177px;
+ 	grid-column-gap: 32px; */
  }
+.tanks,.dps,.support{
+	display: flex;
+	flex-direction: column;
+}
+.row1,.row2{
+	display: flex;
+	flex-direction: row;
+}
 
- .heroes .category {
+/* .category {
  	display: -webkit-box;
  	display: -ms-flexbox;
  	display: flex;
  	-webkit-box-align: center;
  	-ms-flex-align: center;
  	align-items: center;
- }
+ } */
 
- .option {
+ .hero {
  	width: 30px;
  	height: 44px;
  	background-color: var(--white);
@@ -567,7 +586,7 @@ display: block;
  	transition-duration: 25ms;
  }
 
- .option:hover {
+ .hero:hover {
  	-webkit-transform: scale(1.15) skewX(-15deg) translate(-2px, 2px);
  	transform: scale(1.15) skewX(-15deg) translate(-2px, 2px);
  	-webkit-box-shadow: 0px 0px 0px 3px #fff;
@@ -577,12 +596,12 @@ display: block;
  }
 
  .select {
- 	grid-area: select;
+ 	/* grid-area: select;
  	display: -webkit-box;
  	display: -ms-flexbox;
  	display: flex;
  	-webkit-box-pack: center;
- 	-ms-flex-pack: center;
+ 	-ms-flex-pack: center; */
  	justify-content: center;
  }
 
@@ -604,17 +623,10 @@ display: block;
  }
 
 
- .gameinfo .character {
- 	font-size: 55px;
- 	font-style: italic;
- 	color: #fff;
- 	position: relative;
- 	top: 13px;
- 	left: -12px;
- }
+ 
 
  /*Assets*/
-
+/* 
  .option.genji {
  	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/genji.png);
  }
@@ -739,4 +751,4 @@ display: block;
  [hero=tracer] {
  	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/tracer.png);
  	background-position: 19px 2px;
- }
+ } */
