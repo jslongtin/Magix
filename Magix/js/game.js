@@ -1,21 +1,18 @@
-let hand = document.querySelector("#card-container");
-let playerIcon = document.createElement("img");
-playerIcon.src = "img/CartesNum/1.png";
-playerIcon.alt = "playerIcon";
-playerIcon.style = "height:100px";
-
 let imageOpp = document.querySelector("#opponentIcon");
-
-let imagePlay = document.querySelector("#playerIcon");
-imagePlay.append(playerIcon);
-
-let opponent = document.querySelector("#opponent");
-
-let board = document.querySelector("#boardCardContainer");
-
-
-let isCardSelected = null;
-let boardCardOpponent = document.querySelector("#boardOpponentContainer");
+    
+        let imagePlay = document.querySelector("#playerIcon");
+        imagePlay.innerHTML = null;
+            // playerIcon.classList.add("playerIcon");
+           
+let opponentIcon = document.createElement("img");
+    opponentIcon.src = "img/Cartes/Reaper.png";
+    opponentIcon.style = "height:100px";
+    imageOpp.append(opponentIcon); 
+    let playerIcon = document.createElement("img");
+    playerIcon.src =  "img/CartesNum/1.png";
+    playerIcon.alt = "playerIcon";
+    playerIcon.style = "height:100px";
+    imagePlay.append(playerIcon);   
 
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
@@ -56,91 +53,58 @@ const state = () => {
 }
 
 const refreshGame = (data) => {
-    console.log(data);
-    let main = data.hand;
-    let boardCards = data.board;
-    let boardOpponent = data.opponent.board;
-    let opponentHandSize = data.opponent.handSize;
-
-
-    //     <script>
-    // 	node.setAttribute("data-card-location", "hand");
-
-    // </script>
-
-    // <div id="deck" data-card-location="hand" data-543=""></div>
-
-    // regarder si les cartes dans le ajax sont dans la main sinon la créé et l'ajouter ,
-    // si la carte est deja la , regarder si ses stats ont changer et les modifs au besoin
-    // regarder si la main a plus de carte que le ajax si oui, faire remove child 
-    if (hand.childElementCount <= main.length) {
+    let hand = document.querySelector("#card-container");
+    hand.innerHTML = null;
+    let opponent = document.querySelector("#opponent");
+    opponent.innerHTML = null;
+    
+    let board = document.querySelector("#boardCardContainer");
+    board.innerHTML = null;
+    
+    let isCardSelected = null;
+    let boardCardOpponent = document.querySelector("#boardOpponentContainer");
+    // boardCardOpponent .innerHTML = null;
+   
+    
+    
+    let main = null;
+main = data.hand;
+let boardCards = null;
+boardCards = data.board;
+let boardOpponent = null;
+boardOpponent = data.opponent.board;
+let opponentHandSize = null;
+opponentHandSize = data.opponent.handSize;
+        
         main.forEach(element => {
-            // si elle exite
-            let carteCourante = hand.querySelectorAll("data-uid");
-            carteCourante.forEach(e => {
-                if (e == element) {
-                    console.log("allo");
-                }
-                else {
-                    let carte = makeCard(element, element.id);
-                    carte.setAttribute("data-card-location", "hand");
-                    carte.setAttribute("data-id", element.id);
-                    hand.append(carte);
-
-                    carte.onclick = () => {
-                        // play
-                        let formData = new FormData();
-                        formData.append("type", "PLAY");
-                        formData.append("uid", element.uid);
-                        formData.append("id", element.id);
-                        fetch("ajax-state.php", {
-                            method: "POST",
-                            body: formData
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-
-                            });
-
-                    };
-                }
-            })
+            let carte = makeCard(element, element.id);
+            hand.append(carte);
+            
+            carte.onclick = () => {
+                // play
+                let formData = new FormData();
+                formData.append("type", "PLAY");
+                formData.append("uid", element.uid);
+                formData.append("id", element.id);
+                fetch("ajax-state.php", {   
+                    method: "POST",
+                    body: formData      
+                })
+                    .then(response => response.json())
+                    .then(data => {
+            
+                    
+                    });
+            };
         })
-
-
-
-
-
-    }
-    else if (hand.childElementCount > main.length) {
-        main.forEach(element => {
-            if (hand.querySelectorAll("data-id") == element) {
-                console.log("allo");
-
-            } else {
-                hand.removeChild(hand.querySelectorAll("data-id"));
-            }
-        })
-    }
-    // else if (hand.childElementCount == main.length){
-    //     main.forEach(element => {
-    //         let carteCourante = hand.querySelectorAll("data-id") ;
-    //         if(carteCourante.querySelector("atk").innerHTML != element.atk){
-    //             carteCourante.querySelector("atk").innerHTML == element.atk;
-    //         }
-
-
-    // })}
+   
 
 
     for (let i = 0; i < opponentHandSize; i++) {
         let carte = makeCard(0, 102);
         opponent.append(carte);
     }
-    let opponentIcon = document.createElement("img");
-    opponentIcon.src = "img/Cartes/Reaper.png";
-    opponentIcon.style = "height:100px";
-    imageOpp.append(opponentIcon);
+    
     imageOpp.onclick = () => {
         if (isCardSelected != null) {
             attack(isCardSelected, 0);
@@ -373,3 +337,69 @@ window.addEventListener("load", () => {
             //     "welcomeText": "Agility is the key"
             // },
             // data.latestActions []
+
+
+
+
+
+
+            
+    // //     <script>
+    // // 	node.setAttribute("data-card-location", "hand");
+
+    // // </script>
+
+    // // <div id="deck" data-card-location="hand" data-543=""></div>
+
+    // // regarder si les cartes dans le ajax sont dans la main sinon la créé et l'ajouter ,
+    // // si la carte est deja la , regarder si ses stats ont changer et les modifs au besoin
+    // // regarder si la main a plus de carte que le ajax si oui, faire remove child 
+    // if (hand.childElementCount <= main.length) {
+    //     main.forEach(element => {
+    //         // si elle exite
+    //         let carteCourante = hand.querySelectorAll("data-uid");
+    //         carteCourante.forEach(e => {
+    //             if (e == element) {
+    //                 console.log("allo");
+    //             }
+    //             else {
+    //                 let carte = makeCard(element, element.id);
+    //                 carte.setAttribute("data-card-location", "hand");
+    //                 carte.setAttribute("data-id", element.id);
+    //                 hand.append(carte);
+
+    //                 carte.onclick = () => {
+    //                     // play
+    //                     let formData = new FormData();
+    //                     formData.append("type", "PLAY");
+    //                     formData.append("uid", element.uid);
+    //                     formData.append("id", element.id);
+    //                     fetch("ajax-state.php", {
+    //                         method: "POST",
+    //                         body: formData
+    //                     })
+    //                         .then(response => response.json())
+    //                         .then(data => {
+
+    //                         });
+
+    //                 };
+    //             }
+    //         })
+    //     })
+
+
+
+
+
+    // }
+    // else if (hand.childElementCount > main.length) {
+    //     main.forEach(element => {
+    //         if (hand.querySelectorAll("data-id") == element) {
+    //             console.log("allo");
+
+    //         } else {
+    //             hand.removeChild(hand.querySelectorAll("data-id"));
+    //         }
+    //     })
+    // }

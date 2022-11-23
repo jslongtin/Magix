@@ -38,7 +38,7 @@ const graphiqueP =  () => {
 					body: formData
 				})
 				.then(response => response.json())
-				.then(data => {
+        		.then(data => {
 					data.forEach(element => {
 
 						if (element.idcarte != null) {
