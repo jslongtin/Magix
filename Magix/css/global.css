@@ -18,7 +18,7 @@
  html {
  	font-size: 16px;
  	font-family: 'Bebas Neue', sans-serif;
-	 overflow: hidden;
+ 	overflow: hidden;
  }
 
  button[type="submit"],
@@ -50,10 +50,7 @@
  	background-color: var(--blue);
  }
 
- #index,
- #lobby,
- #deck,
- #game {
+ #index, #lobby, #deck, #game {
  	height: 100vh;
  	width: 100vw;
  	align-items: center;
@@ -66,9 +63,11 @@
  	background-image: url("../img/omnic-3-1573084850059.jpg");
  	display: grid;
  	grid-template-columns: 1fr;
- 	grid-template-rows: 1fr 0.2fr 3fr 0.2fr 2fr;
-	padding: 10px;
+ 	grid-template-rows: 1fr 3fr 2fr;
+ 	/* grid-template-rows: 1fr 0.2fr 3fr 0.2fr 2fr; */
+ 	padding: 10px;
  }
+
  /* #messageGame{
 	position: absolute;
 	width: 100vw;
@@ -96,15 +95,15 @@
  	height: 80vw;
  	padding: 20px;
  	margin: auto;
-	background-color: var(--gray);
-	 
+ 	background-color: var(--gray);
+
  }
 
  #deckAPI {
  	width: 100%;
  	height: 100%;
  	background-color: var(--burgundy);
-	visibility:hidden;
+ 	visibility: hidden;
  }
 
  .ConnexionBox {
@@ -155,8 +154,8 @@
 
  #buttonsLobby {
  	grid-area: bouttons;
-	display: flex;
-	flex-direction: column;
+ 	display: flex;
+ 	flex-direction: column;
  	width: 30vw;
  	height: 80vh;
 
@@ -167,9 +166,10 @@
  }
 
  /* card */
- .card , .cardEnemy{
- 	width: 140px;
- 	
+ .card,
+ .cardEnemy {
+
+
  	background-color: var(--blue);
  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
  	transition: 0.5s;
@@ -179,19 +179,24 @@
  	flex-direction: column;
  	color: var(--black);
  }
- .cardEnemy{
-	height: 100px;
-	
+
+ .cardEnemy {
+ 	height: 100px;
+ 	width: 70px;
+ 	background-image: url("../img/cardback.png");
+ 	background-size: cover;
  }
- .card{
-	height: 200px;
+
+ .card, .container {
+ 	height: 180px;
+ 	width: 100px;
  }
 
  /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
- .playableCard {
+ /* .playableCard {
  	position: relative;
  	bottom: 20px;
- }
+ } */
 
  .hp {
  	color: red;
@@ -226,7 +231,7 @@
  /* On mouse-over, add a deeper shadow */
  .card:hover {
  	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-	opacity: 0.5;
+ 	opacity: 0.5;
  }
 
  /* Add some padding inside the card container */
@@ -234,7 +239,7 @@
  	padding: 2px 16px;
  	background-color: var(--lightBlue);
  	height: 35%;
-	 position: relative;
+ 	position: relative;
  }
 
  #card-container {
@@ -246,28 +251,22 @@
  	justify-content: space-evenly;
  	justify-self: end;
  	padding: 10px;
-	 padding-bottom: 20px;
+ 	padding-bottom: 20px;
  	border-radius: 10px;
  }
 
- /* .playerIcon {
- 	position: absolute;
-	 bottom: 200px;
-	 width: 100px;
-	 height: 100px;
- } */
 
  #board {
  	display: flex;
  	flex-direction: column;
- 	justify-content: space-evenly;
- 	/* height: 100%; */
+ 	justify-content: center;
+ 	height: 100%;
  	width: 100%;
+ 	position: relative;
  }
 
- #boardCardContainer,
- #boardOpponentContainer {
- 	/* height: 50%; */
+ #boardCardContainer, #boardOpponentContainer {
+ 	height: 50%;
  	height: auto;
  	width: 80%;
  	display: flex;
@@ -285,17 +284,21 @@
  	justify-content: space-evenly;
  }
 
- #opponent,#opponentCards {
+ #opponent, #opponentCards {
  	display: flex;
  	flex-direction: row;
  	justify-content: space-evenly;
  }
-#opponent{
-top: 0px;
-	height: 100%;
-	width: 100%;
-	padding: 10px;
-	border-radius: 10px;}
+
+ #opponent {
+ 	top: 0px;
+ 	height: 100%;
+ 	width: 100%;
+ 	padding: 10px;
+ 	border-radius: 10px;
+ 	position: relative;
+ }
+
  #info {
  	display: flex;
  	flex-direction: column;
@@ -308,14 +311,14 @@ top: 0px;
  	flex-direction: row;
  	/* height: 100%; */
  	width: 100%;
-	padding-bottom: 20px;
+ 	padding-bottom: 20px;
  }
 
  #healthBar {
  	height: auto;
  	width: auto;
  	color: var(--orange);
-	 background-color: var(--blue);
+ 	background-color: var(--blue);
 
  }
 
@@ -326,37 +329,44 @@ top: 0px;
  	min-width: 100px;
  	align-items: center;
  	justify-content: center;
+ 	width: 20%;
  }
- #opponentIcon, #playerIcon{
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	
+
+ #opponentIcon, #playerIcon {
+ 	position: absolute;
+ 	right: 0px;
+
  }
- #turn{
-	 color: var(--white);
-	 width: 50px;
-	 background-color: var(--orange);
+
+ #turn {
+ 	color: var(--white);
+ 	width: 50px;
+ 	background-color: var(--orange);
  }
- #mana{
-	 color: var(--white);
-	 background-color: var(--lightBlue);
-	 width: 50px;
+
+ #mana {
+ 	color: var(--white);
+ 	background-color: var(--lightBlue);
+ 	width: 50px;
  }
-#timer{
-	color: var(--orange);
-	background-color: var(--black);
-	width: 50px;
-}
-#remaining{
-	color: var(--orange);
-	background-color: var(--black);
-	width: 50px;
-}
-.isSelected{
-	background-color: var(--orange);
-}
-/* canvas{
+
+ #timer {
+ 	color: var(--orange);
+ 	background-color: var(--black);
+ 	width: 50px;
+ }
+
+ #remaining {
+ 	color: var(--orange);
+ 	background-color: var(--black);
+ 	width: 50px;
+ }
+
+ .isSelected {
+ 	background-color: var(--orange);
+ }
+
+ /* canvas{
 width: 500px;
 height: 500px;
 display: block;

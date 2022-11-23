@@ -4,6 +4,28 @@
     let myBoard = [];
     let opponentBoard = [];
     let message = null;
+    let isCardSelected = null;
+
+
+    let hand = document.querySelector("#card-container");
+    let opponent= document.querySelector("#opponent");
+    let playerImage = document.querySelector("#card-container");
+    let opponentImage= document.querySelector("#opponent");
+    let opponentIcon = document.createElement("img");
+    opponentIcon.src = "img/Cartes/Reaper.png";
+    opponentIcon.style = "height:100px";
+    opponentImage.append(opponentIcon);
+    let playerIcon = document.createElement("img");
+    playerIcon.src = "img/CartesNum/1.png";
+    playerIcon.alt = "playerIcon";
+    playerIcon.style = "height:100px";
+    playerImage.append(playerIcon);
+    opponentIcon.onclick = () => {
+        if (isCardSelected != null) {
+            attack(isCardSelected, 0);
+            isCardSelected = null;
+        }
+    };
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
@@ -17,8 +39,8 @@ const state = () => {
             // // opponentHand.innerHTML = null;
 
             if (data == "WAITING") {
-                message = document.querySelector("#game");
-                message.setAttribute("id", "messageGame");
+                // message = document.querySelector("#game");
+                // message.setAttribute("id", "messageGame");
             }
             else if (data == "LAST_GAME_WON") {
                 //  message = document.querySelector("#game").innerHTML = "LAST_GAME_WON" ;
@@ -33,40 +55,23 @@ const state = () => {
             let mana = document.querySelector("#mana").innerHTML = data.mp;
             let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
             let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
-                refreshGame(data);  
+            
+            refreshGame(data);  
             }
-
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
 
 let refreshGame = (data) => {
-    let imageOpp = document.querySelector("#opponentIcon");
-    let imagePlay = document.querySelector("#playerIcon");
-    imagePlay.innerHTML = null; 
-    imageOpp.innerHTML = null; 
+    // let imageOpp = document.querySelector("#opponentIcon");
+    // let imagePlay = document.querySelector("#playerIcon");
+    // imagePlay.innerHTML = null; 
+    // imageOpp.innerHTML = null; 
     // playerIcon.classList.add("playerIcon");
-
-    let opponentIcon = document.createElement("img");
-    opponentIcon.src = "img/Cartes/Reaper.png";
-    opponentIcon.style = "height:100px";
-    imageOpp.append(opponentIcon);
-    let playerIcon = document.createElement("img");
-    playerIcon.src = "img/CartesNum/1.png";
-    playerIcon.alt = "playerIcon";
-    playerIcon.style = "height:100px";
-    imagePlay.append(playerIcon);
-    imageOpp.onclick = () => {
-        if (isCardSelected != null) {
-            attack(isCardSelected, 0);
-            isCardSelected = null;
-        }
-    };
+    
     if (JSON.stringify(data.hand) != JSON.stringify(myHand)){
-        let hand = document.querySelector("#card-container");
         hand.innerHTML = null;
-        let main = null;
-        main = data.hand; 
+        let main = data.hand; 
         main.forEach(element => {
             let carte = makeCard(element, element.id);
             hand.append(carte);
@@ -84,7 +89,6 @@ let refreshGame = (data) => {
                     .then(response => response.json())
                     .then(data => {
             
-                    
                     });
             };
         })
@@ -137,7 +141,8 @@ let refreshGame = (data) => {
         opponentBoard = data.opponent.board
     }
     
-    let isCardSelected = null;
+    
+  
     let opponentInfos = document.querySelector("#opponentInfo");
     opponentInfos.innerHTML = null;
     opponentHealth = data.opponent.hp;
@@ -156,11 +161,12 @@ const makeCard = (element, imageId) => {
     let carte = document.createElement("div");
 
     let container = document.createElement("div");
-    let img = document.createElement("img");
+   
+    if (element != 0) {
+        let img = document.createElement("img");
         img.alt = "carte";
         img.style = "width:100%";
         img.src = cardImage(imageId);
-    if (element != 0) {
         carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle") {
@@ -204,15 +210,16 @@ const makeCard = (element, imageId) => {
         container.append(hp);
         container.append(atk);
         container.append(cost);
-        
+        carte.append(img);
         // container.append(baseHP);
     }
     else {
         carte.classList.add("cardEnemy");
-        // carte.style.backgroundImage = "../img/cardback.png";
+     
+        
 
     }
-    carte.append(img);
+    
     carte.append(container);
     return carte
 }

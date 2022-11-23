@@ -11,8 +11,8 @@ require_once("partial/header.php");
 <div id="deck">
 
 	<div class="actionBar">
-		<button name="deck" onclick="modifierDeck()">Modifier son deck</button>
-		<button name="graph" onload="graphiqueP()">graph</button>
+		<button name="deck" onclick="modifierDeck()" type="submit">Modifier son deck</button>
+		<button name="graph" onload="graphiqueP()" type="submit">graph</button>
 		
 
 		<form action="" method="post">
