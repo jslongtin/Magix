@@ -11,7 +11,7 @@
  	--blue: rgb(64, 82, 117);
  	--lightBlue: rgb(33, 143, 254);
  	--black: rgb(0, 0, 0);
- 	--orange: rgb(240, 100, 20);
+ 	--orange: rgb(250, 156, 29);
  	--white: rgb(255, 255, 255);
  }
 
@@ -371,3 +371,145 @@ width: 500px;
 height: 500px;
 display: block;
 } */
+
+ .overwatch-loader {
+ 	width: 300px;
+	
+ 	position: absolute;
+ 	margin: 0px auto;
+ 	right: 0px;
+ 	bottom: 0;
+ }
+
+ .overwatch-logo {
+ 	filter:
+ 		drop-shadow(0 0 120px rgba(255, 255, 255, 0.15)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.05));
+ 	opacity: 0.8;
+ }
+
+ .circularCW,
+ .circularCCW {
+ 	height: 100%;
+ 	transform-origin: center center;
+ 	width: 100%;
+ 	position: absolute;
+ 	top: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	margin: auto;
+ }
+
+ .circularCW {
+ 	animation: rotate 2s linear infinite;
+ }
+
+ .circularCCW {
+ 	animation: rotate-reverse 4s linear infinite;
+ }
+
+ .path,
+ .path2,
+ .path3,
+ .path4,
+ .path5,
+ .path6,
+ .path7,
+ .path8 {
+ 	stroke-linecap: square;
+ 	stroke-width: 33;
+ 	opacity: 0.8;
+ }
+
+ .path {
+ 	stroke-dasharray: 1400, 2600;
+ 	stroke-dashoffset: 0;
+ 	animation: dash 3.7s ease-in-out infinite;
+ 	opacity: 0.3;
+ }
+
+ .path2 {
+ 	stroke-dasharray: 40, 2600;
+ 	stroke-dashoffset: -500px;
+ }
+
+ .path3 {
+ 	stroke-dasharray: 200, 2600;
+ 	stroke-dashoffset: -700px;
+ }
+
+ .path4 {
+ 	stroke-dasharray: 40, 2600;
+ 	stroke-dashoffset: -2000px;
+ 	animation: dash2 2.5s ease-in-out infinite;
+ }
+
+ .path5 {
+ 	stroke-dasharray: 200, 2600;
+ 	stroke-dashoffset: 0;
+ }
+
+ .path6 {
+ 	stroke-dasharray: 300, 2600;
+ 	stroke-dashoffset: -1000px;
+ }
+
+ .path7 {
+ 	stroke-dasharray: 40, 2600;
+ 	stroke-dashoffset: -1200px;
+ }
+
+ .path8 {
+ 	stroke-dasharray: 100, 2600;
+ 	stroke-dashoffset: -300px;
+ }
+
+ @keyframes rotate {
+ 	100% {
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @keyframes rotate-reverse {
+ 	100% {
+ 		transform: rotate(-360deg);
+ 	}
+ }
+
+ @keyframes dash {
+ 	0% {
+ 		stroke-dasharray: 2000, 2600;
+ 		stroke-dashoffset: 0;
+ 	}
+
+ 	50% {
+ 		stroke-dasharray: 2400, 2600;
+ 		stroke-dashoffset: -500px;
+ 	}
+
+ 	100% {
+ 		stroke-dasharray: 2000, 2600;
+ 		stroke-dashoffset: 0;
+ 	}
+ }
+
+ @keyframes dash2 {
+ 	0% {
+ 		stroke-dasharray: 100, 2600;
+ 		stroke-dashoffset: -2000px;
+ 	}
+
+ 	50% {
+ 		stroke-dasharray: 500, 2600;
+ 		stroke-dashoffset: -1000px;
+ 	}
+
+ 	100% {
+ 		stroke-dasharray: 100, 2600;
+ 		stroke-dashoffset: -1960px;
+ 	}
+ }
+
+ body {
+ 	background: #333;
+ }
