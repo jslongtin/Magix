@@ -149,6 +149,8 @@
 
  #buttonsLobby {
  	grid-area: bouttons;
+	display: flex;
+	flex-direction: column;
  	width: 30vw;
  	height: 80vh;
 
@@ -164,7 +166,7 @@
  	
  	background-color: var(--blue);
  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
- 	transition: 0.3s;
+ 	transition: 0.5s;
  	border-radius: 5px;
  	/* 5px rounded corners */
  	display: flex;
@@ -349,7 +351,8 @@
 .isSelected{
 	background-color: var(--orange);
 }
-canvas{
-width: 100%;
-height: 100%;
-}
+/* canvas{
+width: 500px;
+height: 500px;
+display: block;
+} */

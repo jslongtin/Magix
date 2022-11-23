@@ -8,7 +8,8 @@ require_once("partial/header.php");
 ?>
 <script defer src="js/game.js"></script>
 <div id="game">
-
+  <!-- <iframe  style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+    </iframe> -->
   <div id="opponent">
   </div>
   <div id="opponentIcon"></div>

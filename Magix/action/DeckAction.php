@@ -8,11 +8,19 @@
         }
 
         protected function executeAction() {
+            // $result = "";
+            // if (isset($_POST["graph"])) {
+                
+            //         $result = StatsCardsDAO::getPopularite();
+               
+                
+            // }
+            
         
-        if (isset($_POST["retour"])){
+         if (isset($_POST["retour"])){
             header("location:Lobby.php");
             exit;
         }
-        
+        // return compact("result");
     }
 }

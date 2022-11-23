@@ -63,7 +63,7 @@ const refreshGame = (data) => {
     
     let isCardSelected = null;
     let boardCardOpponent = document.querySelector("#boardOpponentContainer");
-    // boardCardOpponent .innerHTML = null;
+    boardCardOpponent .innerHTML = null;
    
     
     
@@ -73,8 +73,7 @@ let boardCards = null;
 boardCards = data.board;
 let boardOpponent = null;
 boardOpponent = data.opponent.board;
-let opponentHandSize = null;
-opponentHandSize = data.opponent.handSize;
+let opponentHandSize = data.opponent.handSize;
         
         main.forEach(element => {
             let carte = makeCard(element, element.id);
