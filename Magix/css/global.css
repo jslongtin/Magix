@@ -10,6 +10,7 @@
  	--gray: rgb(67, 72, 76);
  	--grayOpp: 67, 72, 76;
  	--blue: rgb(64, 82, 117);
+ 	--blueBoard: 64, 82, 117;
  	--lightBlue: rgb(33, 143, 254);
  	--lightBlueStats: 33, 143, 254;
  	--black: rgb(0, 0, 0);
@@ -304,11 +305,12 @@
  }
 
  /* Add rounded corners to the top left and the top right corner of the image */
- img {
+ .img {
  	border-radius: 5px 5px 0 0;
  	height: 65%;
  	width: fit-content;
- 	height: fit-content;
+ 	max-width: 100px;
+ 	max-height: 100px;
  }
 
  .imgCard {
@@ -337,7 +339,7 @@
  }
 
  #card-container {
- 	background-color: var(--gray);
+
  	width: 70%;
  	height: 100%;
  	display: flex;
@@ -348,7 +350,19 @@
  	padding-bottom: 20px;
  	border-radius: 10px;
  }
-
+ #opponentCards{
+	
+ 	width: 70%;
+ 	height: 100%;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: center;
+ 	justify-self: end;
+ 	padding: 10px;
+ 	padding-bottom: 20px;
+ 	border-radius: 10px;
+	padding-right: 20%;
+}
  #action-buttons, #card-container, #info, #opponentInfo, #graphiques, .hp {
  	align-items: center;
  	justify-content: center;
@@ -382,23 +396,22 @@
  	justify-content: space-evenly;
  }
 
- #opponent,
- #opponentCards {
- 	display: flex;
- 	flex-direction: row;
- 	justify-content: space-evenly;
- }
+
 
  #opponent {
+	display: flex;
+ 	flex-direction: row;
+ 	justify-content: space-evenly;
  	top: 0px;
  	height: 100%;
  	width: 100%;
  	padding: 10px;
  	border-radius: 10px;
  	position: relative;
+	background-color: rgba(var(--blueBoard),0.5);
  }
 
- #info {
+ #info, #opponentInfo {
  	display: flex;
  	flex-direction: column;
  	width: 20%;
@@ -410,7 +423,7 @@
  	flex-direction: row;
  	height: 100%;
  	width: 100%;
-
+	background-color: rgba(var(--blueBoard),0.5);
  	justify-content: center;
  	align-items: center;
  }

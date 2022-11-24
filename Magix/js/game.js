@@ -13,7 +13,8 @@
     let opponentImage= document.querySelector("#opponentIcon");
     let opponentIcon = document.createElement("img");
     opponentIcon.src = "img/Cartes/Reaper.png";
-    opponentIcon.style = "height:100px";
+    opponentIcon.classList.add("img");
+   
     opponentImage.append(opponentIcon);
     let playerIcon = document.createElement("img");
     let formData = new FormData();
@@ -29,7 +30,7 @@
                     });
   
     playerIcon.alt = "playerIcon";
-    playerIcon.style = "height:100px";
+    playerIcon.classList.add("img");
     playerImage.append(playerIcon);
     opponentIcon.onclick = () => {
         if (isCardSelected != null) {
@@ -60,7 +61,11 @@ const state = () => {
             }
             else {
                 // message.innerHTML = null;
-            
+                let healthbar = document.querySelector("#vies").innerHTML = data.hp;;
+                let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
+                let mana = document.querySelector("#mana").innerHTML = data.mp;
+                let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
+                let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
             
             refreshGame(data);  
             }
@@ -69,11 +74,7 @@ const state = () => {
 }
 
 let refreshGame = (data) => {
-    let healthbar = document.querySelector("#vies").innerHTML = data.hp;;
-    let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
-    let mana = document.querySelector("#mana").innerHTML = data.mp;
-    let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
-    let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
+   
   
     
     if (JSON.stringify(data.hand) != JSON.stringify(myHand)){
