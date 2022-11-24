@@ -191,22 +191,22 @@ const makeCard = (element, imageId) => {
         let textName = element.id;
         let bold = document.createElement("b");
         let info = document.createElement("p");
-        element.mechanics.forEach(e => {
-            if (e == "taunt") {
-                // image taunt
-            }
-            else if (e == "charge") {
-                // image charge
-            }
-            else if (e == " stealth ") {
-                // 
-            }
-            else if (e == "confused ") {
+        // element.mechanics.forEach(e => {
+        //     if (e == "taunt") {
+        //         // image taunt
+        //     }
+        //     else if (e == "charge") {
+        //         // image charge
+        //     }
+        //     else if (e == " stealth ") {
+        //         // 
+        //     }
+        //     else if (e == "confused ") {
 
-            }
-        })
+        //     }
+        // })
         let textTnfo = element.mechanics;
-        let hp = document.createElement("div");
+        let hp = document.createElement("div"); 
         hp.innerText = element.hp;
         hp.classList.add("hp");
         let atk = document.createElement("div");
@@ -219,11 +219,11 @@ const makeCard = (element, imageId) => {
         info.append(textTnfo);
         bold.append(textName);
         name.append(bold);
-        container.append(name);
+        // container.append(name);
         container.append(info);
-        container.append(hp);
-        container.append(atk);
-        container.append(cost);
+        carte.append(hp);
+        carte.append(atk);
+        carte.append(cost);
         carte.append(img);
         // container.append(baseHP);
     }

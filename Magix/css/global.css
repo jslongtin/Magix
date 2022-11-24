@@ -46,12 +46,12 @@
  }
 
  #chatGame {
-display: none;
-position: absolute;
-}
-#chatGameToggle{
+ 	display: none;
+ 	position: absolute;
+ }
 
-}
+ #chatGameToggle {}
+
  #message {
  	width: 100px;
  	height: 50px;
@@ -116,11 +116,17 @@ position: absolute;
  	margin: auto;
  	background-color: rgba(var(--pink), 0.4);
  }
-#myChart{
-	max-width: auto;
-max-height:100%;
-margin: auto;
-}
+
+ #graphiques #myChart {
+ 	height: 100%;
+ 	width: 100%;
+ 	max-height: 750px;
+ 	max-width: 1400px;
+ 	justify-self: center;
+ 	align-self: center;
+
+ }
+
  #deckAPI {
  	width: 100%;
  	height: 100%;
@@ -235,13 +241,16 @@ margin: auto;
  	background-image: url("../img/cardback.png");
  	background-size: cover;
  }
-.container{
-height: 100%;
-width: 100%;
-}
+
+ .container {
+ 	height: 100%;
+ 	width: 100%;
+ }
+
  .card {
  	height: 200px;
  	width: 150px;
+ 	position: relative;
  }
 
  /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
@@ -251,24 +260,40 @@ width: 100%;
  } */
 
  .hp {
- 	color: red;
+ 	z-index: 1;
+ 	background-image: url("../img/red.png");
+ 	background-size: cover;
+ 	color: var(--white);
+ 	width: 30px;
+ 	height: 30px;
  	position: absolute;
  	right: 5px;
  	bottom: 0px;
+	text-align: center;
  }
 
  .atk {
- 	color: green;
+	background-image: url("../img/yellow.png");
+ 	background-size: cover;
+	 color: var(--white);
  	position: absolute;
  	left: 5px;
  	bottom: 0px;
+	 text-align: center;
+	 width: 30px;
+ 	height: 30px;
  }
 
  .cost {
- 	color: blue;
+	background-image: url("../img/blue.png");
+ 	background-size: cover;
+	 color: var(--white);
  	position: absolute;
  	left: 5px;
  	top: 0px;
+	 text-align: center;
+	 width: 30px;
+ 	height: 30px;
  }
 
  /* Add rounded corners to the top left and the top right corner of the image */
@@ -278,6 +303,7 @@ width: 100%;
  	width: fit-content;
  	height: fit-content;
  }
+
  .imgCard {
  	border-radius: 5px 5px 0 0;
  	height: 65%;
@@ -295,10 +321,10 @@ width: 100%;
  	padding: 0px 5px;
  	background-color: var(--lightBlue);
  	height: 35%;
-	width: 90%;
+ 	width: 90%;
  	position: relative;
-	align-items: center;
-	justify-content: center;
+ 	align-items: center;
+ 	justify-content: center;
  }
 
  #card-container {
@@ -313,10 +339,11 @@ width: 100%;
  	padding-bottom: 20px;
  	border-radius: 10px;
  }
-#action-buttons,#card-container,#info, #opponentInfo,#graphiques{
-	align-items: center;
-		justify-content: center;
-}
+
+ #action-buttons, #card-container, #info, #opponentInfo, #graphiques, .hp {
+ 	align-items: center;
+ 	justify-content: center;
+ }
 
  #board {
  	display: flex;
@@ -327,8 +354,7 @@ width: 100%;
  	position: relative;
  }
 
- #boardCardContainer,
- #boardOpponentContainer {
+ #boardCardContainer, #boardOpponentContainer {
  	height: 50%;
  	height: auto;
  	width: 80%;
@@ -376,8 +402,8 @@ width: 100%;
  	height: 100%;
  	width: 100%;
 
-	justify-content: center;
-	align-items: center;
+ 	justify-content: center;
+ 	align-items: center;
  }
 
  #healthBar {
@@ -402,9 +428,9 @@ width: 100%;
  #playerIcon {
  	/* position: absolute;
  	right: 0px; */
-	width: 10%;
-	justify-content: center;
-	align-items: center;
+ 	width: 10%;
+ 	justify-content: center;
+ 	align-items: center;
  }
 
  #turn {
@@ -605,9 +631,9 @@ display: block;
  	/* grid-area: heroes; */
  	display: flex;
  	flex-direction: row;
-	width: 800%;
-	
-	justify-content: center;
+ 	width: 800%;
+
+ 	justify-content: center;
  	/* grid-template-columns: 1fr 1fr 1fr; 
  	grid-template-rows:  1fr ;
  	grid-template-areas: "tanks" "dps" "support"; */
