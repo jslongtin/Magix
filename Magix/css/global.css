@@ -162,9 +162,17 @@
  	flex-direction: column;
  	width: 30vw;
  	height: 80vh;
+	align-items: center;
+	justify-content: center;
 
  }
 
+#buttonsLobby button,#buttonsLobby input{
+	width: 80%;
+	max-width: 250px;
+	max-height: 50px;
+	height: 7%;
+}
  #chat {
  	grid-area: chat;
  }
@@ -405,11 +413,11 @@ display: block;
  }
 
  .circularCW {
- 	animation: rotate 2s linear infinite;
+ 	animation: rotate 4s linear infinite;
  }
 
  .circularCCW {
- 	animation: rotate-reverse 4s linear infinite;
+ 	animation: rotate-reverse 8s linear infinite;
  }
 
  .path,
@@ -514,9 +522,6 @@ display: block;
  	}
  }
 
- body {
- 	background: #333;
- }
 
 
 
@@ -528,7 +533,7 @@ display: block;
 	flex-direction: column;
  	height: 300px;
  	width: 100%;
-	justify-content: center;
+	
 	align-items: center;
  	/* grid-template-columns: 1fr 1fr;
  	grid-template-rows:  1fr ;
