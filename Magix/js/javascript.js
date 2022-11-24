@@ -8,7 +8,7 @@ const applyStyles = iframe => {
 		hideIcons: false,
 		inputBackgroundColor: "#218ffe",
 		inputFontColor: "#FFFFFF",
-		height: "400px",
+		height: "500px",
 		memberListFontColor: "#000000",
 		memberListBackgroundColor: "white"
 	}
@@ -29,6 +29,17 @@ const modifierDeck = () => {
 	// 	document.querySelector("#deckAPI").setAttribute("display", "none");
 	// 	document.querySelector("#myChart").setAttribute("display", "block");
 	// }
+}
+const toggleChat = () => {
+	counter++;
+	if (counter % 2 == 1) {
+		console.log("allo");
+	document.querySelector("#chatGame").style.display = "block";
+	
+	}
+	else {
+		document.querySelector("#chatGame").style.display = "none";
+	}
 }
 if (window.location.href.match("StatsDeck.php") != null){
 window.addEventListener("load", () => {

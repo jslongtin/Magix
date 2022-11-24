@@ -10,8 +10,7 @@ require_once("partial/header.php");
 <script defer src="js/game.js"></script>
 
 <div id="game">
-  <iframe id="chatGame" style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
-  </iframe>
+ 
   <div id="opponent">
     <div id="opponentInfo"></div>
     <div id="opponentIcon"></div>
@@ -20,11 +19,13 @@ require_once("partial/header.php");
 
   <div id="board">
     <div id="gameInfo">
+    <iframe id="chatGame" style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+  </iframe>
       <div id="timer">
         <div id="timerValue"></div>
-        <div class="overwatch-loader" id="timerAnim" >
+        <div class="overwatch-loader" id="timerAnim">
           <svg class="overwatch-logo" viewbox="0 0 1000 1000">
-            <svg xmlns="http://www.w3.org/2000/svg" >
+            <svg xmlns="http://www.w3.org/2000/svg">
               <circle cx="50%" cy="50%" r="300" fill="#fff" />
             </svg>
           </svg>
@@ -56,7 +57,7 @@ require_once("partial/header.php");
 
       </div>
       <div id="turn"></div>
-      <button id="chatGameToggle" type="submit">Toggle chat</button>
+      <button id="chatGameToggle" type="submit" onclick="toggleChat()">Toggle chat</button>
     </div>
     <div id="boardOpponentContainer"></div>
     <div id="boardCardContainer"></div>
