@@ -115,9 +115,12 @@ position: absolute;
  	padding: 20px;
  	margin: auto;
  	background-color: rgba(var(--pink), 0.4);
-
  }
-
+#myChart{
+	max-width: auto;
+max-height:100%;
+margin: auto;
+}
  #deckAPI {
  	width: 100%;
  	height: 100%;
@@ -310,7 +313,7 @@ width: 100%;
  	padding-bottom: 20px;
  	border-radius: 10px;
  }
-#action-buttons,#card-container,#info, #opponentInfo{
+#action-buttons,#card-container,#info, #opponentInfo,#graphiques{
 	align-items: center;
 		justify-content: center;
 }
@@ -595,7 +598,6 @@ display: block;
  	justify-content: center;
  	background-color: rgba(var(--grayOpp), 0.6);
  	margin: 0px 10%;
-
  }
 
 
@@ -603,7 +605,9 @@ display: block;
  	/* grid-area: heroes; */
  	display: flex;
  	flex-direction: row;
-
+	width: 800%;
+	
+	justify-content: center;
  	/* grid-template-columns: 1fr 1fr 1fr; 
  	grid-template-rows:  1fr ;
  	grid-template-areas: "tanks" "dps" "support"; */
@@ -640,8 +644,8 @@ display: block;
  } */
 
  .hero {
- 	width: 50px;
- 	height: 60px;
+ 	width: 70px;
+ 	height: 80px;
  	background-color: var(--white);
  	margin-right: 3.2px;
  	background-size: cover;
