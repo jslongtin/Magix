@@ -9,7 +9,7 @@
 
     let hand = document.querySelector("#card-container");
     let opponent= document.querySelector("#opponent");
-    let playerImage = document.querySelector("#card-container");
+    let playerImage = document.querySelector("#playerIcon");
     let opponentImage= document.querySelector("#opponent");
     let opponentIcon = document.createElement("img");
     opponentIcon.src = "img/Cartes/Reaper.png";
@@ -25,6 +25,7 @@
                     .then(response => response.json())
                     .then(data => {
                         playerIcon.src ="img/Cartes/"+ data+ ".png";
+                        
                     });
   
     playerIcon.alt = "playerIcon";
@@ -98,7 +99,10 @@ let refreshGame = (data) => {
                 })
                     .then(response => response.json())
                     .then(data => {
-            
+                        if(typeof(data) == "string"){
+                            console.log(data);
+                        }
+                      
                     });
             };
         })
@@ -124,7 +128,7 @@ let refreshGame = (data) => {
             let carte = makeCard(element, element.id);
             board.append(carte);
             carte.onclick = () => {
-                console.log("click");
+                
                 carte.classList.add("isSelected");
                 isCardSelected = element.uid;
             };
@@ -269,8 +273,13 @@ const heroPower = () => {
     })
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
-            refreshGame(data);
+            if(typeof(data) == "string"){
+                console.log(data);
+            }
+            else{
+                refreshGame(data);
+               
+                }
         });
 }
 const endTurn = () => {
@@ -282,8 +291,12 @@ const endTurn = () => {
     })
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
-            refreshGame(data);
+            if(typeof(data) == "string"){
+                console.log(data);
+            }
+            else{
+                refreshGame(data);
+                }
         });
 }
 const surrender = () => {
@@ -295,8 +308,12 @@ const surrender = () => {
     })
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
-            refreshGame(data);
+            if(typeof(data) == "string"){
+                console.log(data);
+            }
+            else{
+                refreshGame(data);
+                }
         });
 }
 const quitGame = () => {
@@ -314,8 +331,12 @@ const attack = (uidCarteMain, uidTarget) => {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            refreshGame(data);
+            if(typeof(data) == "string"){
+                console.log(data);
+            }
+            else{
+                refreshGame(data);
+                }
         });
 }
 

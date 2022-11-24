@@ -8,7 +8,7 @@ require_once("partial/header.php");
 ?>
 <div id="lobby">
 	<div id="chat">
-		<iframe style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+		<iframe style="width:700px;height:100%;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
 		</iframe>
 	</div>
 

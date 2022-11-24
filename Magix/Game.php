@@ -36,9 +36,9 @@ require_once("partial/header.php");
 
       <div id="remaining"></div>
     </div>
-    <div id="card-container">
-      <div id="playerIcon"></div>
-    </div>
+
+    <div id="card-container"></div>
+    <div id="playerIcon"></div>
     <div id="action-buttons">
       <button name="heroPower" onclick="heroPower()" type="submit">Hero Power</button>
       <button name="endTurn" onclick="endTurn()" type="submit">End Turn</button>

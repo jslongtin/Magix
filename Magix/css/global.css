@@ -8,6 +8,7 @@
 
  :root {
  	--gray: rgb(67, 72, 76);
+ 	--grayOpp: 67, 72, 76;
  	--blue: rgb(64, 82, 117);
  	--lightBlue: rgb(33, 143, 254);
  	--black: rgb(0, 0, 0);
@@ -78,6 +79,8 @@
  #lobby {
  	background-image: url("../img/Lobby.jpg");
  	display: grid;
+	grid-template-columns: 1fr 1fr;
+ 	grid-template-rows: 1.5fr 1fr;
  	grid-template-areas: 
 	'bouttons chat'
 	'heros heros'
@@ -160,8 +163,8 @@
  	grid-area: bouttons;
  	display: flex;
  	flex-direction: column;
- 	width: 30vw;
- 	height: 80vh;
+ 	width: 100%;
+ 	height: 100%;
 	align-items: center;
 	justify-content: center;
 
@@ -175,8 +178,12 @@
 }
  #chat {
  	grid-area: chat;
+	width: 100%;
+ 	height: 100%;
  }
-
+ #chat iframe{
+	min-height: 555px;
+}
  /* card */
  .card,
  .cardEnemy {
@@ -534,14 +541,11 @@ display: block;
  	display: flex;
 	flex-direction: column;
  	height: 300px;
- 	width: 100%;
-	
+ 	width: 80%;
 	align-items: center;
- 	/* grid-template-columns: 1fr 1fr;
- 	grid-template-rows:  1fr ;
- 	grid-template-areas: 
-	"heroes" 
-	"select"; */
+	justify-content: center;
+ 	background-color: rgba(var(--grayOpp), 0.6);
+	margin: 0px 10%;
 
  }
 
