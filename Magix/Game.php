@@ -20,7 +20,41 @@ require_once("partial/header.php");
 
   <div id="board">
     <div id="gameInfo">
-      <div id="timer"></div>
+      <div id="timer">
+        <div id="timerValue"></div>
+        <div class="overwatch-loader" id="timerAnim" >
+          <svg class="overwatch-logo" viewbox="0 0 1000 1000">
+            <svg xmlns="http://www.w3.org/2000/svg" >
+              <circle cx="50%" cy="50%" r="300" fill="#fff" />
+            </svg>
+          </svg>
+          <svg class="circularCW" viewbox="0 0 1000 1000">
+            <circle class="path" cx="500" cy="500" r="355" stroke="#fa9c1e" fill="none" />
+          </svg>
+          <svg class="circularCCW" viewbox="0 0 1000 1000" style="animation-duration: 1.5s">
+            <circle class="path2" cx="500" cy="500" r="355" stroke="#fa9c1e" fill="none" />
+          </svg>
+          <svg class="circularCW" viewbox="0 0 1000 1000">
+            <circle class="path3" cx="500" cy="500" r="355" stroke="#fa9c1e" fill="none" />
+          </svg>
+          <svg class="circularCW" viewbox="0 0 1000 1000">
+            <circle class="path4" cx="500" cy="500" r="355" stroke="#fa9c1e" fill="none" />
+          </svg>
+          <svg class="circularCW" viewbox="0 0 1000 1000">
+            <circle class="path5" cx="500" cy="500" r="420" stroke="#fff" fill="none" />
+          </svg>
+          <svg class="circularCW" viewbox="0 0 1000 1000">
+            <circle class="path6" cx="500" cy="500" r="420" stroke="#fff" fill="none" />
+          </svg>
+          <svg class="circularCCW" viewbox="0 0 1000 1000">
+            <circle class="path7" cx="500" cy="500" r="420" stroke="#fff" fill="none" />
+          </svg>
+          <svg class="circularCCW" viewbox="0 0 1000 1000" style="animation-timing-function: ease-in-out">
+            <circle class="path8" cx="500" cy="500" r="420" stroke="#fff" fill="none" />
+          </svg>
+        </div>
+
+      </div>
       <div id="turn"></div>
       <button id="chatGameToggle" type="submit">Toggle chat</button>
     </div>

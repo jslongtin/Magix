@@ -248,8 +248,8 @@
  }
 
  .card {
- 	height: 200px;
- 	width: 150px;
+ 	height: 250px;
+ 	width: 170px;
  	position: relative;
  }
 
@@ -269,30 +269,34 @@
  	position: absolute;
  	right: 5px;
  	bottom: 0px;
-	text-align: center;
+ 	text-align: center;
+ 	text-justify: center;
  }
 
  .atk {
-	background-image: url("../img/yellow.png");
+ 	z-index: 1;
+ 	background-image: url("../img/yellow.png");
  	background-size: cover;
-	 color: var(--white);
+ 	color: var(--white);
  	position: absolute;
  	left: 5px;
  	bottom: 0px;
-	 text-align: center;
-	 width: 30px;
+ 	text-align: center;
+ 	text-justify: center;
+ 	width: 30px;
  	height: 30px;
  }
 
  .cost {
-	background-image: url("../img/blue.png");
+ 	background-image: url("../img/blue.png");
  	background-size: cover;
-	 color: var(--white);
+ 	color: var(--white);
  	position: absolute;
  	left: 5px;
  	top: 0px;
-	 text-align: center;
-	 width: 30px;
+ 	text-align: center;
+ 	text-justify: center;
+ 	width: 30px;
  	height: 30px;
  }
 
@@ -308,6 +312,8 @@
  	border-radius: 5px 5px 0 0;
  	height: 65%;
  	width: 100%;
+ 	min-width: 100%;
+ 	padding: 10px;
  }
 
  /* On mouse-over, add a deeper shadow */
@@ -447,7 +453,7 @@
 
  #timer {
  	color: var(--orange);
- 	background-color: var(--black);
+ 	height: 50px;
  	width: 50px;
  }
 
@@ -470,10 +476,31 @@ width: 500px;
 height: 500px;
 display: block;
 } */
+ #timerValue {
+ 	z-index: 1;
+ 	width: 70px;
+ 	height: 70px;
+	position: absolute;
+	left: 30px;
+	top: 30px;
+ }
 
- .overwatch-loader {
+ #timerAnim {
+ 	width: 70px;
+ 	height: 70px;
+ 	position: relative;
+ }
+
+ #timerAnim .circularCW {
+	animation: rotate 1s linear infinite;
+}
+
+#timerAnim  .circularCCW {
+	animation: rotate-reverse 5s linear infinite;
+}
+
+ #index .overwatch-loader {
  	width: 300px;
-
  	position: absolute;
  	margin: 0px auto;
  	right: 0px;

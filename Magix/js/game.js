@@ -44,7 +44,6 @@ const state = () => {
         .then(response => response.json())
         .then(data => {
            
-// json stringfy
             
             // let opponentHand = document.querySelector("#opponentHand");
             // // opponentHand.innerHTML = null;
@@ -61,11 +60,7 @@ const state = () => {
             }
             else {
                 // message.innerHTML = null;
-                let healthbar = document.querySelector("#vies").innerHTML = data.hp;;
-            let timer = document.querySelector("#timer").innerHTML = data.remainingTurnTime;
-            let mana = document.querySelector("#mana").innerHTML = data.mp;
-            let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
-            let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
+            
             
             refreshGame(data);  
             }
@@ -74,11 +69,12 @@ const state = () => {
 }
 
 let refreshGame = (data) => {
-    // let imageOpp = document.querySelector("#opponentIcon");
-    // let imagePlay = document.querySelector("#playerIcon");
-    // imagePlay.innerHTML = null; 
-    // imageOpp.innerHTML = null; 
-    // playerIcon.classList.add("playerIcon");
+    let healthbar = document.querySelector("#vies").innerHTML = data.hp;;
+    let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
+    let mana = document.querySelector("#mana").innerHTML = data.mp;
+    let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
+    let remainingCards = document.querySelector("#remaining").innerHTML = data.remainingCardsCount;
+  
     
     if (JSON.stringify(data.hand) != JSON.stringify(myHand)){
         hand.innerHTML = null;
@@ -99,9 +95,8 @@ let refreshGame = (data) => {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        if(typeof(data) == "string"){
-                            console.log(data);
-                        }
+    
+                        refreshGame(data)
                       
                     });
             };
@@ -270,13 +265,11 @@ const heroPower = () => {
     })
         .then(response => response.json())
         .then(data => {
-            if(typeof(data) == "string"){
-                console.log(data);
-            }
-            else{
+            
+            
                 refreshGame(data);
                
-                }
+               
         });
 }
 const endTurn = () => {
@@ -288,12 +281,10 @@ const endTurn = () => {
     })
         .then(response => response.json())
         .then(data => {
-            if(typeof(data) == "string"){
-                console.log(data);
-            }
-            else{
+           
+           
                 refreshGame(data);
-                }
+                
         });
 }
 const surrender = () => {
@@ -305,12 +296,8 @@ const surrender = () => {
     })
         .then(response => response.json())
         .then(data => {
-            if(typeof(data) == "string"){
-                console.log(data);
-            }
-            else{
-                refreshGame(data);
-                }
+           
+               
         });
 }
 const quitGame = () => {
@@ -328,12 +315,9 @@ const attack = (uidCarteMain, uidTarget) => {
     })
         .then(response => response.json())
         .then(data => {
-            if(typeof(data) == "string"){
-                console.log(data);
-            }
-            else{
+           
                 refreshGame(data);
-                }
+                
         });
 }
 
