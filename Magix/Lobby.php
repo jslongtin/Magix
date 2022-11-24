@@ -35,7 +35,7 @@ require_once("partial/header.php");
 			<?php
 			if ($data["DeckError"]) {
 			?>
-			
+
 				<div class="error-message">
 					<strong>"DECK_INCOMPLETE</strong>
 				</div>
@@ -55,7 +55,7 @@ require_once("partial/header.php");
 		</form>
 	</div>
 	<div class="heroSelectionGallery">
-
+		<h2>SELECT YOUR HERO</h2>
 		<div id="heroes">
 			<div class="tanks">
 				<div class="row1">
@@ -78,8 +78,7 @@ require_once("partial/header.php");
 				<div class="row1">
 					<div class="hero" id="ashe"></div>
 					<div class="hero" id="bastion"></div>
-
-					<div class="hero " id="mccree"></div>
+					<div class="hero " id="cassidy"></div>
 					<div class="hero " id="echo"></div>
 					<div class="hero " id="genji"></div>
 					<div class="hero " id="hanzo"></div>
@@ -101,28 +100,28 @@ require_once("partial/header.php");
 			</div>
 			<div class="support">
 				<div class="row1">
-					<div class="hero ana"></div>
-					<div class="hero baptiste"></div>
-					<div class="hero brigitte"></div>
-					<div class="hero kiriko"></div>
+					<div class="hero" id="ana"></div>
+					<div class="hero" id="baptiste"></div>
+					<div class="hero" id="brigitte"></div>
+					<div class="hero" id="kiriko"></div>
 
 				</div>
 				<div class="row2">
-					<div class="hero lucio"></div>
-					<div class="hero mercy"></div>
-					<div class="hero moira"></div>
-					<div class="hero zenyatta"></div>
+					<div class="hero" id="lucio"></div>
+					<div class="hero " id="mercy"></div>
+					<div class="hero" id="moira"></div>
+					<div class="hero " id="zenyatta"></div>
 
 				</div>
 			</div>
 		</div>
 		<div class="select">
-		<form action="" method="post">
-		<button name="select" id="heroChoisi" type="submit">Select</button>
-		</form>
+			<form action="" method="post">
+				<button name="select" id="heroChoisi" type="submit">Select</button>
+			</form>
 		</div>
-		
-		
+
+
 	</div>
 	<script>
 		let heros = document.querySelectorAll(".hero");
@@ -130,10 +129,9 @@ require_once("partial/header.php");
 			e.onclick = () => {
 				let heroChoisi = e.id;
 				document.querySelector("#heroChoisi").value = heroChoisi;
-			
+				e.classList.add("Selected");
 			}
 		});
-	
 	</script>
 </div>
 

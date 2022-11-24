@@ -377,7 +377,9 @@
  .isSelected {
  	background-color: var(--orange);
  }
-
+.hero.Selected{
+	background-color: var(--lightBlue);
+}
  /* canvas{
 width: 500px;
 height: 500px;
@@ -641,7 +643,7 @@ display: block;
  	background-image: url("../img/Cartes/Genji.png");
  }
 
- #mccree {
+ #cassidy {
  	background-image: url("../img/Cartes/Cassidy.png");
  }
 
@@ -732,5 +734,42 @@ display: block;
  #zenyatta {
  	background-image: url("../img/Cartes/Zenyatta.png");
  }
+ #doomfist {
+ 	background-image: url("../img/Cartes/Doomfist.png");
+ }
+ #junkerqueen {
+ 	background-image: url("../img/Cartes/JunkerQueen.png");
+ }
+ #sigma {
+ 	background-image: url("../img/Cartes/Sigma.png");
+ }
+ #hammond {
+ 	background-image: url("../img/Cartes/Hammond.png");
+ }
+ #ashe {
+ 	background-image: url("../img/Cartes/Ashe.png");
+ }
+ #echo {
+ 	background-image: url("../img/Cartes/echo.png");
+ }
+ #sojourn {
+ 	background-image: url("../img/Cartes/Sojourn.png");
+ }
+ #baptiste {
+ 	background-image: url("../img/Cartes/Baptiste.png");
+ }
+ #brigitte {
+ 	background-image: url("../img/Cartes/Brigitte.png");
+ }
+ #kiriko {
+ 	background-image: url("../img/Cartes/Kiriko.png");
+ }
+ #moira {
+ 	background-image: url("../img/Cartes/Moira.png");
+ }
+h2{
+color: var(--orange);
+font-size: 300%;
 
+}
  
