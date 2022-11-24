@@ -76,7 +76,7 @@ class LobbyAction extends CommonAction
             }
         } 
         else if (isset($_POST["deck"])) {
-            header("location:Deck.php");
+            header("location:StatsDeck.php");
             exit;
         }
         else if (isset($_POST["select"])) {

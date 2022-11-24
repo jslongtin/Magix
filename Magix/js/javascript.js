@@ -8,7 +8,7 @@ const applyStyles = iframe => {
 		hideIcons: false,
 		inputBackgroundColor: "#218ffe",
 		inputFontColor: "#FFFFFF",
-		height: "562px",
+		height: "400px",
 		memberListFontColor: "#000000",
 		memberListBackgroundColor: "white"
 	}
@@ -18,20 +18,26 @@ const applyStyles = iframe => {
 	}, 100);
 }
 const modifierDeck = () => {
-	counter++;
-	if (counter % 2 == 1) {
-		document.querySelector("#deckAPI").removeAttribute("visibility");
-	}
-	else {
-
-		document.querySelector("#deckAPI").setAttribute("hidden", "hidden");
-	}
+	// counter++;
+	// if (counter % 2 == 1) {
+		console.log("allo");
+	document.querySelector("#myChart").style.display = "none";
+	document.querySelector("#deckAPI").style.display = "block";
+	// }
+	// else {
+	// 	console.log("fdsfds");
+	// 	document.querySelector("#deckAPI").setAttribute("display", "none");
+	// 	document.querySelector("#myChart").setAttribute("display", "block");
+	// }
 }
 
 window.addEventListener("load", () => {
 	graphiqueP();
 });
 const graphiqueP =  () => {
+	document.querySelector("#deckAPI").style.display = "none";
+	document.querySelector("#myChart").style.display = "block";
+	
 	let xValues = [];
 	let yValues = [];
 	let total = 0;
@@ -43,9 +49,14 @@ const graphiqueP =  () => {
 		})
 		.then(response => response.json())
 		.then(data => {
-		
+			
+			if(data.length == 0){
+				 xValues.push("Aucune carte");
+				 yValues.push(0);
+			}
+			else{
 			data.forEach(element => {
-
+				
 				if (element.idcarte != null) {
 					xValues.push("Carte" + JSON.stringify(element.idcarte));
 					total += element.count;
@@ -56,10 +67,8 @@ const graphiqueP =  () => {
 					let pourcent = Math.floor(e.count * 100 / total);
 					yValues.push(pourcent);
 				}
-			})
+			})}
 		
-	console.log(xValues);
-	console.log(yValues);
 
 	let barColors = [];
 
