@@ -30,10 +30,11 @@ const modifierDeck = () => {
 	// 	document.querySelector("#myChart").setAttribute("display", "block");
 	// }
 }
-
+if (window.location.href.match("StatsDeck.php") != null){
 window.addEventListener("load", () => {
 	graphiqueP();
 });
+}
 const graphiqueP =  () => {
 	document.querySelector("#deckAPI").style.display = "none";
 	document.querySelector("#myChart").style.display = "block";

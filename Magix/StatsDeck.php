@@ -6,6 +6,7 @@ $data = $action->execute();
 
 require_once("partial/header.php");
 ?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 

@@ -6,14 +6,15 @@ $data = $action->execute();
 
 require_once("partial/header.php");
 ?>
+
 <script defer src="js/game.js"></script>
 
 <div id="game">
-  <!-- <iframe  style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
-    </iframe> -->
+  <iframe id="chatGame"  style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+    </iframe>
   <div id="opponent">
-    <div id="opponentCards"></div>
     <div id="opponentInfo"></div>
+    <div id="opponentCards"></div>
     <div id="opponentIcon"></div>
   </div>
 
@@ -21,6 +22,7 @@ require_once("partial/header.php");
     <div id="gameInfo">
       <div id="timer"></div>
       <div id="turn"></div>
+      <button id="chatGameToggle" type="submit">Toggle chat</button>
     </div>
     <div id="boardOpponentContainer"></div>
     <div id="boardCardContainer"></div>
@@ -37,7 +39,6 @@ require_once("partial/header.php");
 
       <div id="remaining"></div>
     </div>
-
     <div id="card-container"></div>
     <div id="playerIcon"></div>
     <div id="action-buttons">

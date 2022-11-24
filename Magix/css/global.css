@@ -16,7 +16,7 @@
  	--orange: rgb(250, 156, 29);
  	--white: rgb(255, 255, 255);
  	--whiteGraph: 255, 255, 255;
-	--pink: 254, 171, 230;
+ 	--pink: 254, 171, 230;
  }
 
  html {
@@ -25,7 +25,7 @@
  	overflow: hidden;
  }
 
- 
+
  button {
  	background-color: var(--orange);
  	color: var(--white);
@@ -45,6 +45,12 @@
  	padding: 20px;
  }
 
+ #chatGame {
+display: none;
+position: absolute;
+}
+#chatGameToggle{
+}
  #message {
  	width: 100px;
  	height: 50px;
@@ -54,7 +60,10 @@
  	background-color: var(--blue);
  }
 
- #index, #lobby, #deck, #game {
+ #index,
+ #lobby,
+ #deck,
+ #game {
  	height: 100vh;
  	width: 100vw;
  	align-items: center;
@@ -82,12 +91,12 @@
  #lobby {
  	background-image: url("../img/Lobby.jpg");
  	display: grid;
-	grid-template-columns: 1fr 1fr;
+ 	grid-template-columns: 1fr 1fr;
  	grid-template-rows: 1.5fr 1fr;
- 	grid-template-areas: 
-	'bouttons chat'
-	'heros heros'
-	;
+ 	grid-template-areas:
+ 		'bouttons chat'
+ 		'heros heros'
+ 	;
  }
 
  #index {
@@ -104,7 +113,7 @@
  	height: 80%;
  	padding: 20px;
  	margin: auto;
- 	background-color: rgba(var(--pink),0.4);
+ 	background-color: rgba(var(--pink), 0.4);
 
  }
 
@@ -112,7 +121,7 @@
  	width: 100%;
  	height: 100%;
  	display: none;
-	background-color: rgba(var(--grayOpp),0.8);
+ 	background-color: rgba(var(--grayOpp), 0.8);
  }
 
  .ConnexionBox {
@@ -147,7 +156,7 @@
  	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
  	color: #333;
  	background-color: var(--orange);
-	color: var(--white);
+ 	color: var(--white);
  	border-radius: 3px;
  	border: none;
  	font-size: 16px;
@@ -161,16 +170,17 @@
  button:hover {
  	background-color: var(--lightBlue);
  }
- #actionBar{
-	display: flex;
-	flex-direction: row;
-	width: 80%;
-	height: 10%;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	margin: auto;
-}
+
+ #actionBar {
+ 	display: flex;
+ 	flex-direction: row;
+ 	width: 80%;
+ 	height: 10%;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding: 10px;
+ 	margin: auto;
+ }
 
 
  #buttonsLobby {
@@ -179,25 +189,29 @@
  	flex-direction: column;
  	width: 100%;
  	height: 100%;
-	align-items: center;
-	justify-content: center;
+ 	align-items: center;
+ 	justify-content: center;
 
  }
 
-#buttonsLobby button,#buttonsLobby input{
-	width: 80%;
-	max-width: 250px;
-	max-height: 50px;
-	height: 7%;
-}
+ #buttonsLobby button,
+ #buttonsLobby input {
+ 	width: 80%;
+ 	max-width: 250px;
+ 	max-height: 50px;
+ 	height: 7%;
+ }
+
  #chat {
  	grid-area: chat;
-	width: 100%;
+ 	width: 100%;
  	height: auto;
  }
- #chat iframe{
-	min-height: 400px;
-}
+
+ #chat iframe {
+ 	min-height: 400px;
+ }
+
  /* card */
  .card,
  .cardEnemy {
@@ -220,7 +234,8 @@
  	background-size: cover;
  }
 
- .card, .container {
+ .card,
+ .container {
  	height: 180px;
  	width: 100px;
  }
@@ -277,7 +292,7 @@
 
  #card-container {
  	background-color: var(--gray);
- 	width: 80%;
+ 	width: 70%;
  	height: 100%;
  	display: flex;
  	flex-direction: row;
@@ -298,7 +313,8 @@
  	position: relative;
  }
 
- #boardCardContainer, #boardOpponentContainer {
+ #boardCardContainer,
+ #boardOpponentContainer {
  	height: 50%;
  	height: auto;
  	width: 80%;
@@ -317,7 +333,8 @@
  	justify-content: space-evenly;
  }
 
- #opponent, #opponentCards {
+ #opponent,
+ #opponentCards {
  	display: flex;
  	flex-direction: row;
  	justify-content: space-evenly;
@@ -342,9 +359,11 @@
  #player {
  	display: flex;
  	flex-direction: row;
- 	/* height: 100%; */
+ 	height: 100%;
  	width: 100%;
- 	padding-bottom: 20px;
+
+	justify-content: center;
+	align-items: center;
  }
 
  #healthBar {
@@ -365,10 +384,13 @@
  	width: 20%;
  }
 
- #opponentIcon, #playerIcon {
- 	position: absolute;
- 	right: 0px;
-
+ #opponentIcon,
+ #playerIcon {
+ 	/* position: absolute;
+ 	right: 0px; */
+	width: 10%;
+	justify-content: center;
+	align-items: center;
  }
 
  #turn {
@@ -398,9 +420,11 @@
  .isSelected {
  	background-color: var(--orange);
  }
-.hero.Selected{
-	background-color: var(--lightBlue);
-}
+
+ .hero.Selected {
+ 	background-color: var(--lightBlue);
+ }
+
  /* canvas{
 width: 500px;
 height: 500px;
@@ -551,15 +575,15 @@ display: block;
 
 
  .heroSelectionGallery {
-	grid-area: heros;
+ 	grid-area: heros;
  	display: flex;
-	flex-direction: column;
+ 	flex-direction: column;
  	height: 300px;
  	width: 80%;
-	align-items: center;
-	justify-content: center;
+ 	align-items: center;
+ 	justify-content: center;
  	background-color: rgba(var(--grayOpp), 0.6);
-	margin: 0px 10%;
+ 	margin: 0px 10%;
 
  }
 
@@ -567,9 +591,9 @@ display: block;
  #heroes {
  	/* grid-area: heroes; */
  	display: flex;
-	flex-direction: row;
+ 	flex-direction: row;
 
-	/* grid-template-columns: 1fr 1fr 1fr; 
+ 	/* grid-template-columns: 1fr 1fr 1fr; 
  	grid-template-rows:  1fr ;
  	grid-template-areas: "tanks" "dps" "support"; */
  	/* -webkit-box-pack: center;
@@ -578,19 +602,24 @@ display: block;
  	/* grid-template-columns: 241px 213px 206px 177px;
  	grid-column-gap: 32px; */
  }
-.tanks,.dps,.support{
-	display: flex;
-	flex-direction: column;
-	margin: 0px 10px;
-}
-.row1,.row2{
-	display: flex;
-	flex-direction: row;
-	margin: 2px 0px;
-	justify-content: center;
-}
 
-/* .category {
+ .tanks,
+ .dps,
+ .support {
+ 	display: flex;
+ 	flex-direction: column;
+ 	margin: 0px 10px;
+ }
+
+ .row1,
+ .row2 {
+ 	display: flex;
+ 	flex-direction: row;
+ 	margin: 2px 0px;
+ 	justify-content: center;
+ }
+
+ /* .category {
  	display: -webkit-box;
  	display: -ms-flexbox;
  	display: flex;
@@ -653,7 +682,7 @@ display: block;
  } */
 
 
- 
+
 
  /*Assets*/
 
@@ -752,42 +781,53 @@ display: block;
  #zenyatta {
  	background-image: url("../img/Cartes/Zenyatta.png");
  }
+
  #doomfist {
  	background-image: url("../img/Cartes/Doomfist.png");
  }
+
  #junkerqueen {
  	background-image: url("../img/Cartes/JunkerQueen.png");
  }
+
  #sigma {
  	background-image: url("../img/Cartes/Sigma.png");
  }
+
  #hammond {
  	background-image: url("../img/Cartes/Hammond.png");
  }
+
  #ashe {
  	background-image: url("../img/Cartes/Ashe.png");
  }
+
  #echo {
  	background-image: url("../img/Cartes/echo.png");
  }
+
  #sojourn {
  	background-image: url("../img/Cartes/Sojourn.png");
  }
+
  #baptiste {
  	background-image: url("../img/Cartes/Baptiste.png");
  }
+
  #brigitte {
  	background-image: url("../img/Cartes/Brigitte.png");
  }
+
  #kiriko {
  	background-image: url("../img/Cartes/Kiriko.png");
  }
+
  #moira {
  	background-image: url("../img/Cartes/Moira.png");
  }
-h2{
-color: var(--orange);
-font-size: 300%;
 
-}
- 
+ h2 {
+ 	color: var(--orange);
+ 	font-size: 300%;
+
+ }
