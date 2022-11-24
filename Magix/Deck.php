@@ -26,7 +26,7 @@ require_once("partial/header.php");
 		
 	<div id="graphiques">
 		<canvas id="myChart"  width="600" height="400"></canvas>
-		<script>
+		<!-- <script>
 			let xValues = [];
 			let yValues = [];
 			let total = 0;
@@ -90,7 +90,7 @@ let chart = new Chart(chartid, {
   }
 });
 });
-</script>
+</script> -->
 	</div>
 </div>
 <?php
