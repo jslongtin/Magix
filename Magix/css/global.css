@@ -542,6 +542,7 @@ display: block;
  	/* grid-area: heroes; */
  	display: flex;
 	flex-direction: row;
+
 	/* grid-template-columns: 1fr 1fr 1fr; 
  	grid-template-rows:  1fr ;
  	grid-template-areas: "tanks" "dps" "support"; */
@@ -554,10 +555,13 @@ display: block;
 .tanks,.dps,.support{
 	display: flex;
 	flex-direction: column;
+	margin: 0px 10px;
 }
 .row1,.row2{
 	display: flex;
 	flex-direction: row;
+	margin: 2px 0px;
+	justify-content: center;
 }
 
 /* .category {
@@ -570,13 +574,13 @@ display: block;
  } */
 
  .hero {
- 	width: 30px;
- 	height: 44px;
+ 	width: 50px;
+ 	height: 60px;
  	background-color: var(--white);
  	margin-right: 3.2px;
  	background-size: cover;
- 	-webkit-transform: skewX(-15deg);
- 	transform: skewX(-15deg);
+ 	-webkit-transform: skewX(-5deg);
+ 	transform: skewX(-5deg);
  	-webkit-transform-origin: bottom left;
  	transform-origin: bottom left;
  	-webkit-box-shadow: inset 0px 2px 0px 0px #fff, inset 0px -1px 0px 0px #fff;
@@ -587,8 +591,8 @@ display: block;
  }
 
  .hero:hover {
- 	-webkit-transform: scale(1.15) skewX(-15deg) translate(-2px, 2px);
- 	transform: scale(1.15) skewX(-15deg) translate(-2px, 2px);
+ 	-webkit-transform: scale(1.15) skewX(-10deg) translate(-2px, 2px);
+ 	transform: scale(1.15) skewX(-10deg) translate(-2px, 2px);
  	-webkit-box-shadow: 0px 0px 0px 3px #fff;
  	box-shadow: 0px 0px 0px 3px #fff;
  	z-index: 2;
@@ -626,129 +630,101 @@ display: block;
  
 
  /*Assets*/
-/* 
- .option.genji {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/genji.png);
+
+ #genji {
+ 	background-image: url("../img/Cartes/Genji.png");
  }
 
- .option.mccree {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/mccree.png);
+ #mccree {
+ 	background-image: url("../img/Cartes/Cassidy.png");
  }
 
- .option.pharah {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/pharah.png);
+ #pharah {
+ 	background-image: url("../img/Cartes/Pharah.png");
  }
 
- .option.reaper {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/reaper.png);
+ #reaper {
+ 	background-image: url("../img/Cartes/Reaper.png");
  }
 
- .option.soldier-76 {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/soldier-76.png);
+ #soldier-76 {
+ 	background-image: url("../img/Cartes/Soldier76.png");
  }
 
- .option.sombra {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/sombra.png);
+ #sombra {
+ 	background-image: url("../img/Cartes/Sombra.png");
  }
 
- .option.tracer {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/tracer.png);
+ #tracer {
+ 	background-image: url("../img/Cartes/Tracer.png")
  }
 
- .option.bastion {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/bastion.png);
+ #bastion {
+ 	background-image: url("../img/Cartes/Bastion.png")
  }
 
- .option.hanzo {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/hanzo.png);
+ #hanzo {
+ 	background-image: url("../img/Cartes/Hanzo.png")
  }
 
- .option.junkrat {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/junkrat.png);
+ #junkrat {
+ 	background-image: url("../img/Cartes/Junkrat.png")
  }
 
- .option.mei {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/mei.png);
+ #mei {
+ 	background-image: url("../img/Cartes/Mei.png");
  }
 
- .option.torbjorn {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/torbjorn.png);
+ #torbjorn {
+ 	background-image: url("../img/Cartes/Torbjorn.png")
  }
 
- .option.widowmaker {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/widowmaker.png);
+ #widowmaker {
+ 	background-image: url("../img/Cartes/Widowmaker.png");
  }
 
- .option.dva {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/dva.png);
+ #dva {
+ 	background-image: url("../img/Cartes/Dva.png");
  }
 
- .option.orisa {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/orisa.png);
+ #orisa {
+ 	background-image: url("../img/Cartes/Orsia.png");
  }
 
- .option.reinhardt {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/reinhardt.png);
+ #reinhardt {
+ 	background-image: url("../img/Cartes/Reinhardt.png");
  }
 
- .option.roadhog {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/roadhog.png);
+ #roadhog {
+ 	background-image: url("../img/Cartes/Roadhog.png");
  }
 
- .option.winston {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/winston.png);
+ #winston {
+ 	background-image: url("../img/Cartes/Winston.png");
  }
 
- .option.zarya {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/zarya.png);
+ #zarya {
+ 	background-image: url("../img/Cartes/Zarya.png");
  }
 
- .option.ana {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/ana.png);
+ #ana {
+ 	background-image: url("../img/Cartes/Ana.png");
  }
 
- .option.lucio {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/lucio.png);
+ #lucio {
+ 	background-image: url("../img/Cartes/Lucio.png");
  }
 
- .option.mercy {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/mercy.png);
+ #mercy {
+ 	background-image: url("../img/Cartes/Mercy.png");
  }
 
- .option.symmetra {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/symmetra.png);
+ #symmetra {
+ 	background-image: url("../img/Cartes/Symetra.png");
  }
 
- .option.zenyatta {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/heroes/zenyatta.png);
+ #zenyatta {
+ 	background-image: url("../img/Cartes/Zenyatta.png");
  }
 
- [hero=bastion] {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/bastion.png);
- 	background-position: 18px 2px;
- }
-
- [hero=mercy] {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/mercy.png);
- 	background-position: 18px 2px;
- }
-
- [hero=hanzo] {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/hanzo.png);
- 	background-position: 18px 2px;
- }
-
- [hero=widowmaker] {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/widowmaker.png);
- 	background-position: 9px 2px;
- }
-
- [hero=soldier-76] {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/soldier-76.png);
- 	background-position: 7px 2px;
- }
-
- [hero=tracer] {
- 	background-image: url(https://arianzargaran.github.io/overwatch-hero-picker_by-geddski/img/selected-heroes/tracer.png);
- 	background-position: 19px 2px;
- } */
+ 

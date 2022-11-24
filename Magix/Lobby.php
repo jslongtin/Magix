@@ -58,43 +58,43 @@ require_once("partial/header.php");
 		<div id="heroes">
 			<div class="tanks">
 				<div class="row1">
-					<div class="hero dva"></div>
-					<div class="hero doomfist"></div>
-					<div class="hero junkerqueen"></div>
-					<div class="hero orisa"></div>
-					<div class="hero reinhardt"></div>
+					<div class="hero" id="dva"></div>
+					<div class="hero" id="doomfist"></div>
+					<div class="hero " id="junkerqueen"></div>
+					<div class="hero " id="orisa"></div>
+					<div class="hero " id="reinhardt"></div>
 				</div>
 				<div class="row2">
-					<div class="hero roadhog"></div>
-					<div class="hero sigma"></div>
-					<div class="hero winston"></div>
-					<div class="hero hammond"></div>
-					<div class="hero zarya"></div>
+					<div class="hero " id="roadhog"></div>
+					<div class="hero " id="sigma"></div>
+					<div class="hero " id="winston"></div>
+					<div class="hero " id="hammond"></div>
+					<div class="hero " id="zarya"></div>
 				</div>
 			</div>
 
 			<div class="dps">
 				<div class="row1">
-					<div class="hero ashe"></div>
-					<div class="hero bastion"></div>
+					<div class="hero " id="ashe"></div>
+					<div class="hero " id="bastion"></div>
 
-					<div class="hero mccree"></div>
-					<div class="hero echo"></div>
-					<div class="hero genji"></div>
-					<div class="hero hanzo"></div>
-					<div class="hero junkrat"></div>
-					<div class="hero mei"></div>
-					<div class="hero pharah"></div>
+					<div class="hero " id="mccree"></div>
+					<div class="hero " id="echo"></div>
+					<div class="hero " id="genji"></div>
+					<div class="hero " id="hanzo"></div>
+					<div class="hero " id="junkrat"></div>
+					<div class="hero " id="mei"></div>
+					<div class="hero " id="pharah"></div>
 				</div>
 				<div class="row2">
-					<div class="hero reaper"></div>
-					<div class="hero sojourn"></div>
-					<div class="hero soldier-76"></div>
-					<div class="hero sombra"></div>
-					<div class="hero symmetra"></div>
-					<div class="hero torbjorn"></div>
-					<div class="hero tracer"></div>
-					<div class="hero widowmaker"></div>
+					<div class="hero " id="reaper"></div>
+					<div class="hero " id="sojourn"></div>
+					<div class="hero " id="soldier-76"></div>
+					<div class="hero " id="sombra"></div>
+					<div class="hero " id="symmetra"></div>
+					<div class="hero " id="torbjorn"></div>
+					<div class="hero " id="tracer"></div>
+					<div class="hero " id="widowmaker"></div>
 
 				</div>
 			</div>

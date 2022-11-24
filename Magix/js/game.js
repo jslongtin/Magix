@@ -235,10 +235,10 @@ const cardImage = (id) => {
     else {
         cheminImage = "img/CartesNum/";
     }
-    if (id <= 34) {
+    if (id <= 35) {
         image = cheminImage + id.toString() + ".png";
     }
-    else if (id > 34 && id <= 68) {
+    else if (id > 35 && id <= 68) {
         image = cheminImage + (id - 34).toString() + ".png";
     }
     else if (id > 68 && id <= 101) {
