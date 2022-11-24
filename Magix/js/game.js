@@ -10,7 +10,7 @@
     let hand = document.querySelector("#card-container");
     let opponent= document.querySelector("#opponent");
     let playerImage = document.querySelector("#playerIcon");
-    let opponentImage= document.querySelector("#opponent");
+    let opponentImage= document.querySelector("#opponentIcon");
     let opponentIcon = document.createElement("img");
     opponentIcon.src = "img/Cartes/Reaper.png";
     opponentIcon.style = "height:100px";
@@ -179,8 +179,8 @@ const makeCard = (element, imageId) => {
     if (element != 0) {
         let img = document.createElement("img");
         img.alt = "carte";
-        img.style = "width:100%";
         img.src = cardImage(imageId);
+        img.classList.add("imgCard");
         carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle") {
@@ -229,9 +229,6 @@ const makeCard = (element, imageId) => {
     }
     else {
         carte.classList.add("cardEnemy");
-     
-        
-
     }
     
     carte.append(container);

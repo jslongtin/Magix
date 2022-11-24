@@ -50,6 +50,7 @@ display: none;
 position: absolute;
 }
 #chatGameToggle{
+
 }
  #message {
  	width: 100px;
@@ -215,8 +216,6 @@ position: absolute;
  /* card */
  .card,
  .cardEnemy {
-
-
  	background-color: var(--blue);
  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
  	transition: 0.5s;
@@ -233,11 +232,13 @@ position: absolute;
  	background-image: url("../img/cardback.png");
  	background-size: cover;
  }
-
- .card,
- .container {
- 	height: 180px;
- 	width: 100px;
+.container{
+height: 100%;
+width: 100%;
+}
+ .card {
+ 	height: 200px;
+ 	width: 150px;
  }
 
  /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
@@ -273,7 +274,11 @@ position: absolute;
  	height: 65%;
  	width: fit-content;
  	height: fit-content;
-
+ }
+ .imgCard {
+ 	border-radius: 5px 5px 0 0;
+ 	height: 65%;
+ 	width: 100%;
  }
 
  /* On mouse-over, add a deeper shadow */
@@ -284,10 +289,13 @@ position: absolute;
 
  /* Add some padding inside the card container */
  .container {
- 	padding: 2px 16px;
+ 	padding: 0px 5px;
  	background-color: var(--lightBlue);
  	height: 35%;
+	width: 90%;
  	position: relative;
+	align-items: center;
+	justify-content: center;
  }
 
  #card-container {
@@ -302,7 +310,10 @@ position: absolute;
  	padding-bottom: 20px;
  	border-radius: 10px;
  }
-
+#action-buttons,#card-container,#info, #opponentInfo{
+	align-items: center;
+		justify-content: center;
+}
 
  #board {
  	display: flex;

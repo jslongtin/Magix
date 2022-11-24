@@ -10,12 +10,12 @@ require_once("partial/header.php");
 <script defer src="js/game.js"></script>
 
 <div id="game">
-  <iframe id="chatGame"  style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
-    </iframe>
+  <iframe id="chatGame" style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+  </iframe>
   <div id="opponent">
     <div id="opponentInfo"></div>
-    <div id="opponentCards"></div>
     <div id="opponentIcon"></div>
+    <div id="opponentCards"></div>
   </div>
 
   <div id="board">
@@ -39,8 +39,8 @@ require_once("partial/header.php");
 
       <div id="remaining"></div>
     </div>
-    <div id="card-container"></div>
     <div id="playerIcon"></div>
+    <div id="card-container"></div>
     <div id="action-buttons">
       <button name="heroPower" onclick="heroPower()" type="submit">Hero Power</button>
       <button name="endTurn" onclick="endTurn()" type="submit">End Turn</button>
