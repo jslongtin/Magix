@@ -21,13 +21,13 @@
  	overflow: hidden;
  }
 
- button[type="submit"],
+ 
  button {
  	background-color: var(--orange);
  	color: var(--white);
  }
 
- button[type="submit"]:hover,
+
  button:hover {
  	background-color: var(--lightBlue);
  }
@@ -140,7 +140,8 @@
  button {
  	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
  	color: #333;
- 	background-color: #d1d1d1;
+ 	background-color: var(--orange);
+	color: var(--white);
  	border-radius: 3px;
  	border: none;
  	font-size: 16px;
@@ -152,7 +153,7 @@
  }
 
  button:hover {
- 	background-color: #bbb;
+ 	background-color: var(--lightBlue);
  }
 
  #buttonsLobby {
@@ -609,7 +610,7 @@ display: block;
  	justify-content: center;
  }
 
- button {
+ /* button {
  	height: 32px;
  	width: 110px;
  	border: none;
@@ -624,7 +625,7 @@ display: block;
  button:hover {
  	background-color: #df9600;
  	cursor: pointer;
- }
+ } */
 
 
  

@@ -16,7 +16,17 @@
     opponentIcon.style = "height:100px";
     opponentImage.append(opponentIcon);
     let playerIcon = document.createElement("img");
-    playerIcon.src = "img/CartesNum/1.png";
+    let formData = new FormData();
+                formData.append("type", "icon");
+                fetch("ajax-state.php", {   
+                    method: "POST",
+                    body: formData      
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        playerIcon.src ="img/Cartes/"+ data+ ".png";
+                    });
+  
     playerIcon.alt = "playerIcon";
     playerIcon.style = "height:100px";
     playerImage.append(playerIcon);

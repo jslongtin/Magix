@@ -27,6 +27,7 @@ const modifierDeck = () => {
 		document.querySelector("#deckAPI").setAttribute("hidden", "hidden");
 	}
 }
+
 window.addEventListener("load", () => {
 	graphiqueP();
 });

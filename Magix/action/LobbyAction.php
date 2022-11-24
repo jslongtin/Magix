@@ -79,6 +79,9 @@ class LobbyAction extends CommonAction
             header("location:Deck.php");
             exit;
         }
+        else if (isset($_POST["select"])) {
+            $_SESSION["heroChoisi"] = $_POST["select"] ;
+        }
 
         return compact("deconnectionError", "KeyError","TypeError" , "DeckError");
     }

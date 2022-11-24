@@ -35,6 +35,7 @@ require_once("partial/header.php");
 			<?php
 			if ($data["DeckError"]) {
 			?>
+			
 				<div class="error-message">
 					<strong>"DECK_INCOMPLETE</strong>
 				</div>
@@ -75,8 +76,8 @@ require_once("partial/header.php");
 
 			<div class="dps">
 				<div class="row1">
-					<div class="hero " id="ashe"></div>
-					<div class="hero " id="bastion"></div>
+					<div class="hero" id="ashe"></div>
+					<div class="hero" id="bastion"></div>
 
 					<div class="hero " id="mccree"></div>
 					<div class="hero " id="echo"></div>
@@ -116,11 +117,24 @@ require_once("partial/header.php");
 			</div>
 		</div>
 		<div class="select">
-			<button>Select</button>
+		<form action="" method="post">
+		<button name="select" id="heroChoisi" type="submit">Select</button>
+		</form>
 		</div>
-
+		
+		
 	</div>
-
+	<script>
+		let heros = document.querySelectorAll(".hero");
+		heros.forEach(e => {
+			e.onclick = () => {
+				let heroChoisi = e.id;
+				document.querySelector("#heroChoisi").value = heroChoisi;
+			
+			}
+		});
+	
+	</script>
 </div>
 
 </div>

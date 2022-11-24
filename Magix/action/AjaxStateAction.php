@@ -49,6 +49,9 @@ class AjaxStateAction extends CommonAction
 			else if ($_POST["type"] == "BD"){
 				$result = StatsCardsDAO::getPopularite();
 			}
+			else if ($_POST["type"] == "icon"){
+				$result = $_SESSION["heroChoisi"];
+			}
 		}
 		else {
 			$data["key"] = $_SESSION["key"];
