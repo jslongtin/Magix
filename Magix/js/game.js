@@ -171,10 +171,12 @@ const makeCard = (element, imageId) => {
     let container = document.createElement("div");
    
     if (element != 0) {
-        let img = document.createElement("img");
-        img.alt = "carte";
-        img.src = cardImage(imageId);
+        let img = document.createElement("div");
+        img.style.backgroundImage = cardImage(imageId);
         img.classList.add("imgCard");
+        // img.alt = "carte";
+        // img.src = cardImage(imageId);
+        // img.classList.add("imgCard");
         carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle") {

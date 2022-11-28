@@ -319,6 +319,7 @@
  	width: 100%;
  	min-width: 100%;
  	padding: 10px;
+	background-size: cover;
  }
 
  /* On mouse-over, add a deeper shadow */
