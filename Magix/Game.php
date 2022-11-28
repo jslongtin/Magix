@@ -12,7 +12,11 @@ require_once("partial/header.php");
 <div id="game">
  
   <div id="opponent">
-    <div id="opponentInfo"></div>
+    <div id="opponentInfo">
+      <div id="hpOpponent"></div>
+      <div id="manaOpponent"></div>
+      <div id="remainingCardsOpponent"></div>
+    </div>
     <div id="opponentIcon"></div>
     <div id="opponentCards"></div>
   </div>

@@ -152,15 +152,15 @@ let refreshGame = (data) => {
     
   
     let opponentInfos = document.querySelector("#opponentInfo");
-    opponentInfos.innerHTML = null;
-    opponentHealth = data.opponent.hp;
-    opponentInfos.append(opponentHealth);
-    let opponentMp = null;
-    opponentMp = data.opponent.mp;
-    opponentInfos.append(opponentMp);
-    let opponentRemainingCards = null;
-    opponentRemainingCards = data.opponent.remainingCardsCount;
-    opponentInfos.append(opponentRemainingCards);
+    let opponentHealth = document.querySelector("#hpOpponent");
+    let opponentMp = document.querySelector("#manaOpponent");
+    let opponentRemainingCards = document.querySelector("#remainingCardsOpponent");
+    opponentHealth.innerHTML  =null;
+    opponentMp.innerHTML  =null;
+    opponentRemainingCards.innerHTML  =null;
+    opponentHealth.innerHTML = "hp :" + data.opponent.hp;
+    opponentMp.innerHTML = "mana :" + data.opponent.mp;
+    opponentRemainingCards.innerHTML ="Cartes restantes :" + data.opponent.remainingCardsCount;
 
 }
 // methode de construction de carte pour eviter la repetition
