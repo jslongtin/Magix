@@ -172,7 +172,7 @@ const makeCard = (element, imageId) => {
    
     if (element != 0) {
         let img = document.createElement("div");
-        img.style.backgroundImage = cardImage(imageId);
+        img.style.backgroundImage =  "url("+cardImage(imageId)+")" ;
         img.classList.add("imgCard");
         // img.alt = "carte";
         // img.src = cardImage(imageId);
