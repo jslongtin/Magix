@@ -3,10 +3,10 @@
     let opponantHand = [];
     let myBoard = [];
     let opponentBoard = [];
-    let message = null;
+    
     let isCardSelected = null;
 
-
+    let Messages = document.querySelector("#message");
     let hand = document.querySelector("#card-container");
     let opponent= document.querySelector("#opponent");
     let playerImage = document.querySelector("#playerIcon");
@@ -50,17 +50,17 @@ const state = () => {
             // // opponentHand.innerHTML = null;
 
             if (data == "WAITING") {
-                // message = document.querySelector("#game");
+                Messages.innerHTML = data;
                 // message.setAttribute("id", "messageGame");
             }
             else if (data == "LAST_GAME_WON") {
-                //  message = document.querySelector("#game").innerHTML = "LAST_GAME_WON" ;
+                Messages.innerHTML = data;
                 }
             else if (data == "LAST_GAME_LOST") {
-                // message = document.querySelector("#game").innerHTML = "LAST_GAME_LOST" ; 
+                Messages.innerHTML = data;
             }
             else {
-                // message.innerHTML = null;
+                Messages.innerHTML = null;
                 let healthbar = document.querySelector("#vies").innerHTML = "hp: " + data.hp;;
                 let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
                 let mana = document.querySelector("#mana").innerHTML = "mana: " + data.mp;
@@ -74,8 +74,8 @@ const state = () => {
 }
 
 let refreshGame = (data) => {
-    if ( typeof data != 'object'){
-        let Messges = document.querySelector("#message").innerHTML = data;
+    if ( typeof data != "object"){
+       Messages.innerHTML = data;
     }
     else{
       
@@ -177,7 +177,7 @@ const makeCard = (element, imageId) => {
    
     if (element != 0) {
         let img = document.createElement("div");
-        img.style.backgroundImage =  "url("+cardImage(imageId)+")" ;
+        
         img.classList.add("imgCard");
         // img.alt = "carte";
         // img.src = cardImage(imageId);
@@ -192,20 +192,23 @@ const makeCard = (element, imageId) => {
         let textName = element.id;
         let bold = document.createElement("b");
         let info = document.createElement("p");
-        // element.mechanics.forEach(e => {
-        //     if (e == "taunt") {
-        //         // image taunt
-        //     }
-        //     else if (e == "charge") {
-        //         // image charge
-        //     }
-        //     else if (e == " stealth ") {
-        //         // 
-        //     }
-        //     else if (e == "confused ") {
-
-        //     }
-        // })
+        element.mechanics.forEach(e => {
+            if (e.includes("Taunt")) {
+                img.style.backgroundImage =  "url(img/Cartes/Tracer.png)" ;
+            }
+            else if (e.includes("Charge")) {
+                img.style.backgroundImage =  "url(img/Cartes/Reinhardt.png)" ;
+            }
+            else if (e.includes("Stealth")) {
+                img.style.backgroundImage =  "url(img/Cartes/Sombra.png)" ;
+            }
+            else if (e.includes("Confused")) {
+                img.style.backgroundImage =  "url(img/Cartes/Junkrat.png)" ;
+            }
+            else{
+                img.style.backgroundImage =  "url("+cardImage(imageId)+")" ;
+            }
+        })
         let textTnfo = element.mechanics;
         let hp = document.createElement("div"); 
         hp.innerText = element.hp;
@@ -247,14 +250,14 @@ const cardImage = (id) => {
     else {
         cheminImage = "img/CartesNum/";
     }
-    if (id <= 35) {
+    if (id <= 31) {
         image = cheminImage + id.toString() + ".png";
     }
-    else if (id > 35 && id <= 68) {
-        image = cheminImage + (id - 34).toString() + ".png";
+    else if (id > 31 && id <= 62) {
+        image = cheminImage + (id - 31).toString() + ".png";
     }
-    else if (id > 68 && id <= 101) {
-        image = cheminImage + (id - 68).toString() + ".png";
+    else if (id > 62 && id <= 101) {
+        image = cheminImage + (id - 62).toString() + ".png";
     }
     else {
         image = "img/cardback.png";

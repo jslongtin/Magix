@@ -15,43 +15,41 @@ class AjaxStateAction extends CommonAction
 		$result = "";
 		$data = [];
 		$error = "";
-		
-		if(!empty($_POST["type"])){
+
+		if (!empty($_POST["type"])) {
 			if ($_POST["type"] == "HERO_POWER") {
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "HERO_POWER";
 				$result = parent::callAPI("games/action", $data);
-			}
-			else if ($_POST["type"] == "END_TURN") {
-				
+			} else if ($_POST["type"] == "END_TURN") {
+
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "END_TURN";
 				$result = parent::callAPI("games/action", $data);
-			}
-			else if ($_POST["type"] == "SURRENDER") {
+			} else if ($_POST["type"] == "SURRENDER") {
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "SURRENDER";
 				$result = parent::callAPI("games/action", $data);
-			}
-			else if ($_POST["type"] == "PLAY") {
+			} else if ($_POST["type"] == "PLAY") {
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "PLAY";
 				$data["uid"] = $_POST["uid"];
 				$result = parent::callAPI("games/action", $data);
 				$add = StatsCardsDAO::addCardPlayed($_POST["id"]);
-			}
-			else if ($_POST["type"] == "ATTACK") {
+			} else if ($_POST["type"] == "ATTACK") {
 				$data["key"] = $_SESSION["key"];
 				$data["type"] = "ATTACK";
 				$data["uid"] = $_POST["uid"];
 				$data["targetuid"] = $_POST["targetuid"];
 				$result = parent::callAPI("games/action", $data);
-			}
-			else if ($_POST["type"] == "BD"){
+			} else if ($_POST["type"] == "BD") {
 				$result = StatsCardsDAO::getPopularite();
-			}
-			else if ($_POST["type"] == "icon"){
-				$result = $_SESSION["heroChoisi"];
+			} else if ($_POST["type"] == "icon") {
+				if (isset($_SESSION["heroChoisi"])) {
+					$result = $_SESSION["heroChoisi"];
+				} else {
+					$result = "Zenyatta";
+				}
 			}
 		}
 		// if(is_string($result)){
@@ -85,8 +83,8 @@ class AjaxStateAction extends CommonAction
 		// }
 		// if($result == "HERO_POWER_ALREADY_USED"){
 		// }
-		
-		
+
+
 		else {
 			$data["key"] = $_SESSION["key"];
 			$result = parent::callAPI("games/state", $data);
