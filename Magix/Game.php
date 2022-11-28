@@ -10,7 +10,6 @@ require_once("partial/header.php");
 <script defer src="js/game.js"></script>
 
 <div id="game">
- 
   <div id="opponent">
     <div id="opponentInfo">
       <div id="hpOpponent"></div>
@@ -62,6 +61,7 @@ require_once("partial/header.php");
       </div>
       <div id="turn"></div>
       <button id="chatGameToggle" type="submit" onclick="toggleChat()">Toggle chat</button>
+      <div id="message"></div>
     </div>
     <div id="boardOpponentContainer"></div>
     <div id="boardCardContainer"></div>

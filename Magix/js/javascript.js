@@ -88,7 +88,7 @@ const graphiqueP = () => {
 			// genere des  barColors aleatoires pour chaque id
 			let letters = "0123456789ABCDEF";
 			let color = "#";
-			for (let i = 0; i < 10; i++) {
+			for (let i = 0; i <= yValues.length; i++) {
 				for (let i = 0; i < 6; i++) {
 					color += letters[Math.floor(Math.random() * 16)];
 				}

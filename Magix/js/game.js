@@ -61,11 +61,11 @@ const state = () => {
             }
             else {
                 // message.innerHTML = null;
-                let healthbar = document.querySelector("#vies").innerHTML = "hp" + data.hp;;
+                let healthbar = document.querySelector("#vies").innerHTML = "hp: " + data.hp;;
                 let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
-                let mana = document.querySelector("#mana").innerHTML = "mana" + data.mp;
+                let mana = document.querySelector("#mana").innerHTML = "mana: " + data.mp;
                 let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
-                let remainingCards = document.querySelector("#remaining").innerHTML = "cartes restantes" + data.remainingCardsCount;
+                let remainingCards = document.querySelector("#remaining").innerHTML = "cartes restantes: " + data.remainingCardsCount;
             
             refreshGame(data);  
             }
@@ -74,6 +74,11 @@ const state = () => {
 }
 
 let refreshGame = (data) => {
+    if ( typeof data != 'object'){
+        let Messges = document.querySelector("#message").innerHTML = data;
+    }
+    else{
+      
    
     if (JSON.stringify(data.hand) != JSON.stringify(myHand)){
         hand.innerHTML = null;
@@ -162,7 +167,7 @@ let refreshGame = (data) => {
     opponentMp.innerHTML = "mana :" + data.opponent.mp;
     opponentRemainingCards.innerHTML ="Cartes restantes :" + data.opponent.remainingCardsCount;
 
-}
+} }
 // methode de construction de carte pour eviter la repetition
 const makeCard = (element, imageId) => {
    
