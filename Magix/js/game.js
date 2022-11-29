@@ -258,8 +258,11 @@ const cardImage = (id) => {
     else if (id > 62 && id <= 101) {
         image = cheminImage + (id - 62).toString() + ".png";
     }
-    else {
+    else if (id == 102) {
         image = "img/cardback.png";
+    }
+    else {
+        image = "img/Cartes/Omnic.webp";
 
     }
     return image;
