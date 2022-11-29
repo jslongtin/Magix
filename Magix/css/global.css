@@ -253,6 +253,7 @@
  	height: 250px;
  	width: 170px;
  	position: relative;
+	margin: 0px 5px;
  }
 
  /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
@@ -317,7 +318,9 @@
  	width: 80%;
  	min-width: 100%;
  	padding: 10px;
-	background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
  }
 
  /* On mouse-over, add a deeper shadow */
@@ -338,7 +341,6 @@
  }
 
  #card-container {
-
  	width: 70%;
  	height: 100%;
  	display: flex;

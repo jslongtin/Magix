@@ -79,7 +79,6 @@ let refreshGame = (data) => {
     }
     else{
       
-   
     if (JSON.stringify(data.hand) != JSON.stringify(myHand)){
         hand.innerHTML = null;
         let main = data.hand; 
