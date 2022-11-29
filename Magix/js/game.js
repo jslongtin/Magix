@@ -192,23 +192,23 @@ const makeCard = (element, imageId) => {
         let textName = element.id;
         let bold = document.createElement("b");
         let info = document.createElement("p");
-        element.mechanics.forEach(e => {
-            if (e.includes("Taunt")) {
+      
+            if ( element.mechanics.includes("Taunt")) {
                 img.style.backgroundImage =  "url(img/Cartes/Tracer.png)" ;
             }
-            else if (e.includes("Charge")) {
+            else if (element.mechanics.includes("Charge")) {
                 img.style.backgroundImage =  "url(img/Cartes/Reinhardt.png)" ;
             }
-            else if (e.includes("Stealth")) {
+            else if (element.mechanics.includes("Stealth")) {
                 img.style.backgroundImage =  "url(img/Cartes/Sombra.png)" ;
             }
-            else if (e.includes("Confused")) {
+            else if (element.mechanics.includes("Confused")) {
                 img.style.backgroundImage =  "url(img/Cartes/Junkrat.png)" ;
             }
             else{
                 img.style.backgroundImage =  "url("+cardImage(imageId)+")" ;
             }
-        })
+        
         let textTnfo = element.mechanics;
         let hp = document.createElement("div"); 
         hp.innerText = element.hp;
