@@ -12,6 +12,7 @@ require_once("partial/header.php");
 <div id="game">
   <div id="opponent">
     <div id="opponentInfo">
+      <div id="classOpponent"></div>
       <div id="hpOpponent"></div>
       <div id="manaOpponent"></div>
       <div id="remainingCardsOpponent"></div>
@@ -22,7 +23,7 @@ require_once("partial/header.php");
 
   <div id="board">
     <div id="gameInfo">
-      <iframe id="chatGame" style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+      <iframe id="chatGame" style="width:700px;height:562px;bottom:1px" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
       </iframe>
       <div id="timer">
         <div id="timerValue"></div>
@@ -69,16 +70,19 @@ require_once("partial/header.php");
 
   <div id="player">
     <div id="info">
-      <!-- health bar -->
-      <div id="healthBar">
-        <div id="vies">0</div>
-        <!-- <progress id="health" value="100" max="100"> </progress> -->
-      </div>
-      <div id="mana"></div>
+      <div id="playerIcon"></div>
+      <div>
+        <!-- health bar -->
+        <div id="healthBar">
+          <div id="vies">0</div>
+          <!-- <progress id="health" value="100" max="100"> </progress> -->
+        </div >
+        <div id="mana"></div>
 
-      <div id="remaining"></div>
+        <div id="remaining"></div>
+      </div>
     </div>
-    <!-- <div id="playerIcon"></div> -->
+
     <div id="card-container"></div>
     <div id="action-buttons">
       <button name="heroPower" onclick="heroPower()" type="submit">Hero Power</button>
