@@ -71,6 +71,7 @@ require_once("partial/header.php");
     <div id="info">
       <div id="playerIcon"></div>
       <div>
+        <div id="class"></div>
         <div id="healthBar">
           <div id="vies">0</div>
         </div>

@@ -54,7 +54,6 @@ const state = () => {
                         .then(response => response.json())
                         .then(data => {
                             playerIcon.src = "img/Cartes/" + data + ".png";
-
                         });
 
                     playerIcon.alt = "playerIcon";
@@ -67,8 +66,8 @@ const state = () => {
                         }
                     };
                 }
-
-                let healthbar = document.querySelector("#vies").innerHTML = "hp: " + data.hp;;
+                let classname = document.querySelector("#class").innerHTML = "class: " + data.heroClass;
+                let healthbar = document.querySelector("#vies").innerHTML = "hp: " + data.hp;
                 let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
                 let mana = document.querySelector("#mana").innerHTML = "mana: " + data.mp;
                 let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
