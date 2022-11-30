@@ -238,7 +238,7 @@
  }
 
  /* On mouse-over, add a deeper shadow */
- .card:hover ,#opponentIcon:hover{
+ .card:hover, #opponentIcon:hover {
  	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
  	opacity: 0.5;
  }
@@ -660,7 +660,7 @@
  }
 
  #orisa {
- 	background-image: url("../img/Cartes/Orsia.png");
+ 	background-image: url("../img/Cartes/Orisa.png");
  }
 
  #reinhardt {
