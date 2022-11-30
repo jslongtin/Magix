@@ -61,6 +61,7 @@ require_once("partial/header.php");
       </div>
       <div id="turn"></div>
       <button id="chatGameToggle" type="submit" onclick="toggleChat()">Toggle chat</button>
+      <button id="legendToggleBTN" type="submit" onclick="toggleLegend()">Legend</button>
       <div id="message"></div>
     </div>
     <div id="boardOpponentContainer"></div>
@@ -69,6 +70,19 @@ require_once("partial/header.php");
 
   <div id="player">
     <div id="info">
+      <div id="legend">
+        Hero power legend
+        <p><b>Warrior</b>: Spawn a 1/1 taunt minion</p>
+        <p><b>Priest</b>: Give a random friendly minion +2 HP</p>
+        <p><b>Hunter</b> : Draw 1 card</p>
+        <p><b>Warlock</b>: Leech 2 HP from the opponent's hero</p>
+        <p><b>DemonHunter</b>: Deal 1 HP to the left+right most minions. 2 HP if 1 minion or 3 HP to the hero if no minion</p>
+        <p><b>Rogue</b>: Spawn a 1/1 minion with charge and stealth</p>
+        <p><b>Paladin</b>: Spawn a 0/1 minion that randomly gives +1/+1 to a friendly minion at the start of your turn</p>
+        <p><b>Shaman</b>: Spawn a 0/1 minion that deals 2 HP to the opponent's hero at the end of your turn</p>
+        <p><b>Druid</b>: Spawn a 1/1 minion, restore 2 HP to your hero</p>
+        <p><b>Mage</b>: Randomly deal 3 HP to enemies</p>
+      </div>
       <div id="playerIcon"></div>
       <div>
         <div id="class"></div>

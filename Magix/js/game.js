@@ -275,10 +275,10 @@ const makeCard = (element, imageId) => {
     else {
         carte.classList.add("cardEnemy");
     }
-
     carte.append(container);
     return carte
 }
+
 //retourne une image pour la carte selon le id
 const cardImage = (id) => {
     // console.log(id);
@@ -303,6 +303,7 @@ const cardImage = (id) => {
     }
     return image;
 }
+
 const heroPower = () => {
     let formData = new FormData();
     formData.append("type", "HERO_POWER");
@@ -316,6 +317,7 @@ const heroPower = () => {
             refreshGame(data);
         });
 }
+
 const endTurn = () => {
     let formData = new FormData();
     formData.append("type", "END_TURN");
@@ -328,6 +330,7 @@ const endTurn = () => {
             refreshGame(data);
         });
 }
+
 const surrender = () => {
     let formData = new FormData();
     formData.append("type", "SURRENDER");

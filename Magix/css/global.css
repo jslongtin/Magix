@@ -105,9 +105,28 @@
  	margin: auto;
  	padding: 20px;
  }
-
-
+b{
+color: var(--black);
+}
  /* game */
+ /* #legend p {
+	border: 0.5px solid var(--white);
+} */
+
+ #legend {
+ 	display: none;
+ 	height: 30%;
+ 	min-height: fit-content;
+ 	min-width: fit-content;
+ 	color: var(--white);
+ 	position: absolute;
+ 	text-align:left;
+ 	z-index: 100;
+ 	background-color: rgba(var(--orangeGame), 0.8);
+ 	font-size: large;
+ 	left: 20px;
+ }
+
  #chatGame {
  	display: none;
  	position: absolute;
@@ -301,8 +320,8 @@
  	display: flex;
  	flex-direction: row;
  	justify-content: space-evenly;
-	
-	
+
+
  }
 
  #boardOpponentContainer {

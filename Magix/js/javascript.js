@@ -41,14 +41,21 @@ const getName = () => {
 const toggleChat = () => {
 	counter++;
 	if (counter % 2 == 1) {
-		console.log("allo");
 		document.querySelector("#chatGame").style.display = "block";
 	}
 	else {
 		document.querySelector("#chatGame").style.display = "none";
 	}
 }
-
+const toggleLegend = () => {
+	counter++;
+	if (counter % 2 == 1) {
+		document.querySelector("#legend").style.display = "block";
+	}
+	else {
+		document.querySelector("#legend").style.display = "none";
+	}
+}
 // stats/deck
 const modifierDeck = () => {
 	console.log("allo");
