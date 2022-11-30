@@ -308,8 +308,8 @@
  }
 
  .sleep {
- 	width: 50px;
- 	height: 50px;
+ 	width: 60px;
+ 	height: 60px;
  	background-image: url("../img/sleeping.png");
  	background-size: contain;
  	background-repeat: no-repeat;
