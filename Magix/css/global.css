@@ -49,9 +49,9 @@
  #chatGame {
  	display: none;
  	position: absolute;
-	z-index: 1;
-	left: 160px;
-	bottom: 100px;
+ 	z-index: 1;
+ 	left: 160px;
+ 	bottom: 100px;
  }
 
 
@@ -79,7 +79,7 @@
  	background-image: url("../img/hanamura.jpg");
  	display: grid;
  	grid-template-columns: 1fr;
- 	grid-template-rows: 0.5fr 3fr 2fr;
+ 	grid-template-rows: 0.5fr 4fr 2fr;
  	/* grid-template-rows: 1fr 0.2fr 3fr 0.2fr 2fr; */
  	padding: 10px;
  }
@@ -252,8 +252,10 @@
  .card {
  	height: 220px;
  	width: 140px;
+	padding: 4px;
  	position: relative;
-	/* margin: 0px 5px; */
+	
+ 	/* margin: 0px 5px; */
  }
 
  /* ajoute d'effet pour quon voyent les carte que l'on peut jouer ou pas */
@@ -316,9 +318,9 @@
  	border-radius: 5px 5px 0 0;
  	height: 55%;
  	width: 100%;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+ 	background-position: center;
  }
 
  /* On mouse-over, add a deeper shadow */
@@ -329,13 +331,14 @@
 
  /* Add some padding inside the card container */
  .container {
- 	padding: 0px 5px;
+ 	/* padding: 0px 5px; */
  	background-color: var(--lightBlue);
  	height: 45%;
  	width: 100%;
  	position: relative;
  	align-items: center;
  	justify-content: center;
+	 border-radius: 5px 5px 0 0;
  }
 
  #card-container {
@@ -343,14 +346,12 @@
  	height: 100%;
  	display: flex;
  	flex-direction: row;
- 	justify-content: space-between;
- 	justify-self: end;
- 	padding: 10px;
- 	padding-bottom: 20px;
+ 	justify-content: space-evenly;
  	border-radius: 10px;
  }
- #opponentCards{
-	
+
+ #opponentCards {
+
  	width: 70%;
  	height: 100%;
  	display: flex;
@@ -360,8 +361,9 @@
  	padding: 10px;
  	padding-bottom: 20px;
  	border-radius: 10px;
-	padding-right: 20%;
-}
+ 	padding-right: 20%;
+ }
+
  #action-buttons, #card-container, #info, #opponentInfo, #graphiques, .hp {
  	align-items: center;
  	justify-content: center;
@@ -378,13 +380,26 @@
 
  #boardCardContainer, #boardOpponentContainer {
  	height: 50%;
- 	height: auto;
+ 	min-height: 200px;
  	width: 80%;
  	display: flex;
  	flex-direction: row;
  	justify-content: space-evenly;
  }
-
+ #boardOpponentContainer{
+padding-top: 5px;}
+.sleep{
+	width: 30px;
+	height: 30px;
+	background-image: url("../img/sleeping.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+ 	top:0px;
+	right: 0px;
+ 	
+}
  #action-buttons {
  	right: 0px;
  	width: 20%;
@@ -398,16 +413,16 @@
 
 
  #opponent {
-	display: flex;
+ 	display: flex;
  	flex-direction: row;
  	justify-content: space-evenly;
  	top: 0px;
  	height: 100%;
  	width: 100%;
- 	padding: 10px;
+	padding-top: 5px;
  	border-radius: 10px;
  	position: relative;
-	background-color: rgba(var(--blueBoard),0.5);
+ 	background-color: rgba(var(--blueBoard), 0.5);
  }
 
  #info, #opponentInfo {
@@ -422,7 +437,7 @@
  	flex-direction: row;
  	height: 100%;
  	width: 100%;
-	background-color: rgba(var(--blueBoard),0.5);
+ 	background-color: rgba(var(--blueBoard), 0.5);
  	justify-content: center;
  	align-items: center;
  }
@@ -460,23 +475,6 @@
  	background-color: var(--orange);
  }
 
- /* #mana {
- 	color: var(--white);
- 	background-color: var(--lightBlue);
- 	width: 50px;
- }
-
- #timer {
- 	color: var(--orange);
- 	height: 50px;
- 	width: 50px;
- }
-
- #remaining {
- 	color: var(--orange);
- 	background-color: var(--black);
- 	width: 50px;
- } */
 
  .isSelected {
  	background-color: var(--orange);
@@ -486,18 +484,14 @@
  	background-color: var(--lightBlue);
  }
 
- /* canvas{
-width: 500px;
-height: 500px;
-display: block;
-} */
+
  #timerValue {
  	z-index: 1;
  	width: 70px;
  	height: 70px;
-	position: absolute;
-	left: 30px;
-	top: 30px;
+ 	position: absolute;
+ 	left: 30px;
+ 	top: 30px;
  }
 
  #timerAnim {
@@ -507,12 +501,12 @@ display: block;
  }
 
  #timerAnim .circularCW {
-	animation: rotate 1s linear infinite;
-}
+ 	animation: rotate 1s linear infinite;
+ }
 
-#timerAnim  .circularCCW {
-	animation: rotate-reverse 5s linear infinite;
-}
+ #timerAnim .circularCCW {
+ 	animation: rotate-reverse 5s linear infinite;
+ }
 
  #index .overwatch-loader {
  	width: 300px;

@@ -22,8 +22,8 @@ require_once("partial/header.php");
 
   <div id="board">
     <div id="gameInfo">
-    <iframe id="chatGame" style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
-  </iframe>
+      <iframe id="chatGame" style="width:700px;height:562px;" onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>/large">
+      </iframe>
       <div id="timer">
         <div id="timerValue"></div>
         <div class="overwatch-loader" id="timerAnim">
@@ -78,7 +78,7 @@ require_once("partial/header.php");
 
       <div id="remaining"></div>
     </div>
-    <div id="playerIcon"></div>
+    <!-- <div id="playerIcon"></div> -->
     <div id="card-container"></div>
     <div id="action-buttons">
       <button name="heroPower" onclick="heroPower()" type="submit">Hero Power</button>
@@ -88,14 +88,7 @@ require_once("partial/header.php");
     </div>
 
   </div>
-  <!-- card exemple -->
-  <!-- <div class="card">
-  <img  alt="Carte" src="img/Cartes/1664932350_837161.png" style="width:100%">
-  <div class="container">
-    <h4><b>Name</b></h4>
-    <p>infos</p>
-  </div>
-</div> -->
+
 
 
 </div>

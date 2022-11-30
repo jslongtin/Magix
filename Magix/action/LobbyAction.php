@@ -24,8 +24,7 @@ class LobbyAction extends CommonAction
 
             if ($result == "INVALID_KEY") {
                 $deconnectionError = true;
-            } 
-            else {
+            } else {
                 $_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
                 header("location:Index.php");
                 exit;
@@ -51,8 +50,7 @@ class LobbyAction extends CommonAction
                 header("location:Game.php");
                 exit;
             }
-        } 
-        else if (isset($_POST["pratique"])) {
+        } else if (isset($_POST["pratique"])) {
             $data = [];
             $data["key"] = $_SESSION["key"];
             $data["type"] = "TRAINING";
@@ -69,20 +67,17 @@ class LobbyAction extends CommonAction
             }
             if ($result == "DECK_INCOMPLETE") {
                 $DeckError = true;
-            } 
-            else {
+            } else {
                 header("location:Game.php");
                 exit;
             }
-        } 
-        else if (isset($_POST["deck"])) {
+        } else if (isset($_POST["deck"])) {
             header("location:StatsDeck.php");
             exit;
-        }
-        else if (isset($_POST["select"])) {
-            $_SESSION["heroChoisi"] = $_POST["select"] ;
+        } else if (isset($_POST["select"])) {
+            $_SESSION["heroChoisi"] = $_POST["select"];
         }
 
-        return compact("deconnectionError", "KeyError","TypeError" , "DeckError");
+        return compact("deconnectionError", "KeyError", "TypeError", "DeckError");
     }
 }

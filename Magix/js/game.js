@@ -9,7 +9,7 @@
     let Messages = document.querySelector("#message");
     let hand = document.querySelector("#card-container");
     let opponent= document.querySelector("#opponent");
-    let playerImage = document.querySelector("#playerIcon");
+    let playerImage = document.querySelector("#info");
     let opponentImage= document.querySelector("#opponentIcon");
     let opponentIcon = document.createElement("img");
     opponentIcon.src = "img/Cartes/Reaper.png";
@@ -44,14 +44,11 @@ const state = () => {
     })
         .then(response => response.json())
         .then(data => {
-           
-            
-            // let opponentHand = document.querySelector("#opponentHand");
-            // // opponentHand.innerHTML = null;
+      
 
             if (data == "WAITING") {
                 Messages.innerHTML = data;
-                // message.setAttribute("id", "messageGame");
+               
             }
             else if (data == "LAST_GAME_WON") {
                 Messages.innerHTML = data;
@@ -84,6 +81,9 @@ let refreshGame = (data) => {
         let main = data.hand; 
         main.forEach(element => {
             let carte = makeCard(element, element.id);
+            if(element.cost <= data.mp){
+                carte.classList.add("playableCard")
+            }
             hand.append(carte);
             
             carte.onclick = () => {
@@ -218,17 +218,20 @@ const makeCard = (element, imageId) => {
         let cost = document.createElement("div");
         cost.innerHTML = element.cost;
         cost.classList.add("cost");
-        // let baseHP = element.baseHP;
         info.append(textTnfo);
         bold.append(textName);
         name.append(bold);
-        // container.append(name);
         container.append(info);
         carte.append(hp);
         carte.append(atk);
         carte.append(cost);
         carte.append(img);
-        // container.append(baseHP);
+        if (element.state == "SLEEP"){
+            let sleep = document.createElement("div"); 
+            sleep.classList.add("sleep")
+            carte.append(sleep)
+        }
+     
     }
     else {
         carte.classList.add("cardEnemy");

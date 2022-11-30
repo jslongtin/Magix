@@ -18,17 +18,11 @@ const applyStyles = iframe => {
 	}, 100);
 }
 const modifierDeck = () => {
-	// counter++;
-	// if (counter % 2 == 1) {
+
 	console.log("allo");
 	document.querySelector("#myChart").style.display = "none";
 	document.querySelector("#deckAPI").style.display = "block";
-	// }
-	// else {
-	// 	console.log("fdsfds");
-	// 	document.querySelector("#deckAPI").setAttribute("display", "none");
-	// 	document.querySelector("#myChart").setAttribute("display", "block");
-	// }
+
 }
 const toggleChat = () => {
 	counter++;
@@ -108,13 +102,13 @@ const graphiqueP = () => {
 			}
 			let chartid = document.getElementById("myChart");
 			let chart = new Chart(chartid, {
-				
+
 				type: "pie",
 				data: piedata,
 				options: {
-					legend : {
-						labels : {
-						  fontColor : '#000000'  
+					legend: {
+						labels: {
+							fontColor: '#000000'
 						}
 					},
 					responsive: true,
@@ -129,7 +123,7 @@ const graphiqueP = () => {
 					title: {
 						display: true,
 						text: "Popularité des cartes en Pourcentage",
-						fontColor : '#000000'  
+						fontColor: '#000000'
 					}
 
 				}
