@@ -26,13 +26,6 @@
  	overflow: hidden;
  }
 
-
- button {
- 	background-color: var(--orange);
- 	color: var(--white);
- }
-
-
  button:hover {
  	background-color: var(--lightBlue);
  }
@@ -44,6 +37,12 @@
  	height: 100px;
  	margin: auto;
  	padding: 20px;
+ }
+
+ h2 {
+ 	color: var(--orange);
+ 	font-size: 300%;
+
  }
 
  #chatGame {
@@ -84,7 +83,6 @@
  	display: grid;
  	grid-template-columns: 1fr;
  	grid-template-rows: 0.5fr 4fr 2fr;
- 	/* grid-template-rows: 1fr 0.2fr 3fr 0.2fr 2fr; */
  	padding: 10px;
  }
 
@@ -111,11 +109,12 @@
  }
 
  #graphiques {
+
  	width: 90%;
  	height: 80%;
  	padding: 20px;
  	margin: auto;
- 	background-color: rgba(var(--pink), 0.4);
+ 	background-color: rgba(var(--pink), 0.5);
  }
 
  #graphiques #myChart {
@@ -125,7 +124,7 @@
  	max-width: 1400px;
  	justify-self: center;
  	align-self: center;
-
+	margin: auto;
  }
 
  #deckAPI {
@@ -164,6 +163,8 @@
  }
 
  button {
+ 	background-color: var(--orange);
+ 	color: var(--white);
  	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
  	color: #333;
  	background-color: var(--orange);
@@ -209,8 +210,8 @@
  #buttonsLobby input {
  	width: 80%;
  	max-width: 250px;
- 	max-height: 50px;
- 	height: 7%;
+ 	max-height: 60px;
+ 	height: 10%;
  }
 
  #chat {
@@ -427,6 +428,7 @@
  	padding-top: 600px;
  	font-size: 200px;
  	z-index: 10;
+	margin-left: -20px;
  }
 
  #opponent {
@@ -860,10 +862,4 @@
 
  #moira {
  	background-image: url("../img/Cartes/Moira.png");
- }
-
- h2 {
- 	color: var(--orange);
- 	font-size: 300%;
-
  }

@@ -76,7 +76,7 @@ const graphiqueP = () => {
 				data.forEach(element => {
 
 					if (element.idcarte != null) {
-						xValues.push("Carte" + JSON.stringify(element.idcarte));
+						xValues.push("CarteId " + JSON.stringify(element.idcarte));
 						total += element.count;
 					}
 				});
