@@ -40,7 +40,40 @@ const state = () => {
                     let opponentImage = document.querySelector("#opponentIcon");
                     opponentImage.innerHTML = null;
                     let opponentIcon = document.createElement("img");
-                    opponentIcon.src = "img/Cartes/Reaper.png";
+                    console.log(data);
+                    if (data.opponent.heroClass.includes("Warlock")) {
+                        opponentIcon.src = "img/Cartes/Moira.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Demonhunter")) {
+                        opponentIcon.src = "img/Cartes/Reaper.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Druid")) {
+                        opponentIcon.src = "img/Cartes/Zenyatta.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Paladin")) {
+                        opponentIcon.src = "img/Cartes/Reinhardt.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Warrior")) {
+                        opponentIcon.src = "img/Cartes/Soldier76.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Hunter")) {
+                        opponentIcon.src = "img/Cartes/Hanzo.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Rogue")) {
+                        opponentIcon.src = "img/Cartes/Genji.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Priest")) {
+                        opponentIcon.src = "img/Cartes/Mercy.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Shaman")) {
+                        opponentIcon.src = "img/Cartes/Kiriko.png";
+                    }
+                    else if (data.opponent.heroClass.includes("Mage")) {
+                        opponentIcon.src = "img/Cartes/Mei.png";
+                    }
+                    else { opponentIcon.src = "img/Cartes/Reaper.png"; }
+
+
                     opponentIcon.classList.add("img");
 
                     opponentImage.append(opponentIcon);
