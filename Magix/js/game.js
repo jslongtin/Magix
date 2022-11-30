@@ -22,14 +22,13 @@ const state = () => {
             else if (data == "LAST_GAME_WON") {
                 messages.style.display = "block";
                 messages.innerHTML = "VICTOIRE";
-
-                messages.setAttribute("id", "messageErreurs");
+                messages.setAttribute("id", "messagesFin");
 
             }
             else if (data == "LAST_GAME_LOST") {
                 messages.style.display = "block";
                 messages.innerHTML = "DEFAITE";
-                messages.setAttribute("id", "messageErreurs");
+                messages.setAttribute("id", "messagesFin");
             }
             else {
                 if (count == 0) {
@@ -275,9 +274,9 @@ const cardImage = (id) => {
 const heroPower = () => {
     let formData = new FormData();
     formData.append("type", "HERO_POWER");
-    fetch("ajax-state.php", {    
+    fetch("ajax-state.php", {
         method: "POST",
-        body: formData       
+        body: formData
     })
         .then(response => response.json())
         .then(data => {
@@ -288,9 +287,9 @@ const heroPower = () => {
 const endTurn = () => {
     let formData = new FormData();
     formData.append("type", "END_TURN");
-    fetch("ajax-state.php", {   
+    fetch("ajax-state.php", {
         method: "POST",
-        body: formData     
+        body: formData
     })
         .then(response => response.json())
         .then(data => {
@@ -300,9 +299,9 @@ const endTurn = () => {
 const surrender = () => {
     let formData = new FormData();
     formData.append("type", "SURRENDER");
-    fetch("ajax-state.php", {  
+    fetch("ajax-state.php", {
         method: "POST",
-        body: formData       
+        body: formData
     })
         .then(response => response.json())
         .then(data => {
@@ -318,9 +317,9 @@ const attack = (uidCarteMain, uidTarget) => {
     formData.append("type", "ATTACK");
     formData.append("uid", uidCarteMain);
     formData.append("targetuid", uidTarget);
-    fetch("ajax-state.php", {   
+    fetch("ajax-state.php", {
         method: "POST",
-        body: formData       
+        body: formData
     })
         .then(response => response.json())
         .then(data => {

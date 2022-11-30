@@ -424,21 +424,26 @@
  	justify-content: space-evenly;
  }
 
- #messageErreurs {
+ #messageErreurs ,#messagesFin{
  	height: 100vh;
  	width: 100vw;
  	margin: auto;
- 	background-color: rgba(var(--lightBlueStats), 0.6);
  	color: var(--white);
  	align-items: center;
  	justify-content: center;
  	text-align: center;
  	padding-top: 600px;
- 	font-size: 200px;
  	z-index: 10;
 	margin-left: -20px;
  }
-
+ #messagesFin{
+	background-color: rgba(var(--lightBlueStats), 0.6);
+	font-size: 200px;
+}
+#messageErreurs{
+	background-color: rgba(var(--orangeGame), 0.4);
+	font-size: 100px;
+}
  #opponent {
  	display: flex;
  	flex-direction: row;
