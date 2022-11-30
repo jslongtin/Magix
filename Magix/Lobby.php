@@ -13,7 +13,7 @@ require_once("partial/header.php");
 		</iframe>
 	</div>
 
-	<div class="logout">
+	<div class="actionButtonsLobby">
 		<form action="" method="post">
 			<?php
 			if ($data["deconnectionError"] or $data["KeyError"]) {

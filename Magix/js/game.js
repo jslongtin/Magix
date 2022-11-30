@@ -302,7 +302,7 @@ const surrender = () => {
     formData.append("type", "SURRENDER");
     fetch("ajax-state.php", {  
         method: "POST",
-        body: formData       /
+        body: formData       
     })
         .then(response => response.json())
         .then(data => {
