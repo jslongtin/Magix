@@ -275,9 +275,9 @@ const cardImage = (id) => {
 const heroPower = () => {
     let formData = new FormData();
     formData.append("type", "HERO_POWER");
-    fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+    fetch("ajax-state.php", {    
         method: "POST",
-        body: formData       // l’API (games/state)
+        body: formData       
     })
         .then(response => response.json())
         .then(data => {
@@ -288,9 +288,9 @@ const heroPower = () => {
 const endTurn = () => {
     let formData = new FormData();
     formData.append("type", "END_TURN");
-    fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+    fetch("ajax-state.php", {   
         method: "POST",
-        body: formData       // l’API (games/state)
+        body: formData     
     })
         .then(response => response.json())
         .then(data => {
@@ -300,9 +300,9 @@ const endTurn = () => {
 const surrender = () => {
     let formData = new FormData();
     formData.append("type", "SURRENDER");
-    fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+    fetch("ajax-state.php", {  
         method: "POST",
-        body: formData       // l’API (games/state)
+        body: formData       /
     })
         .then(response => response.json())
         .then(data => {
@@ -318,9 +318,9 @@ const attack = (uidCarteMain, uidTarget) => {
     formData.append("type", "ATTACK");
     formData.append("uid", uidCarteMain);
     formData.append("targetuid", uidTarget);
-    fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
+    fetch("ajax-state.php", {   
         method: "POST",
-        body: formData       // l’API (games/state)
+        body: formData       
     })
         .then(response => response.json())
         .then(data => {

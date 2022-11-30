@@ -115,7 +115,8 @@ const graphiqueP = () => {
 				options: {
 					legend: {
 						labels: {
-							fontColor: '#000000'
+							fontColor: '#000000',
+							fontSize: 16
 						}
 					},
 					responsive: true,
@@ -129,8 +130,9 @@ const graphiqueP = () => {
 					},
 					title: {
 						display: true,
-						text: "Popularité des cartes en Pourcentage",
-						fontColor: '#000000'
+						text: "Popularité des cartes",
+						fontColor: '#000000',
+						fontSize: 20
 					}
 
 				}
