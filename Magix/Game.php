@@ -10,6 +10,7 @@ require_once("partial/header.php");
 <script defer src="js/game.js"></script>
 
 <div id="game">
+
   <div id="opponent">
     <div id="opponentInfo">
       <div id="classOpponent"></div>
@@ -76,7 +77,7 @@ require_once("partial/header.php");
         <div id="healthBar">
           <div id="vies">0</div>
           <!-- <progress id="health" value="100" max="100"> </progress> -->
-        </div >
+        </div>
         <div id="mana"></div>
 
         <div id="remaining"></div>
@@ -88,7 +89,7 @@ require_once("partial/header.php");
       <button name="heroPower" onclick="heroPower()" type="submit">Hero Power</button>
       <button name="endTurn" onclick="endTurn()" type="submit">End Turn</button>
       <button name="surrender" onclick="surrender()" type="submit">Surrender</button>
-      <button name="quitter" onclick="quitGame()" type="submit">Quitter</button>
+      <button id="quitter" name="quitter" onclick="quitGame()" type="submit">Quitter</button>
     </div>
 
   </div>

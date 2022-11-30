@@ -7,7 +7,8 @@ let count = 0;
 let isCardSelected = null;
 let hand = document.querySelector("#card-container");
 let opponent = document.querySelector("#opponent");
-let Messages = document.querySelector("#message");
+let messages = document.querySelector("#message");
+
 
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
@@ -17,25 +18,27 @@ const state = () => {
         .then(data => {
 
             if (data == "WAITING") {
-                Messages.style.display = "block";
-                Messages.innerHTML = data;
-
+                messages.style.display = "block";
+                messages.innerHTML = data;
 
             }
             else if (data == "LAST_GAME_WON") {
-                Messages.style.display = "block";
-                Messages.innerHTML = "VICTOIRE";
+                messages.style.display = "block";
+                messages.innerHTML = "VICTOIRE";
+               
+                messages.setAttribute("id", "messageErreurs");
+              
             }
             else if (data == "LAST_GAME_LOST") {
-                Messages.style.display = "block";
-                Messages.innerHTML = "DEFAITE";
+                messages.style.display = "block";
+                messages.innerHTML = "DEFAITE";
+                messages.setAttribute("id", "messageErreurs");
             }
             else {
-                Messages.style.display = "none";
                 
                 if (count == 0) {
                     count++;
-                    Messages.innerHTML = null;
+                    messages.style.display = "none";
                     let playerImage = document.querySelector("#playerIcon");
                     playerImage.innerHTML = null;
 
@@ -81,13 +84,18 @@ const state = () => {
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
-
+// Refresh genral avec des conditions pour chaques sections si modifications dans le JSON
 let refreshGame = (data) => {
     if (typeof data != "object") {
-        Messages.innerHTML = data;
+        messages.style.display = "block";
+        messages.setAttribute("id", "messageErreurs");
+        messages.innerHTML = data;
+        setTimeout(() => {
+            messages.style.display = "none";
+            messages.removeAttribute("id", "messageErreurs");
+        }, 2000);
     }
     else {
-
         if (JSON.stringify(data.hand) != JSON.stringify(myHand)) {
             hand.innerHTML = null;
             let main = data.hand;
@@ -185,18 +193,13 @@ let refreshGame = (data) => {
 }
 // methode de construction de carte pour eviter la repetition
 const makeCard = (element, imageId) => {
-
     let carte = document.createElement("div");
-
     let container = document.createElement("div");
 
     if (element != 0) {
         let img = document.createElement("div");
 
         img.classList.add("imgCard");
-        // img.alt = "carte";
-        // img.src = cardImage(imageId);
-        // img.classList.add("imgCard");
         carte.classList.add("card");
         // si la carte peut etre jouée
         if (element.state == "idle") {
@@ -247,7 +250,6 @@ const makeCard = (element, imageId) => {
             sleep.classList.add("sleep")
             carte.append(sleep)
         }
-
     }
     else {
         carte.classList.add("cardEnemy");
@@ -260,14 +262,8 @@ const makeCard = (element, imageId) => {
 const cardImage = (id) => {
     // console.log(id);
     let image;
-    let cheminImage;
-    //  pour l'implementation futur du hero selection screen
-    if (id.length < 2) {
-        cheminImage = "img/Cartes/";
-    }
-    else {
-        cheminImage = "img/CartesNum/";
-    }
+    let cheminImage= "img/CartesNum/";
+  
     if (id <= 31) {
         image = cheminImage + id.toString() + ".png";
     }
@@ -281,8 +277,8 @@ const cardImage = (id) => {
         image = "img/cardback.png";
     }
     else {
+        // carte generique
         image = "img/Cartes/Omnic.webp";
-
     }
     return image;
 }
