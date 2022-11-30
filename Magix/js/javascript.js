@@ -16,11 +16,19 @@ const applyStyles = iframe => {
 		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");
 	}, 100);
 }
-const modifierDeck = () => {
-	console.log("allo");
-	document.querySelector("#myChart").style.display = "none";
-	document.querySelector("#deckAPI").style.display = "block";
+// onload events
+if (window.location.href.match("StatsDeck.php") != null) {
+	window.addEventListener("load", () => {
+		graphiqueP();
+	});
+
 }
+else if (window.location.href.match("Lobby.php") != null) {
+	window.addEventListener("load", () => {
+		getName();
+	});
+}
+// local storage
 const localStorage = () => {
 	let username = document.querySelector("#Username").value;
 	window.localStorage.setItem("Name", username);
@@ -40,18 +48,13 @@ const toggleChat = () => {
 		document.querySelector("#chatGame").style.display = "none";
 	}
 }
-if (window.location.href.match("StatsDeck.php") != null) {
-	window.addEventListener("load", () => {
-		graphiqueP();
-	});
 
+// stats/deck
+const modifierDeck = () => {
+	console.log("allo");
+	document.querySelector("#myChart").style.display = "none";
+	document.querySelector("#deckAPI").style.display = "block";
 }
-else if (window.location.href.match("Lobby.php") != null) {
-	window.addEventListener("load", () => {
-		getName();
-	});
-}
-
 const graphiqueP = () => {
 	document.querySelector("#deckAPI").style.display = "none";
 	document.querySelector("#myChart").style.display = "block";
@@ -99,7 +102,7 @@ const graphiqueP = () => {
 				barColors.push(color);
 				color = "#";
 			}
-			
+
 			let piedata = {
 				labels: xValues,
 				datasets: [{

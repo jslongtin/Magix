@@ -14,8 +14,8 @@
  	--lightBlue: rgb(33, 143, 254);
  	--lightBlueStats: 33, 143, 254;
  	--black: rgb(0, 0, 0);
- 	--orange: rgb(250, 156, 29); 
- 	--orangeGame: 250, 156, 29; 
+ 	--orange: rgb(250, 156, 29);
+ 	--orangeGame: 250, 156, 29;
  	--white: rgb(255, 255, 255);
  	--whiteGraph: 255, 255, 255;
  	--pink: 254, 171, 230;
@@ -31,42 +31,6 @@
  	background-color: var(--lightBlue);
  }
 
- h1 {
- 	color: var(--orange);
- 	font-size: 700%;
- 	width: fit-content;
- 	height: 100px;
- 	margin: auto;
- 	padding: 20px;
- }
-
- h2 {
- 	color: var(--orange);
- 	font-size: 300%;
-
- }
-
- #chatGame {
- 	display: none;
- 	position: absolute;
- 	z-index: 2;
- 	left: 160px;
-
- 	max-height: 500px;
- }
-
- #quitter {
- 	z-index: 100;
- }
-
- #message {
- 	width: 100px;
- 	height: 50px;
- 	color: var(--white);
- 	background-color: var(--blue);
- 	display: none;
- }
-
  #index,
  #lobby,
  #deck,
@@ -79,62 +43,30 @@
  	background-repeat: no-repeat;
  }
 
- #game {
- 	background-image: url("../img/hanamura.jpg");
- 	display: grid;
- 	grid-template-columns: 1fr;
- 	grid-template-rows: 0.5fr 4fr 2fr;
- 	padding: 10px;
+ button {
+ 	background-color: var(--orange);
+ 	color: var(--white);
+ 	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
+ 	color: #333;
+ 	background-color: var(--orange);
+ 	color: var(--white);
+ 	border-radius: 3px;
+ 	border: none;
+ 	font-size: 16px;
+ 	font-weight: 700;
+ 	height: 40px;
+ 	width: 150px;
+ 	padding: 4px 16px;
+ 	cursor: pointer;
  }
 
-
-
- #lobby {
- 	background-image: url("../img/Lobby.jpg");
- 	display: grid;
- 	grid-template-columns: 1fr 1fr;
- 	grid-template-rows: 1.5fr 1fr;
- 	grid-template-areas:
- 		'bouttons chat'
- 		'heros heros'
- 	;
+ button:hover {
+ 	background-color: var(--lightBlue);
  }
 
+ /* index */
  #index {
  	background-image: url("../img/dalticu-eb19f94d-2103-4b0e-bcfd-4383f2eba94f.jpg");
- }
-
- #deck {
- 	overflow: hidden;
- 	background-image: url("../img/wallpaperbetter.com_1366x768.jpg");
- }
-
- #graphiques {
- 	width: 90%;
- 	height: 80%;
- 	padding: 20px;
- 	margin: auto;
- 	background-color: rgba(var(--pink), 0.4);
- }
-
- #graphiques #myChart {
- 	height: 100%;
- 	width: 100%;
- 	max-height: 750px;
- 	max-width: 1400px;
- 	justify-self: center;
- 	align-self: center;
-	margin: auto;
- }
- #myChart {
-	background-color: rgba(var(--pink), 0.6);
-	border-radius: 5px;
-}
- #deckAPI {
- 	width: 100%;
- 	height: 100%;
- 	display: none;
- 	background-color: rgba(var(--grayOpp), 0.8);
  }
 
  .ConnexionBox {
@@ -165,70 +97,44 @@
  	height: 10px;
  }
 
- button {
- 	background-color: var(--orange);
- 	color: var(--white);
- 	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
- 	color: #333;
- 	background-color: var(--orange);
- 	color: var(--white);
- 	border-radius: 3px;
- 	border: none;
- 	font-size: 16px;
- 	font-weight: 700;
- 	height: 40px;
- 	width: 150px;
- 	padding: 4px 16px;
- 	cursor: pointer;
- }
-
- button:hover {
- 	background-color: var(--lightBlue);
- }
-
- #actionBar {
- 	display: flex;
- 	flex-direction: row;
- 	width: 80%;
- 	height: 10%;
- 	justify-content: center;
- 	align-items: center;
- 	padding: 10px;
- 	margin: auto;
- }
-#actionButtonsLobby{
-	grid-area: bouttons;
-	width: 100%;
- 	height: 100%;
-	max-height: 500px;
-	margin: auto;
-}
-
-#buttonsLobby {
- 	display: flex;
- 	flex-direction: column;
+ h1 {
+ 	color: var(--orange);
+ 	font-size: 700%;
  	width: fit-content;
- 	align-items: center;
- 	justify-content: center;
-	margin: auto;
-	background-color:rgba( var(--orangeGame),0.2);
+ 	height: 100px;
+ 	margin: auto;
+ 	padding: 20px;
  }
 
- #buttonsLobby button,
- #buttonsLobby input {
-	margin: 10px;
-	min-height: 60px;
-	min-width: 250px;
+
+ /* game */
+ #chatGame {
+ 	display: none;
+ 	position: absolute;
+ 	z-index: 2;
+ 	left: 160px;
+
+ 	max-height: 500px;
  }
 
- #chat {
- 	grid-area: chat;
- 	width: 100%;
- 	height: 500px;
+ #quitter {
+ 	z-index: 100;
  }
 
- #chat iframe {
- 	min-height: 400px;
+ #message {
+ 	width: 100px;
+ 	height: 50px;
+ 	color: var(--white);
+ 	background-color: var(--blue);
+ 	display: none;
+ }
+
+ #game {
+ 	background-image: url("../img/hanamura.jpg");
+ 	display: grid;
+ 	grid-template-columns: 1fr;
+ 	grid-template-rows: 0.5fr 4fr 2fr;
+ 	padding: 10px;
  }
 
  .card,
@@ -357,8 +263,8 @@
  	justify-content: space-evenly;
  	border-radius: 10px;
  	z-index: 0;
-	align-items: center;
-	margin: auto;
+ 	align-items: center;
+ 	margin: auto;
  }
 
  #opponentCards {
@@ -424,7 +330,7 @@
  	justify-content: space-evenly;
  }
 
- #messageErreurs ,#messagesFin{
+ #messageErreurs, #messagesFin {
  	height: 100vh;
  	width: 100vw;
  	margin: auto;
@@ -434,16 +340,19 @@
  	text-align: center;
  	padding-top: 600px;
  	z-index: 10;
-	margin-left: -20px;
+ 	margin-left: -20px;
  }
- #messagesFin{
-	background-color: rgba(var(--lightBlueStats), 0.6);
-	font-size: 200px;
-}
-#messageErreurs{
-	background-color: rgba(var(--orangeGame), 0.4);
-	font-size: 100px;
-}
+
+ #messagesFin {
+ 	background-color: rgba(var(--lightBlueStats), 0.6);
+ 	font-size: 200px;
+ }
+
+ #messageErreurs {
+ 	background-color: rgba(var(--orangeGame), 0.4);
+ 	font-size: 100px;
+ }
+
  #opponent {
  	display: flex;
  	flex-direction: row;
@@ -523,150 +432,107 @@
  	position: relative;
  }
 
- #timerAnim .circularCW {
- 	animation: rotate 1s linear infinite;
+ /* stats/deck */
+ #deck {
+ 	overflow: hidden;
+ 	background-image: url("../img/wallpaperbetter.com_1366x768.jpg");
  }
 
- #timerAnim .circularCCW {
- 	animation: rotate-reverse 5s linear infinite;
+ #graphiques {
+ 	width: 90%;
+ 	height: 80%;
+ 	padding: 20px;
+ 	margin: auto;
+ 	background-color: rgba(var(--pink), 0.4);
  }
 
- #index .overwatch-loader {
- 	width: 300px;
- 	position: absolute;
- 	margin: 0px auto;
- 	right: 0px;
- 	bottom: 0;
- }
-
- .overwatch-logo {
- 	filter:
- 		drop-shadow(0 0 120px rgba(255, 255, 255, 0.15)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.05));
- 	opacity: 0.8;
- }
-
- .circularCW,
- .circularCCW {
+ #graphiques #myChart {
  	height: 100%;
- 	transform-origin: center center;
  	width: 100%;
- 	position: absolute;
- 	top: 0;
- 	bottom: 0;
- 	left: 0;
- 	right: 0;
+ 	max-height: 750px;
+ 	max-width: 1400px;
+ 	justify-self: center;
+ 	align-self: center;
  	margin: auto;
  }
 
- .circularCW {
- 	animation: rotate 4s linear infinite;
+ #myChart {
+ 	background-color: rgba(var(--pink), 0.6);
+ 	border-radius: 5px;
  }
 
- .circularCCW {
- 	animation: rotate-reverse 8s linear infinite;
+ #deckAPI {
+ 	width: 100%;
+ 	height: 100%;
+ 	display: none;
+ 	background-color: rgba(var(--grayOpp), 0.8);
  }
 
- .path,
- .path2,
- .path3,
- .path4,
- .path5,
- .path6,
- .path7,
- .path8 {
- 	stroke-linecap: square;
- 	stroke-width: 33;
- 	opacity: 0.8;
+
+ /* Lobby */
+ h2 {
+ 	color: var(--orange);
+ 	font-size: 300%;
+
  }
 
- .path {
- 	stroke-dasharray: 1400, 2600;
- 	stroke-dashoffset: 0;
- 	animation: dash 3.7s ease-in-out infinite;
- 	opacity: 0.3;
+ #lobby {
+ 	background-image: url("../img/Lobby.jpg");
+ 	display: grid;
+ 	grid-template-columns: 1fr 1fr;
+ 	grid-template-rows: 1.5fr 1fr;
+ 	grid-template-areas:
+ 		'bouttons chat'
+ 		'heros heros'
+ 	;
  }
 
- .path2 {
- 	stroke-dasharray: 40, 2600;
- 	stroke-dashoffset: -500px;
+ #actionBar {
+ 	display: flex;
+ 	flex-direction: row;
+ 	width: 80%;
+ 	height: 10%;
+ 	justify-content: center;
+ 	align-items: center;
+ 	padding: 10px;
+ 	margin: auto;
  }
 
- .path3 {
- 	stroke-dasharray: 200, 2600;
- 	stroke-dashoffset: -700px;
+ #actionButtonsLobby {
+ 	grid-area: bouttons;
+ 	width: 100%;
+ 	height: 100%;
+ 	max-height: 500px;
+ 	margin: auto;
  }
 
- .path4 {
- 	stroke-dasharray: 40, 2600;
- 	stroke-dashoffset: -2000px;
- 	animation: dash2 2.5s ease-in-out infinite;
+ #buttonsLobby {
+ 	display: flex;
+ 	flex-direction: column;
+ 	width: fit-content;
+ 	align-items: center;
+ 	justify-content: center;
+ 	margin: auto;
+ 	background-color: rgba(var(--orangeGame), 0.2);
  }
 
- .path5 {
- 	stroke-dasharray: 200, 2600;
- 	stroke-dashoffset: 0;
+ #buttonsLobby button,
+ #buttonsLobby input {
+ 	margin: 10px;
+ 	min-height: 60px;
+ 	min-width: 250px;
  }
 
- .path6 {
- 	stroke-dasharray: 300, 2600;
- 	stroke-dashoffset: -1000px;
+ #chat {
+ 	grid-area: chat;
+ 	width: 100%;
+ 	height: 500px;
  }
 
- .path7 {
- 	stroke-dasharray: 40, 2600;
- 	stroke-dashoffset: -1200px;
+ #chat iframe {
+ 	min-height: 400px;
  }
 
- .path8 {
- 	stroke-dasharray: 100, 2600;
- 	stroke-dashoffset: -300px;
- }
-
- @keyframes rotate {
- 	100% {
- 		transform: rotate(360deg);
- 	}
- }
-
- @keyframes rotate-reverse {
- 	100% {
- 		transform: rotate(-360deg);
- 	}
- }
-
- @keyframes dash {
- 	0% {
- 		stroke-dasharray: 2000, 2600;
- 		stroke-dashoffset: 0;
- 	}
-
- 	50% {
- 		stroke-dasharray: 2400, 2600;
- 		stroke-dashoffset: -500px;
- 	}
-
- 	100% {
- 		stroke-dasharray: 2000, 2600;
- 		stroke-dashoffset: 0;
- 	}
- }
-
- @keyframes dash2 {
- 	0% {
- 		stroke-dasharray: 100, 2600;
- 		stroke-dashoffset: -2000px;
- 	}
-
- 	50% {
- 		stroke-dasharray: 500, 2600;
- 		stroke-dashoffset: -1000px;
- 	}
-
- 	100% {
- 		stroke-dasharray: 100, 2600;
- 		stroke-dashoffset: -1960px;
- 	}
- }
 
  .heroSelectionGallery {
  	grid-area: heros;
@@ -875,4 +741,151 @@
 
  #moira {
  	background-image: url("../img/Cartes/Moira.png");
+ }
+
+
+ /* anim logo qui tourne */
+ #timerAnim .circularCW {
+ 	animation: rotate 1s linear infinite;
+ }
+
+ #timerAnim .circularCCW {
+ 	animation: rotate-reverse 5s linear infinite;
+ }
+
+ #index .overwatch-loader {
+ 	width: 300px;
+ 	position: absolute;
+ 	margin: 0px auto;
+ 	right: 0px;
+ 	bottom: 0;
+ }
+
+ .overwatch-logo {
+ 	filter:
+ 		drop-shadow(0 0 120px rgba(255, 255, 255, 0.15)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.05));
+ 	opacity: 0.8;
+ }
+
+ .circularCW,
+ .circularCCW {
+ 	height: 100%;
+ 	transform-origin: center center;
+ 	width: 100%;
+ 	position: absolute;
+ 	top: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	margin: auto;
+ }
+
+ .circularCW {
+ 	animation: rotate 4s linear infinite;
+ }
+
+ .circularCCW {
+ 	animation: rotate-reverse 8s linear infinite;
+ }
+
+ .path,
+ .path2,
+ .path3,
+ .path4,
+ .path5,
+ .path6,
+ .path7,
+ .path8 {
+ 	stroke-linecap: square;
+ 	stroke-width: 33;
+ 	opacity: 0.8;
+ }
+
+ .path {
+ 	stroke-dasharray: 1400, 2600;
+ 	stroke-dashoffset: 0;
+ 	animation: dash 3.7s ease-in-out infinite;
+ 	opacity: 0.3;
+ }
+
+ .path2 {
+ 	stroke-dasharray: 40, 2600;
+ 	stroke-dashoffset: -500px;
+ }
+
+ .path3 {
+ 	stroke-dasharray: 200, 2600;
+ 	stroke-dashoffset: -700px;
+ }
+
+ .path4 {
+ 	stroke-dasharray: 40, 2600;
+ 	stroke-dashoffset: -2000px;
+ 	animation: dash2 2.5s ease-in-out infinite;
+ }
+
+ .path5 {
+ 	stroke-dasharray: 200, 2600;
+ 	stroke-dashoffset: 0;
+ }
+
+ .path6 {
+ 	stroke-dasharray: 300, 2600;
+ 	stroke-dashoffset: -1000px;
+ }
+
+ .path7 {
+ 	stroke-dasharray: 40, 2600;
+ 	stroke-dashoffset: -1200px;
+ }
+
+ .path8 {
+ 	stroke-dasharray: 100, 2600;
+ 	stroke-dashoffset: -300px;
+ }
+
+ @keyframes rotate {
+ 	100% {
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @keyframes rotate-reverse {
+ 	100% {
+ 		transform: rotate(-360deg);
+ 	}
+ }
+
+ @keyframes dash {
+ 	0% {
+ 		stroke-dasharray: 2000, 2600;
+ 		stroke-dashoffset: 0;
+ 	}
+
+ 	50% {
+ 		stroke-dasharray: 2400, 2600;
+ 		stroke-dashoffset: -500px;
+ 	}
+
+ 	100% {
+ 		stroke-dasharray: 2000, 2600;
+ 		stroke-dashoffset: 0;
+ 	}
+ }
+
+ @keyframes dash2 {
+ 	0% {
+ 		stroke-dasharray: 100, 2600;
+ 		stroke-dashoffset: -2000px;
+ 	}
+
+ 	50% {
+ 		stroke-dasharray: 500, 2600;
+ 		stroke-dashoffset: -1000px;
+ 	}
+
+ 	100% {
+ 		stroke-dasharray: 100, 2600;
+ 		stroke-dashoffset: -1960px;
+ 	}
  }
