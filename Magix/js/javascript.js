@@ -12,24 +12,21 @@ const applyStyles = iframe => {
 		memberListFontColor: "#000000",
 		memberListBackgroundColor: "white"
 	}
-
 	setTimeout(() => {
 		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");
 	}, 100);
 }
 const modifierDeck = () => {
-
 	console.log("allo");
 	document.querySelector("#myChart").style.display = "none";
 	document.querySelector("#deckAPI").style.display = "block";
-
 }
 const localStorage = () => {
 	let username = document.querySelector("#Username").value;
-	window.localStorage.setItem("Name",  username);
+	window.localStorage.setItem("Name", username);
 }
 const getName = () => {
-	let titre = "SELECT YOUR HERO " + window.localStorage.getItem("Name");
+	let titre = "SELECT YOUR HERO, " + window.localStorage.getItem("Name");
 	document.getElementById("name").innerHTML = titre;
 }
 
@@ -38,7 +35,6 @@ const toggleChat = () => {
 	if (counter % 2 == 1) {
 		console.log("allo");
 		document.querySelector("#chatGame").style.display = "block";
-
 	}
 	else {
 		document.querySelector("#chatGame").style.display = "none";
@@ -48,12 +44,13 @@ if (window.location.href.match("StatsDeck.php") != null) {
 	window.addEventListener("load", () => {
 		graphiqueP();
 	});
-	
+
 }
 else if (window.location.href.match("Lobby.php") != null) {
 	window.addEventListener("load", () => {
 		getName();
-	});}
+	});
+}
 
 const graphiqueP = () => {
 	document.querySelector("#deckAPI").style.display = "none";
@@ -91,9 +88,7 @@ const graphiqueP = () => {
 				})
 			}
 
-
 			let barColors = [];
-
 			// genere des  barColors aleatoires pour chaque id
 			let letters = "0123456789ABCDEF";
 			let color = "#";
@@ -104,9 +99,7 @@ const graphiqueP = () => {
 				barColors.push(color);
 				color = "#";
 			}
-			console.log(barColors);
-
-
+			
 			let piedata = {
 				labels: xValues,
 				datasets: [{
@@ -117,7 +110,6 @@ const graphiqueP = () => {
 			}
 			let chartid = document.getElementById("myChart");
 			let chart = new Chart(chartid, {
-
 				type: "pie",
 				data: piedata,
 				options: {

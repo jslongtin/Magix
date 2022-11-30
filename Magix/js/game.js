@@ -9,25 +9,22 @@ let hand = document.querySelector("#card-container");
 let opponent = document.querySelector("#opponent");
 let messages = document.querySelector("#message");
 
-
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
     })
         .then(response => response.json())
         .then(data => {
-
             if (data == "WAITING") {
                 messages.style.display = "block";
                 messages.innerHTML = data;
-
             }
             else if (data == "LAST_GAME_WON") {
                 messages.style.display = "block";
                 messages.innerHTML = "VICTOIRE";
-               
+
                 messages.setAttribute("id", "messageErreurs");
-              
+
             }
             else if (data == "LAST_GAME_LOST") {
                 messages.style.display = "block";
@@ -35,7 +32,6 @@ const state = () => {
                 messages.setAttribute("id", "messageErreurs");
             }
             else {
-                
                 if (count == 0) {
                     count++;
                     messages.style.display = "none";
@@ -118,9 +114,7 @@ let refreshGame = (data) => {
                     })
                         .then(response => response.json())
                         .then(data => {
-
                             refreshGame(data)
-
                         });
                 };
             })
@@ -166,14 +160,11 @@ let refreshGame = (data) => {
                     if (isCardSelected != null) {
                         attack(isCardSelected, element.uid);
                         isCardSelected = null;
-
                     }
                 };
             })
             opponentBoard = data.opponent.board
         }
-
-
 
         let opponentInfos = document.querySelector("#opponentInfo");
         let opponentclass = document.querySelector("#classOpponent");
@@ -195,7 +186,6 @@ let refreshGame = (data) => {
 const makeCard = (element, imageId) => {
     let carte = document.createElement("div");
     let container = document.createElement("div");
-
     if (element != 0) {
         let img = document.createElement("div");
 
@@ -262,8 +252,8 @@ const makeCard = (element, imageId) => {
 const cardImage = (id) => {
     // console.log(id);
     let image;
-    let cheminImage= "img/CartesNum/";
-  
+    let cheminImage = "img/CartesNum/";
+
     if (id <= 31) {
         image = cheminImage + id.toString() + ".png";
     }
@@ -292,10 +282,7 @@ const heroPower = () => {
         .then(response => response.json())
         .then(data => {
 
-
             refreshGame(data);
-
-
         });
 }
 const endTurn = () => {
@@ -307,10 +294,7 @@ const endTurn = () => {
     })
         .then(response => response.json())
         .then(data => {
-
-
             refreshGame(data);
-
         });
 }
 const surrender = () => {
@@ -322,7 +306,6 @@ const surrender = () => {
     })
         .then(response => response.json())
         .then(data => {
-
 
         });
 }
@@ -341,7 +324,6 @@ const attack = (uidCarteMain, uidTarget) => {
     })
         .then(response => response.json())
         .then(data => {
-
             refreshGame(data);
 
         });

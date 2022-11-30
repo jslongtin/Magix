@@ -18,7 +18,6 @@ class IndexAction extends CommonAction
             $data["username"] = $_POST["Username"];
             $data["password"] = $_POST["Password"];
 
-
             $result = parent::callAPI("signin", $data);
 
             if ($result == "INVALID_USERNAME_PASSWORD") {

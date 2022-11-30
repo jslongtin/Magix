@@ -58,7 +58,6 @@ require_once("partial/header.php");
             <circle class="path8" cx="500" cy="500" r="420" stroke="#fff" fill="none" />
           </svg>
         </div>
-
       </div>
       <div id="turn"></div>
       <button id="chatGameToggle" type="submit" onclick="toggleChat()">Toggle chat</button>

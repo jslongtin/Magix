@@ -36,7 +36,6 @@ require_once("partial/header.php");
 			<?php
 			if ($data["DeckError"]) {
 			?>
-
 				<div class="error-message">
 					<strong>"DECK_INCOMPLETE</strong>
 				</div>
@@ -56,7 +55,7 @@ require_once("partial/header.php");
 		</form>
 	</div>
 	<div class="heroSelectionGallery">
-		<h2 id="name" >SELECT YOUR HERO</h2>
+		<h2 id="name">SELECT YOUR HERO</h2>
 		<div id="heroes">
 			<div class="tanks">
 				<div class="row1">

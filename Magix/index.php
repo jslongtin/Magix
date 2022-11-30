@@ -32,7 +32,6 @@ require_once("partial/header.php");
 		</form>
 	</div>
 
-
 	<div class="overwatch-loader">
 		<svg class="overwatch-logo" viewbox="0 0 1000 1000">
 			<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" x="200" y="210">

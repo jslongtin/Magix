@@ -353,7 +353,6 @@
  }
 
  #opponentCards {
-
  	width: 70%;
  	height: 100%;
  	display: flex;
@@ -416,7 +415,6 @@
  	justify-content: space-evenly;
  }
 
-
  #messageErreurs {
  	height: 100vh;
  	width: 100vw;
@@ -427,7 +425,7 @@
  	justify-content: center;
  	text-align: center;
  	padding-top: 600px;
- 	font-size:200px;
+ 	font-size: 200px;
  	z-index: 10;
  }
 
@@ -655,11 +653,6 @@
  	}
  }
 
-
-
-
-
-
  .heroSelectionGallery {
  	grid-area: heros;
  	display: flex;
@@ -672,7 +665,6 @@
  	margin: 0px 10%;
  }
 
-
  #heroes {
  	/* grid-area: heroes; */
  	display: flex;
@@ -680,14 +672,6 @@
  	width: 800%;
 
  	justify-content: center;
- 	/* grid-template-columns: 1fr 1fr 1fr; 
- 	grid-template-rows:  1fr ;
- 	grid-template-areas: "tanks" "dps" "support"; */
- 	/* -webkit-box-pack: center;
- 	-ms-flex-pack: center; */
- 	/* justify-content: center; */
- 	/* grid-template-columns: 241px 213px 206px 177px;
- 	grid-column-gap: 32px; */
  }
 
  .tanks,
@@ -705,15 +689,6 @@
  	margin: 2px 0px;
  	justify-content: center;
  }
-
- /* .category {
- 	display: -webkit-box;
- 	display: -ms-flexbox;
- 	display: flex;
- 	-webkit-box-align: center;
- 	-ms-flex-align: center;
- 	align-items: center;
- } */
 
  .hero {
  	width: 70px;
@@ -742,36 +717,10 @@
  }
 
  .select {
- 	/* grid-area: select;
- 	display: -webkit-box;
- 	display: -ms-flexbox;
- 	display: flex;
- 	-webkit-box-pack: center;
- 	-ms-flex-pack: center; */
  	justify-content: center;
  }
 
- /* button {
- 	height: 32px;
- 	width: 110px;
- 	border: none;
- 	margin-top: 15px;
- 	font-size: 22px;
- 	letter-spacing: 2px;
- 	color: #fff;
- 	background-color: #b47900;
- 	outline-style: none;
- }
-
- button:hover {
- 	background-color: #df9600;
- 	cursor: pointer;
- } */
-
-
-
-
- /*Assets*/
+ /*Image hero picker*/
 
  #genji {
  	background-image: url("../img/Cartes/Genji.png");
