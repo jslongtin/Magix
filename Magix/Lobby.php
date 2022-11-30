@@ -56,7 +56,7 @@ require_once("partial/header.php");
 		</form>
 	</div>
 	<div class="heroSelectionGallery">
-		<h2>SELECT YOUR HERO</h2>
+		<h2 id="name" >SELECT YOUR HERO</h2>
 		<div id="heroes">
 			<div class="tanks">
 				<div class="row1">

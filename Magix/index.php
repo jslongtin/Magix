@@ -28,7 +28,7 @@ require_once("partial/header.php");
 			<div class="formLabel"><label for="Password"> Password : </label></div>
 			<div class="formInput"><input type="password" name="Password" id="Password" /></div>
 			<div class="formSeparator"></div>
-			<button class="connexion" type="submit">Connexion</button>
+			<button class="connexion" type="submit" onclick="localStorage()">Connexion</button>
 		</form>
 	</div>
 

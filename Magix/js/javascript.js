@@ -24,6 +24,15 @@ const modifierDeck = () => {
 	document.querySelector("#deckAPI").style.display = "block";
 
 }
+const localStorage = () => {
+	let username = document.querySelector("#Username").value;
+	window.localStorage.setItem("Name",  username);
+}
+const getName = () => {
+	let titre = "SELECT YOUR HERO " + window.localStorage.getItem("Name");
+	document.getElementById("name").innerHTML = titre;
+}
+
 const toggleChat = () => {
 	counter++;
 	if (counter % 2 == 1) {
@@ -39,7 +48,13 @@ if (window.location.href.match("StatsDeck.php") != null) {
 	window.addEventListener("load", () => {
 		graphiqueP();
 	});
+	
 }
+else if (window.location.href.match("Lobby.php") != null) {
+	window.addEventListener("load", () => {
+		getName();
+	});}
+
 const graphiqueP = () => {
 	document.querySelector("#deckAPI").style.display = "none";
 	document.querySelector("#myChart").style.display = "block";
