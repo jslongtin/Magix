@@ -59,7 +59,6 @@ const toggleLegend = () => {
 }
 // stats/deck
 const modifierDeck = () => {
-	console.log("allo");
 	document.querySelector("#myChart").style.display = "none";
 	document.querySelector("#deckAPI").style.display = "block";
 }

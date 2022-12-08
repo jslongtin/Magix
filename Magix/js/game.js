@@ -281,7 +281,6 @@ const makeCard = (element, imageId) => {
 
 //retourne une image pour la carte selon le id
 const cardImage = (id) => {
-    // console.log(id);
     let image;
     let cheminImage = "img/CartesNum/";
 
