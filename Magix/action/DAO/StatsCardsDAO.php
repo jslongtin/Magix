@@ -21,6 +21,15 @@ class StatsCardsDAO
 
         return $statement->fetchAll();
     }
+    public static function getMostPlayed()
+    {
+        $connection = Connection::getConnection();
+        $statement = $connection->prepare("SELECT idCarte, COUNT (idCarte) as count FROM statsCards  GROUP BY idCarte ORDER BY count DESC LIMIT 1");
+        $statement->setFetchMode(PDO::FETCH_ASSOC); // Retourne un dictionnaire
+        $statement->execute();
+
+        return $statement->fetch();
+    }
     public static function clear()
     {
         $connection = Connection::getConnection();

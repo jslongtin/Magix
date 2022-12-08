@@ -291,7 +291,7 @@ const cardImage = (id) => {
     else if (id > 31 && id <= 62) {
         image = cheminImage + (id - 31).toString() + ".png";
     }
-    else if (id > 62 && id <= 101) {
+    else if (id > 62 && id < 93) {
         image = cheminImage + (id - 62).toString() + ".png";
     }
     else if (id == 102) {
@@ -299,7 +299,7 @@ const cardImage = (id) => {
     }
     else {
         // carte generique
-        image = "img/Cartes/Omnic.webp";
+        image = "img/Cartes/omnic.jpg";
     }
     return image;
 }

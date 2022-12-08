@@ -44,6 +44,8 @@ class AjaxStateAction extends CommonAction
 				$result = parent::callAPI("games/action", $data);
 			} else if ($_POST["type"] == "BD") {
 				$result = StatsCardsDAO::getPopularite();
+			} else if ($_POST["type"] == "MostPlayed") {
+				$result = StatsCardsDAO::getMostPlayed();
 			} else if ($_POST["type"] == "icon") {
 				if (isset($_SESSION["heroChoisi"])) {
 					$result = $_SESSION["heroChoisi"];

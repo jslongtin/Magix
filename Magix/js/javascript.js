@@ -20,6 +20,7 @@ const applyStyles = iframe => {
 if (window.location.href.match("StatsDeck.php") != null) {
 	window.addEventListener("load", () => {
 		graphiqueP();
+		mostPlayed();
 	});
 
 }
@@ -62,6 +63,20 @@ const modifierDeck = () => {
 	document.querySelector("#myChart").style.display = "none";
 	document.querySelector("#deckAPI").style.display = "block";
 }
+const mostPlayed = () => {
+
+	let formData = new FormData();
+	formData.append("type", "MostPlayed");
+	fetch("ajax-state.php", {
+		method: "POST",
+		body: formData
+	})
+		.then(response => response.json())
+		.then(data => {
+
+	document.querySelector("#mostPlayed").innerHTML = "Most played : carte " + data.idcarte+ ", nombre de fois jouée: " + data.count ;
+});
+}
 const graphiqueP = () => {
 	document.querySelector("#deckAPI").style.display = "none";
 	document.querySelector("#myChart").style.display = "block";
@@ -97,7 +112,8 @@ const graphiqueP = () => {
 					}
 				})
 			}
-
+			
+			
 			let barColors = [];
 			// genere des  barColors aleatoires pour chaque id
 			let letters = "0123456789ABCDEF";

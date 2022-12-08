@@ -22,7 +22,7 @@ require_once("partial/header.php");
 	<div id="graphiques">
 		<iframe id="deckAPI" src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>"></iframe>
 		<canvas id="myChart"></canvas>
-		<div id="most_played"></div>
+		<div id="mostPlayed"></div>
 	</div>
 
 </div>

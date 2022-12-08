@@ -60,8 +60,10 @@ require_once("partial/header.php");
         </div>
       </div>
       <div id="turn"></div>
+      <div id="buttons">
       <button id="chatGameToggle" type="submit" onclick="toggleChat()">Toggle chat</button>
       <button id="legendToggleBTN" type="submit" onclick="toggleLegend()">Legend</button>
+      </div>
       <div id="message"></div>
     </div>
     <div id="boardOpponentContainer"></div>
