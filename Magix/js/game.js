@@ -291,8 +291,11 @@ const cardImage = (id) => {
     else if (id > 31 && id <= 62) {
         image = cheminImage + (id - 31).toString() + ".png";
     }
-    else if (id > 62 && id < 93) {
+    else if (id > 62 && id <= 93) {
         image = cheminImage + (id - 62).toString() + ".png";
+    }
+    else if (id > 93 && id <= 101) {
+        image = cheminImage + (id - 93).toString() + ".png";
     }
     else if (id == 102) {
         image = "img/cardback.png";
