@@ -417,12 +417,14 @@
  	justify-content: center;
  	width: 20%;
  	z-index: 10;
-	
+
  }
-#buttons{
-display: flex;
-flex-direction: column;
-}
+
+ #buttons {
+ 	display: flex;
+ 	flex-direction: column;
+ }
+
  #opponentIcon,
  #playerIcon {
  	justify-content: center;
@@ -431,7 +433,7 @@ flex-direction: column;
 
  #turn {
  	color: var(--white);
- 	width: 50px;
+ 	width: 150px;
  	background-color: var(--orange);
  }
 
