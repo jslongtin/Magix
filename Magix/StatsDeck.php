@@ -20,9 +20,10 @@ require_once("partial/header.php");
 		</form>
 	</div>
 	<div id="graphiques">
+	<div id="mostPlayed"></div>
 		<iframe id="deckAPI" src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>"></iframe>
 		<canvas id="myChart"></canvas>
-		<div id="mostPlayed"></div>
+		
 	</div>
 
 </div>

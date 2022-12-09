@@ -302,7 +302,7 @@
  	padding-right: 20%;
  }
 
- #action-buttons, #info, #opponentInfo, #graphiques, .hp, .ConnexionBox {
+ #action-buttons, #info, #opponentInfo, #graphiques, .hp, .ConnexionBox ,#turn{
  	align-items: center;
  	justify-content: center;
  }
@@ -434,7 +434,7 @@
  #turn {
  	color: var(--white);
  	width: 150px;
- 	background-color: var(--orange);
+ 	background-color: var(--lightblue);
  }
 
 
