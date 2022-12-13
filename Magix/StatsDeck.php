@@ -13,7 +13,7 @@ require_once("partial/header.php");
 <div id="deck">
 	<div id="actionBar">
 		<button name="deck" onclick="modifierDeck()" type="submit">Modifier son deck</button>
-		<button name="graph" onclick="graphiqueP()" type="submit">graph</button>
+		<button name="graph" onclick="graphiqueP()" type="submit">Graph</button>
 		<form action="" method="post">
 			<button name="clear" type="submit">Clear</button>
 			<button name="retour" type="submit">Retour</button>
