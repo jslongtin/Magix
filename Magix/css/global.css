@@ -573,18 +573,18 @@
  	display: flex;
  	flex-direction: column;
  	height: 300px;
- 	width: 80%;
+ 	width: 90%;
  	align-items: center;
  	justify-content: center;
  	background-color: rgba(var(--grayOpp), 0.6);
- 	margin: 0px 10%;
+ 	margin-left: 5%;
  }
 
  #heroes {
  	/* grid-area: heroes; */
  	display: flex;
  	flex-direction: row;
- 	width: 800%;
+ 	width: 100%;
 
  	justify-content: center;
  }
