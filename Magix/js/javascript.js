@@ -19,7 +19,7 @@ const applyStyles = iframe => {
 // onload events
 if (window.location.href.match("StatsDeck.php") != null) {
 	window.addEventListener("load", () => {
-		graphiqueP();
+		// graphiqueP();
 		mostPlayed();
 	});
 
