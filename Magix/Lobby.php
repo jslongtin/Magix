@@ -91,7 +91,7 @@ require_once("partial/header.php");
 					<div class="hero " id="sojourn"></div>
 					<div class="hero " id="soldier-76"></div>
 					<div class="hero " id="sombra"></div>
-					<div class="hero " id="symmetra"></div>
+					<div class="hero " id="symetra"></div>
 					<div class="hero " id="torbjorn"></div>
 					<div class="hero " id="tracer"></div>
 					<div class="hero " id="widowmaker"></div>

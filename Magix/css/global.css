@@ -302,7 +302,7 @@
  	padding-right: 20%;
  }
 
- #action-buttons, #info, #opponentInfo, #graphiques, .hp, .ConnexionBox ,#turn{
+ #action-buttons, #info, #opponentInfo, #graphiques, .hp, .ConnexionBox, #turn {
  	align-items: center;
  	justify-content: center;
  }
@@ -472,12 +472,12 @@
  	width: 90%;
  	height: 80%;
  	padding: 20px;
-	padding-bottom: 50px;
+ 	padding-bottom: 50px;
  	margin: auto;
  	background-color: rgba(var(--pink), 0.4);
-	text-align: center;
-	font-size: large;
-	overflow: hidden;
+ 	text-align: center;
+ 	font-size: large;
+ 	overflow: hidden;
  }
 
  #graphiques #myChart {
@@ -725,7 +725,7 @@
  	background-image: url("../img/Cartes/Mercy.png");
  }
 
- #symmetra {
+ #symetra {
  	background-image: url("../img/Cartes/Symetra.png");
  }
 

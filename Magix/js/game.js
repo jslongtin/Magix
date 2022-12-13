@@ -207,7 +207,7 @@ let refreshGame = (data) => {
         let opponentMp = document.querySelector("#manaOpponent");
         let nomOpponent = document.querySelector("#nameOpp");
         nomOpponent.innerHTML = null;
-        nomOpponent.innerHTML = "Username :" + data.opponent.username;
+        nomOpponent.innerHTML =  data.opponent.username;
         let opponentRemainingCards = document.querySelector("#remainingCardsOpponent");
         opponentclass.innerHTML = null;
         opponentHealth.innerHTML = null;
