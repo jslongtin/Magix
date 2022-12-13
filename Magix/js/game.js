@@ -3,6 +3,7 @@ let myHand = [];
 let opponantHand = [];
 let myBoard = [];
 let opponentBoard = [];
+let mana = 0;
 let count = 0;
 let isCardSelected = null;
 let hand = document.querySelector("#card-container");
@@ -102,7 +103,7 @@ const state = () => {
                 let classname = document.querySelector("#class").innerHTML = "class: " + data.heroClass;
                 let healthbar = document.querySelector("#vies").innerHTML = "hp: " + data.hp;
                 let timer = document.querySelector("#timerValue").innerHTML = data.remainingTurnTime;
-                let mana = document.querySelector("#mana").innerHTML = "mana: " + data.mp;
+                let manaSelect = document.querySelector("#mana").innerHTML = "mana: " + data.mp;
                 let turn = document.querySelector("#turn").innerHTML = data.yourTurn == true ? "Your turn" : "Enemy turn";
                 let remainingCards = document.querySelector("#remaining").innerHTML = "cartes restantes: " + data.remainingCardsCount;
 
@@ -123,8 +124,9 @@ let refreshGame = (data) => {
         }, 2000);
     }
     else {
-        if (JSON.stringify(data.hand) != JSON.stringify(myHand)) {
+        if (JSON.stringify(data.hand) != JSON.stringify(myHand) || mana != data.mp) {
             hand.innerHTML = null;
+            mana = data.mp;
             let main = data.hand;
             main.forEach(element => {
                 let carte = makeCard(element, element.id);
@@ -197,10 +199,15 @@ let refreshGame = (data) => {
             opponentBoard = data.opponent.board
         }
 
+         
+
         let opponentInfos = document.querySelector("#opponentInfo");
         let opponentclass = document.querySelector("#classOpponent");
         let opponentHealth = document.querySelector("#hpOpponent");
         let opponentMp = document.querySelector("#manaOpponent");
+        let nomOpponent = document.querySelector("#nameOpp");
+        nomOpponent.innerHTML = null;
+        nomOpponent.innerHTML = "Username :" + data.opponent.username;
         let opponentRemainingCards = document.querySelector("#remainingCardsOpponent");
         opponentclass.innerHTML = null;
         opponentHealth.innerHTML = null;
