@@ -11,20 +11,20 @@ require_once("partial/header.php");
 
 
 <div id="deck">
-	<div id="actionBar">
-		<button name="deck" onclick="modifierDeck()" type="submit">Modifier son deck</button>
-		<button name="graph" onclick="graphiqueP()" type="submit">Graph</button>
-		<form action="" method="post">
-			<button name="clear" type="submit">Clear</button>
-			<button name="retour" type="submit">Retour</button>
-		</form>
-	</div>
-	<div id="graphiques">
-	<div id="mostPlayed"></div>
-		<iframe id="deckAPI" src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>"></iframe>
-		<canvas id="myChart"></canvas>
-		
-	</div>
+    <div id="actionBar">
+        <button name="deck" onclick="modifierDeck()" type="submit">Modifier son deck</button>
+        <button name="graph" onclick="graphique()" type="submit">Graph</button>
+        <form action="" method="post">
+            <button name="clear" type="submit">Clear</button>
+            <button name="retour" type="submit">Retour</button>
+        </form>
+    </div>
+    <div id="graphiques">
+        <div id="mostPlayed"></div>
+        <iframe id="deckAPI" src="https://magix.apps-de-cours.com/server/#/deck/<?= $_SESSION["key"] ?>"></iframe>
+        <canvas id="myChart"></canvas>
+
+    </div>
 
 </div>
 <?php

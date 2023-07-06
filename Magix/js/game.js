@@ -1,3 +1,4 @@
+// agit comme le controller du jeu, il gère les appels ajax et les affichages des cartes et des infos du jeu
 
 let myHand = [];
 let opponantHand = [];
@@ -32,6 +33,8 @@ const state = () => {
                 messages.setAttribute("id", "messagesFin");
             }
             else {
+
+                // creation de l'image du joueur selon le héro selectionné et de l'adversaire selon la classe choisie
                 if (count == 0) {
                     count++;
                     messages.style.display = "none";
@@ -41,7 +44,7 @@ const state = () => {
                     let opponentImage = document.querySelector("#opponentIcon");
                     opponentImage.innerHTML = null;
                     let opponentIcon = document.createElement("img");
-                    console.log(data);
+                    // console.log(data);
                     if (data.opponent.heroClass.includes("Warlock")) {
                         opponentIcon.src = "img/Cartes/Moira.png";
                     }
@@ -112,7 +115,7 @@ const state = () => {
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
-// Refresh genral avec des conditions pour chaques sections si modifications dans le JSON
+// Refresh genral qui gère les erreurs et les changements dans le jeu
 let refreshGame = (data) => {
     if (typeof data != "object") {
         messages.style.display = "block";
@@ -199,15 +202,15 @@ let refreshGame = (data) => {
             opponentBoard = data.opponent.board
         }
 
-         
 
+        // refresh des infos du joueur adverse ainsi que ses cartes
         let opponentInfos = document.querySelector("#opponentInfo");
         let opponentclass = document.querySelector("#classOpponent");
         let opponentHealth = document.querySelector("#hpOpponent");
         let opponentMp = document.querySelector("#manaOpponent");
         let nomOpponent = document.querySelector("#nameOpp");
         nomOpponent.innerHTML = null;
-        nomOpponent.innerHTML =  data.opponent.username;
+        nomOpponent.innerHTML = data.opponent.username;
         let opponentRemainingCards = document.querySelector("#remainingCardsOpponent");
         opponentclass.innerHTML = null;
         opponentHealth.innerHTML = null;
@@ -220,7 +223,7 @@ let refreshGame = (data) => {
 
     }
 }
-// methode de construction de carte pour eviter la repetition
+// methode de construction de carte 
 const makeCard = (element, imageId) => {
     let carte = document.createElement("div");
     let container = document.createElement("div");
@@ -313,6 +316,8 @@ const cardImage = (id) => {
     return image;
 }
 
+// **********  Fonctions appelées par les boutons de l'écran de jeux principal**********
+
 const heroPower = () => {
     let formData = new FormData();
     formData.append("type", "HERO_POWER");
@@ -322,7 +327,6 @@ const heroPower = () => {
     })
         .then(response => response.json())
         .then(data => {
-
             refreshGame(data);
         });
 }
@@ -371,6 +375,7 @@ const attack = (uidCarteMain, uidTarget) => {
 
         });
 }
+// **************************************************************
 
 window.addEventListener("load", () => {
     setTimeout(state, 1000); // Appel initial (attendre 1 seconde)

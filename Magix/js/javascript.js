@@ -1,4 +1,5 @@
 let counter = 0;
+// applique les styles au chat
 const applyStyles = iframe => {
 	let styles = {
 		fontColor: "#FFFFFF",
@@ -16,7 +17,7 @@ const applyStyles = iframe => {
 		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");
 	}, 100);
 }
-// onload events
+// onload events **********************************************************************************************************************
 if (window.location.href.match("StatsDeck.php") != null) {
 	window.addEventListener("load", () => {
 		// graphiqueP();
@@ -29,7 +30,8 @@ else if (window.location.href.match("Lobby.php") != null) {
 		getName();
 	});
 }
-// local storage
+// ************************************************************************************************************************************
+
 const localStorage = () => {
 	let username = document.querySelector("#Username").value;
 	window.localStorage.setItem("Name", username);
@@ -39,6 +41,7 @@ const getName = () => {
 	document.getElementById("name").innerHTML = titre;
 }
 
+// affiche le chat dans la partie
 const toggleChat = () => {
 	counter++;
 	if (counter % 2 == 1) {
@@ -48,6 +51,8 @@ const toggleChat = () => {
 		document.querySelector("#chatGame").style.display = "none";
 	}
 }
+
+// affiche la légende dans la partie pour les classes
 const toggleLegend = () => {
 	counter++;
 	if (counter % 2 == 1) {
@@ -57,11 +62,14 @@ const toggleLegend = () => {
 		document.querySelector("#legend").style.display = "none";
 	}
 }
-// stats/deck
+
+// change entre le graphique et le iframe pour changer ton deck
 const modifierDeck = () => {
 	document.querySelector("#myChart").style.display = "none";
 	document.querySelector("#deckAPI").style.display = "block";
 }
+
+// interoge la BD pour savoir quelle carte a été le plus jouée , utilisé par graphique()
 const mostPlayed = () => {
 
 	let formData = new FormData();
@@ -73,10 +81,12 @@ const mostPlayed = () => {
 		.then(response => response.json())
 		.then(data => {
 
-	document.querySelector("#mostPlayed").innerHTML = "Most played : carte " + data.idcarte+ ", nombre de fois jouée: " + data.count ;
-});
+			document.querySelector("#mostPlayed").innerHTML = "Most played : carte " + data.idcarte + ", nombre de fois jouée: " + data.count;
+		});
 }
-const graphiqueP = () => {
+
+// graphique chart.js des statistiques de tes cartes jouées 
+const graphique = () => {
 	document.querySelector("#deckAPI").style.display = "none";
 	document.querySelector("#myChart").style.display = "block";
 
@@ -111,8 +121,6 @@ const graphiqueP = () => {
 					}
 				})
 			}
-			
-			
 			let barColors = [];
 			// genere des  barColors aleatoires pour chaque id
 			let letters = "0123456789ABCDEF";
