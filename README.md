@@ -79,7 +79,7 @@ This project is a Web based game based on the style of Heartsone.It was created 
 2. Start the wamp server
 3. Open the project in your browser
    ```sh
-   http://localhost/Magix/
+   http://localhost/Magix/Magix
    ```
   
 
