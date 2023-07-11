@@ -1,8 +1,7 @@
 
-<!-- Theme: Overwatch
 
-Info connexions
-username : Name_Hidden -->
+<!-- Info connexions
+username : Name_Hidden  -->
 
 <a name="readme-top"></a>
 
@@ -15,7 +14,6 @@ username : Name_Hidden -->
 
   <p align="center">
     Hearstone like web game project
-   
   </p>
 </div>
 
@@ -48,10 +46,10 @@ username : Name_Hidden -->
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+<!-- [![Homescreen][homepage-screenshot]] -->
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project is a Web based game based on the style of Heartsone or oher card games. The visual theme is Overwatch. The game is based on a PHP backend and a Javascript frontend. The game uses ajax to call the api and interact with the data returned or modify the database
+This project is a Web based game based on the style of Heartsone.It was created in the context of my last web class so you can't create an account and use the game if you're not a student or old student. This is more to show my skills and growth.  The visual theme is Overwatch. The game is based on a PHP backend and a Javascript frontend. The game uses ajax to call the api and interact with the data returned or modify the database. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,14 +93,17 @@ This project is a Web based game based on the style of Heartsone or oher card ga
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+The first thing to do is to log into your account. Once you have an account you can create a deck with the teacher's api. You can then play against the AI or another player. You can also see your stats liste= your most played card in the stats and deck tab.In this tab, you can also change your deck or see the stats of other players .
 
-_For more examples, please refer to the [Documentation](https://example.com)_ -->
+<!-- [![Lobby][lobby-screenshot]] -->
+When you're logged you enter the lobby where you can go into a game against an other player or AI. You can see the chat on the right and the list of players on the left, go to the stats/deck tab , chose a hero on the bottom tu use in game or quit the application.
+
+<!-- [![InGame][in-game-screenshot]] -->
+In game, turn by turn you can chose to place a card on the board or attack a card on the board. You can also use your hero power if you have enough mana.  You can see the cards in your hand on the bottom and the cards on the board in the middle. There is a toggle for the hero powers with a legend of their effects depending on the hero class. There is another toggle to see the chat in game. Every card you can play in your hand will be higher than the rest of the cards. You can see the stats of all the players and a countdown of every turn.
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 
 
 <!-- CONTACT -->
@@ -121,9 +122,8 @@ Profile link: [My github profile](https://github.com/jslongtin)
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* My teacher Frederic Theriault that created the api , the database and the concept of the game.
+* The author of this readme template : [othneildrew](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,6 +144,9 @@ Profile link: [My github profile](https://github.com/jslongtin)
 [Chart.js-url]: https://www.chartjs.org
 [Postgres]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
 [Postgres-url]: https://www.postgresql.org 
+<!-- [homepage-screenshot]:
+[lobby-screenshot]:
+[in-game-screenshot]: -->
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
